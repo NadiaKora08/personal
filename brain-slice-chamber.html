@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microfluidic perfusion chamber for brain slices — Nadia Korostyleva</title>
+<meta name="description" content="A microfluidic perfusion chamber that extends brain slice viability for long-term optogenetics experiments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="wordmark" href="index.html">Nadia Korostyleva</a>
+    <nav>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#publications">Publications</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="project-header">
+  <div class="wrap">
+    <p class="eyebrow"><a href="index.html#work">← Selected work</a></p>
+    <h1>Microfluidic perfusion chamber for brain slices</h1>
+    <p class="dek">Brain slices stay usable for a matter of hours. That ceiling decides what an optogenetics experiment is allowed to ask.</p>
+    <p class="factline">
+      Acousto-Bioelectronics Lab, University of South Florida<br>
+      In collaboration with a neuroscience lab<br>
+      2025 to present — project lead
+    </p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <div class="results">
+    <div>
+      <div class="result-value">30×</div>
+      <div class="result-label">target extension of slice viability</div>
+    </div>
+    <div>
+      <div class="result-value">48 h → 2 h</div>
+      <div class="result-label">device build time after process redesign</div>
+    </div>
+  </div>
+
+  <h2>The problem</h2>
+  <p>Acute brain slices are the workhorse preparation for studying neural circuits, and optogenetics has made them more useful still. But a slice in a conventional chamber degrades within hours, which rules out any protocol that needs to observe the same tissue over a long window — repeated stimulation, slow plasticity, anything where the interesting change takes longer than the tissue lasts.</p>
+
+  <figure class="figure">
+    <div class="ph">
+      <div class="ph-file">images/chamber-cad.png</div>
+      <div class="ph-note">CAD render of the chamber showing the flow path. Confirm with Dr. Kim before posting geometry from unpublished work.</div>
+    </div>
+    <figcaption>Chamber design in CAD.</figcaption>
+  </figure>
+
+  <h2>The approach</h2>
+  <p>The chamber perfuses the slice continuously rather than bathing it, keeping oxygen and nutrient delivery steady across the tissue instead of letting gradients build. Designing it is a fluidics problem constrained by an optical one: the slice has to be accessible to light and to a probe while the flow field stays uniform over it.</p>
+  <p>I lead the device side of the collaboration. The first version worked but took two full days to build, which made iteration impossibly slow. Reworking the microfabrication process brought that down to two hours, and the design has gone through many more revisions since as a direct result.</p>
+
+  <div class="figure-pair">
+    <figure class="figure">
+      <div class="ph">
+        <div class="ph-file">images/chamber-fabricated.jpg</div>
+        <div class="ph-note">Photo of the machined or fabricated chamber, ideally with something for scale.</div>
+      </div>
+      <figcaption>Fabricated chamber.</figcaption>
+    </figure>
+    <figure class="figure">
+      <div class="ph">
+        <div class="ph-file">images/chamber-setup.jpg</div>
+        <div class="ph-note">The chamber installed in the rig — tubing, perfusion lines, microscope stage.</div>
+      </div>
+      <figcaption>Chamber integrated into the experimental setup.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Where it stands</h2>
+  <p>The platform is being brought to full functionality now: CNC machining of the chamber body, probe integration for stimulation and recording, and cleanroom fabrication of the microfluidic layer. Each of the three has to work with the other two, so the current phase is as much integration as it is fabrication.</p>
+
+  <figure class="figure">
+    <div class="ph">
+      <div class="ph-file">images/chamber-slice.jpg</div>
+      <div class="ph-note">A slice in the chamber, or viability imaging if you have it. Optional — skip if the data is unpublished.</div>
+    </div>
+    <figcaption>Tissue in the chamber.</figcaption>
+  </figure>
+
+  <h2>What I took from it</h2>
+  <p>The build-time result mattered more than it sounds. Cutting a two-day process to two hours did not improve the device directly; it improved the rate at which the device could be wrong and get fixed. On a project with three interacting subsystems, iteration speed turned out to be the real constraint.</p>
+
+  <p class="next-project"><a href="blood-pressure-system.html">Next: semi-automated blood pressure regulation →</a></p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Nadia Korostyleva — <a href="mailto:nadezhda.kor08@gmail.com">nadezhda.kor08@gmail.com</a> — <a href="https://www.linkedin.com/in/nadezhda890/">LinkedIn</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

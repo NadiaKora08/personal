@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nadia Korostyleva — Biomedical Engineer</title>
+<meta name="description" content="Biomedical engineer working on MEMS devices: microneedle phototherapy patches, microfluidic brain-slice chambers, and the instrumentation around them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="wordmark" href="index.html">Nadia Korostyleva</a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#publications">Publications</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Nadia Korostyleva</h1>
+    <p class="hero-lede">I build medical devices at the millimetre and micrometre scale — phototherapy patches you wear on a wound, microfluidic chambers that keep brain tissue alive, and the electronics that drive them.</p>
+    <p class="hero-facts">
+      M.S. Biomedical Engineering, University of South Florida<br>
+      Graduate Research Engineer, Acousto-Bioelectronics Lab<br>
+      Tampa, Florida
+    </p>
+
+    <figure class="hero-figure">
+      <svg viewBox="0 0 820 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross-section diagram of a microneedle phototherapy patch: an LED above a microlens focuses blue light through hollow microneedles into the tissue below.">
+        <defs>
+          <marker id="tick" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M3 0 V6" stroke="#59626e" stroke-width="1"/>
+          </marker>
+        </defs>
+
+        <!-- tissue -->
+        <rect x="60" y="182" width="700" height="118" fill="#f2e4e2"/>
+        <path d="M60 182 H760" stroke="#e0cbc8" stroke-width="1.5"/>
+        <path d="M60 206 H760" stroke="#e8d6d3" stroke-width="1" stroke-dasharray="3 5"/>
+
+        <!-- wound bed -->
+        <path d="M300 182 q60 26 120 0" fill="#e9d3d0" stroke="#dcbdb9" stroke-width="1.2"/>
+
+        <!-- patch substrate -->
+        <rect x="150" y="118" width="520" height="30" fill="#2b3340"/>
+        <rect x="150" y="148" width="520" height="34" fill="#eceff4" stroke="#d8dce3" stroke-width="1"/>
+
+        <!-- LEDs -->
+        <rect x="256" y="100" width="34" height="18" fill="#1533cc"/>
+        <rect x="393" y="100" width="34" height="18" fill="#1533cc"/>
+        <rect x="530" y="100" width="34" height="18" fill="#1533cc"/>
+
+        <!-- microlenses -->
+        <path d="M249 148 a24 18 0 0 1 48 0 z" fill="#e9edfb" stroke="#1533cc" stroke-width="1.4"/>
+        <path d="M386 148 a24 18 0 0 1 48 0 z" fill="#e9edfb" stroke="#1533cc" stroke-width="1.4"/>
+        <path d="M523 148 a24 18 0 0 1 48 0 z" fill="#e9edfb" stroke="#1533cc" stroke-width="1.4"/>
+
+        <!-- microneedles -->
+        <path d="M262 182 h22 l-11 46 z" fill="#ffffff" stroke="#151a21" stroke-width="1.4"/>
+        <path d="M399 182 h22 l-11 46 z" fill="#ffffff" stroke="#151a21" stroke-width="1.4"/>
+        <path d="M536 182 h22 l-11 46 z" fill="#ffffff" stroke="#151a21" stroke-width="1.4"/>
+
+        <!-- light paths -->
+        <path class="ray ray-1" d="M273 118 V148 L273 228 273 282" stroke="#1533cc" stroke-width="2" fill="none" opacity="0.85"/>
+        <path class="ray ray-2" d="M410 118 V148 L410 228 410 282" stroke="#1533cc" stroke-width="2" fill="none" opacity="0.85"/>
+        <path class="ray ray-3" d="M547 118 V148 L547 228 547 282" stroke="#1533cc" stroke-width="2" fill="none" opacity="0.85"/>
+        <path class="ray ray-1" d="M273 228 L246 288" stroke="#1533cc" stroke-width="1" fill="none" opacity="0.4"/>
+        <path class="ray ray-1" d="M273 228 L300 288" stroke="#1533cc" stroke-width="1" fill="none" opacity="0.4"/>
+        <path class="ray ray-2" d="M410 228 L383 288" stroke="#1533cc" stroke-width="1" fill="none" opacity="0.4"/>
+        <path class="ray ray-2" d="M410 228 L437 288" stroke="#1533cc" stroke-width="1" fill="none" opacity="0.4"/>
+        <path class="ray ray-3" d="M547 228 L520 288" stroke="#1533cc" stroke-width="1" fill="none" opacity="0.4"/>
+        <path class="ray ray-3" d="M547 228 L574 288" stroke="#1533cc" stroke-width="1" fill="none" opacity="0.4"/>
+
+        <!-- leader lines and labels -->
+        <g class="dia-labels" font-family="IBM Plex Sans, sans-serif" font-size="12.5" fill="#59626e">
+          <path d="M256 109 H150 H120" stroke="#c8ced8" stroke-width="1"/>
+          <text x="60" y="105">LED source</text>
+
+          <path d="M249 141 H150 H120" stroke="#c8ced8" stroke-width="1"/>
+          <text x="60" y="145">Microlens</text>
+
+          <path d="M262 205 H150 H120" stroke="#c8ced8" stroke-width="1"/>
+          <text x="60" y="209">Microneedle</text>
+
+          <path d="M600 250 H700 H730" stroke="#c8ced8" stroke-width="1"/>
+          <text x="672" y="270">Wound bed</text>
+        </g>
+
+        <!-- scale bar -->
+        <g class="dia-labels" font-family="IBM Plex Sans, sans-serif" font-size="11.5" fill="#59626e">
+          <path d="M672 314 H760" stroke="#59626e" stroke-width="1.2" marker-start="url(#tick)" marker-end="url(#tick)"/>
+          <text x="672" y="332">500 µm</text>
+        </g>
+      </svg>
+      <figcaption>Working principle of the MAP wound patch, in cross-section: LED sources at the top, microlenses beneath them, and microneedles carrying antimicrobial blue light past the skin surface into the wound bed. Schematic, not to scale.</figcaption>
+    </figure>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section id="work">
+    <div class="section-head"><h2>Selected work</h2></div>
+
+    <div class="projects">
+
+      <a class="project-row" href="map-phototherapy.html">
+        <p class="project-title">MAP — microneedle phototherapy wound patch</p>
+        <p class="project-meta">Acousto-Bioelectronics Lab, USF — 2025 to present</p>
+        <p class="project-blurb">A wearable MEMS patch that delivers antimicrobial blue light below the skin surface. I led it end to end, from device design and fabrication through in vitro results and in vivo validation. Redesigning the drive electronics and optics cut peak device temperature by 30 °C and power draw by two orders of magnitude.</p>
+        <p class="project-tags"><span>Microfabrication</span><span>Optics</span><span>Thermal design</span><span>First-author IEEE MEMS paper</span></p>
+      </a>
+
+      <a class="project-row" href="brain-slice-chamber.html">
+        <p class="project-title">Microfluidic perfusion chamber for brain slices</p>
+        <p class="project-meta">Acousto-Bioelectronics Lab with a collaborating neuroscience lab, USF — 2025 to present</p>
+        <p class="project-blurb">Brain slices die within hours, which caps how long an optogenetics experiment can run. I am building a perfusion chamber to extend viability by roughly 30×, and cut the device build time from two days to two hours along the way.</p>
+        <p class="project-tags"><span>Microfluidics</span><span>CNC machining</span><span>Cleanroom fabrication</span><span>Optogenetics</span></p>
+      </a>
+
+      <a class="project-row" href="blood-pressure-system.html">
+        <p class="project-title">Semi-automated blood pressure regulation for ICU patients</p>
+        <p class="project-meta">Senior design with MiracleBots, LLC — 2024 to 2025</p>
+        <p class="project-blurb">A closed-loop system pairing a non-invasive cuff with a peristaltic pump for nicardipine delivery, designed against ISO 14971, 13485, 81060-2 and IEC 60601-2-24. Three of us built every part of it: hardware, CAD, signal processing, the patient-response model, and the clinician app.</p>
+        <p class="project-tags"><span>Regulated design</span><span>Closed-loop control</span><span>Human subject testing</span><span>Python / C++ / MATLAB</span></p>
+      </a>
+
+      <a class="project-row" href="eog-wearable.html">
+        <p class="project-title">Wireless EOG driver drowsiness monitor</p>
+        <p class="project-meta">Junior design, USF — 2024</p>
+        <p class="project-blurb">A wearable that reads eye movement to track blink frequency, a validated marker of sleepiness, and streams it over BLE to a companion phone app. Selected as one of the top three teams of fifteen at the 2024 Florida Medical Manufacturing Consortium.</p>
+        <p class="project-tags"><span>Biopotential sensing</span><span>BLE</span><span>Mobile app</span></p>
+      </a>
+
+      <a class="project-row" href="hardware-workshops.html">
+        <p class="project-title">Hardware workshops — IEEE Computer Society at USF</p>
+        <p class="project-meta">Hardware Tech Lead — 2025 to present</p>
+        <p class="project-blurb">I design and teach the chapter's hardware curriculum: two embedded builds so far, an optical Morse-code link that uses a reverse-biased LED as a photodetector, and a two-way Wi-Fi audio system over I²S. Over 200 attendees and 100+ devices built.</p>
+        <p class="project-tags"><span>Embedded systems</span><span>Particle Argon</span><span>ESP32 / I²S</span><span>Curriculum</span></p>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="section-head"><h2>Publications</h2></div>
+    <ul class="pubs">
+      <li>
+        N. Korostyleva, R. Qasim, M. Rastegar Pour, D. Yoon, J. Kim, and A. Kim. “Microneedle-mediated adaptive phototherapy (MAP) wound patch with microlens.”
+        <span class="pub-venue">Proceedings of the IEEE International Conference on MEMS, 2026 — conference paper and poster</span>
+      </li>
+      <li>
+        N. Korostyleva et al. “Enhanced gene delivery with high-frequency asymmetric biphasic pulses: balancing efficiency and reduced muscle contractions.”
+        <span class="pub-venue">Molecular Therapy, vol. 33, no. 4, April 2025 — conference abstract</span>
+      </li>
+      <li>
+        J. Hensley, M. Francis, A. Otten, N. Korostyleva, T. Gagliardo, and A. Bulysheva. “Localized in vivo electro gene therapy (LiveGT)-mediated skeletal muscle protein factory reprogramming.”
+        <span class="pub-venue">Applied Sciences, vol. 14, no. 23, p. 11298, December 2024 — journal paper</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="skills">
+    <div class="section-head"><h2>What I work with</h2></div>
+    <div class="skills">
+      <div>
+        <h3>Fabrication</h3>
+        <p>Cleanroom processing and photolithography, mask design in L-Edit, microneedle and microlens array fabrication, CNC machining, FDM and SLA 3D printing.</p>
+      </div>
+      <div>
+        <h3>Design and simulation</h3>
+        <p>SOLIDWORKS, Autodesk Fusion, COMSOL Multiphysics for thermal and optical modelling.</p>
+      </div>
+      <div>
+        <h3>Electronics and firmware</h3>
+        <p>Embedded development on ESP32 and Particle Argon, I²S and analog sensor interfacing, BLE and Wi-Fi links, breadboard prototyping and hardware debug.</p>
+      </div>
+      <div>
+        <h3>Software and analysis</h3>
+        <p>Python, C++, MATLAB, SPSS, machine learning for physiological response modelling.</p>
+      </div>
+      <div>
+        <h3>Wet lab</h3>
+        <p>In vitro work with mammalian and human cell lines; in vivo rodent studies including surgery and imaging, IACUC certified.</p>
+      </div>
+      <div>
+        <h3>Standards</h3>
+        <p>ISO 14971 risk management, ISO 13485 quality systems, ISO 81060-2, IEC 60601-2-24.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="awards">
+    <div class="section-head"><h2>Awards and programs</h2></div>
+    <ul class="plain">
+      <li>NSF Research Traineeship in Semiconductors and Microelectronics Technology, 2026 to present</li>
+      <li>Barbara J. Lancor BME Excellence Achievement Award, 2025 — awarded to two of fifty graduating BME students</li>
+      <li>iGEM Gold Medal, 2020 — Moscow team, CRISPR-Cas testing method for hepatitis C</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <h2 style="margin-top:0">Get in touch</h2>
+    <p>I am looking for device development and R&amp;D roles in MedTech. The fastest way to reach me is email.</p>
+    <ul class="contact-links">
+      <li><a href="mailto:nadezhda.kor08@gmail.com">nadezhda.kor08@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/nadezhda890/">LinkedIn</a></li>
+      <li><a href="resume.pdf">Résumé (PDF)</a></li>
+    </ul>
+  </div>
+</footer>
+
+</body>
+</html>

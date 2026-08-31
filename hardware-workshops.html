@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hardware workshops — Nadia Korostyleva</title>
+<meta name="description" content="Embedded hardware curriculum for IEEE Computer Society at USF: an optical Morse link and a two-way Wi-Fi audio system over I²S.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="wordmark" href="index.html">Nadia Korostyleva</a>
+    <nav>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#publications">Publications</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="project-header">
+  <div class="wrap">
+    <p class="eyebrow"><a href="index.html#work">← Selected work</a></p>
+    <h1>Hardware workshops</h1>
+    <p class="dek">Most students meet embedded hardware through a tutorial they can follow without understanding. I build the workshops backwards from that: a device that only works if you understand why.</p>
+    <p class="factline">
+      Hardware Tech Lead, IEEE Computer Society at USF<br>
+      August 2025 to present<br>
+      200+ attendees, 100+ devices built
+    </p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <p>I design and teach the chapter's hardware curriculum end to end — the circuits, the firmware, the slides, and the debugging that happens when thirty breadboards fail in thirty different ways. Every attendee leaves with a working device they built themselves.</p>
+
+  <figure class="figure">
+    <div class="ph">
+      <div class="ph-file">images/workshop-room.jpg</div>
+      <div class="ph-note">Wide shot of a full room mid-workshop. The scale of the room is the point here.</div>
+    </div>
+    <figcaption>A workshop in progress at USF.</figcaption>
+  </figure>
+
+  <h2>Optical Morse link</h2>
+  <p>Two Particle Argon boards talking to each other over a beam of visible light. The sender drives an LED from a digital pin; the receiver wires a second LED in reverse and reads the photocurrent on an analog input, which works because an LED is a diode with a junction that responds to light as readily as it emits it. Pairs of students sent Morse across a table and then tested it with the room lights off.</p>
+  <p>Using an LED as its own detector is the part that makes the session teach something. It forces the question of what the component actually is, rather than what the tutorial calls it, and it lets students see a real analog signal instead of a boolean. The workshop covers voltage, current, resistance and grounding first, then board provisioning and cloud flashing, then the circuit.</p>
+
+  <div class="figure-pair">
+    <figure class="figure">
+      <div class="ph">
+        <div class="ph-file">images/workshop-optical-circuit.jpg</div>
+        <div class="ph-note">The breadboarded sender and receiver — Argon, LED, wiring.</div>
+      </div>
+      <figcaption>Sender and receiver assemblies.</figcaption>
+    </figure>
+    <figure class="figure">
+      <div class="ph">
+        <div class="ph-file">images/workshop-students-building.jpg</div>
+        <div class="ph-note">Students working in pairs on their builds.</div>
+      </div>
+      <figcaption>Students building in pairs.</figcaption>
+    </figure>
+  </div>
+
+  <h2>Two-way Wi-Fi audio</h2>
+  <p>A pair of ESP32 boards carrying live audio between them: a MEMS microphone on one end and a Class-D amplifier on the other, both over I²S. The session works through the interface properly — bit clock, word select, and how a sample stream is framed — because those are the concepts that transfer to any synchronous digital bus a student meets later.</p>
+
+  <figure class="figure">
+    <div class="ph">
+      <div class="ph-file">images/workshop-audio-build.jpg</div>
+      <div class="ph-note">The ESP32 build with the mic and amplifier boards wired up.</div>
+    </div>
+    <figcaption>ESP32 with I²S microphone and Class-D amplifier.</figcaption>
+  </figure>
+
+  <h2>CAD and 3D printing</h2>
+  <p>A separate track takes students from a blank SOLIDWORKS sketch to a printed part: parametric modelling, STL and 3MF export, slicer configuration, supports and resolution, and choosing between FDM and SLA for a given part. Most attendees have never printed anything before and leave having sent a file to a printer themselves.</p>
+
+  <figure class="figure">
+    <div class="ph">
+      <div class="ph-file">images/workshop-prints.jpg</div>
+      <div class="ph-note">Printed parts from the CAD workshop.</div>
+    </div>
+    <figcaption>Parts printed by workshop attendees.</figcaption>
+  </figure>
+
+  <p class="next-project"><a href="map-phototherapy.html">Back to the top of the work: MAP phototherapy patch →</a></p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Nadia Korostyleva — <a href="mailto:nadezhda.kor08@gmail.com">nadezhda.kor08@gmail.com</a> — <a href="https://www.linkedin.com/in/nadezhda890/">LinkedIn</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
