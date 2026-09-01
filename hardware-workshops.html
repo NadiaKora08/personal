@@ -36,64 +36,83 @@
   </div>
 </div>
 
-<main class="wrap">
+<main class="bands">
 
-  <p>I design and teach the chapter's hardware curriculum end to end — the circuits, the firmware, the slides, and the debugging that happens when thirty breadboards fail in thirty different ways. Every attendee leaves with a working device they built themselves.</p>
-
-  <figure class="figure">
-    <div class="ph">
-      <div class="ph-file">images/workshop-room.jpg</div>
-      <div class="ph-note">Wide shot of a full room mid-workshop. The scale of the room is the point here.</div>
-    </div>
-    <figcaption>A workshop in progress at USF.</figcaption>
-  </figure>
-
-  <h2>Optical Morse link</h2>
-  <p>Two Particle Argon boards talking to each other over a beam of visible light. The sender drives an LED from a digital pin; the receiver wires a second LED in reverse and reads the photocurrent on an analog input, which works because an LED is a diode with a junction that responds to light as readily as it emits it. Pairs of students sent Morse across a table and then tested it with the room lights off.</p>
-  <p>Using an LED as its own detector is the part that makes the session teach something. It forces the question of what the component actually is, rather than what the tutorial calls it, and it lets students see a real analog signal instead of a boolean. The workshop covers voltage, current, resistance and grounding first, then board provisioning and cloud flashing, then the circuit.</p>
-
-  <div class="figure-pair">
-    <figure class="figure">
-      <div class="ph">
-        <div class="ph-file">images/workshop-optical-circuit.jpg</div>
-        <div class="ph-note">The breadboarded sender and receiver — Argon, LED, wiring.</div>
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">01 — The room</p>
+        <h2>Teaching the whole stack</h2>
+        <p>I design and teach the chapter's hardware curriculum end to end — the circuits, the firmware, the slides, and the debugging that happens when thirty breadboards fail in thirty different ways. Every attendee leaves with a working device they built themselves.</p>
+        <p>Sessions run in pairs so nobody watches someone else do the build, and the room stays open afterwards for the ones who want to keep going.</p>
       </div>
-      <figcaption>Sender and receiver assemblies.</figcaption>
-    </figure>
-    <figure class="figure">
-      <div class="ph">
-        <div class="ph-file">images/workshop-students-building.jpg</div>
-        <div class="ph-note">Students working in pairs on their builds.</div>
+      <div class="band-media reveal">
+        <figure>
+          <img src="images/workshop-room.jpg" alt="A full workshop room at USF, students at laptops with breadboards while a wiring diagram is projected at the front.">
+          <figcaption>A workshop in progress at USF.</figcaption>
+        </figure>
       </div>
-      <figcaption>Students building in pairs.</figcaption>
-    </figure>
-  </div>
-
-  <h2>Two-way Wi-Fi audio</h2>
-  <p>A pair of ESP32 boards carrying live audio between them: a MEMS microphone on one end and a Class-D amplifier on the other, both over I²S. The session works through the interface properly — bit clock, word select, and how a sample stream is framed — because those are the concepts that transfer to any synchronous digital bus a student meets later.</p>
-
-  <figure class="figure">
-    <div class="ph">
-      <div class="ph-file">images/workshop-audio-build.jpg</div>
-      <div class="ph-note">The ESP32 build with the mic and amplifier boards wired up.</div>
     </div>
-    <figcaption>ESP32 with I²S microphone and Class-D amplifier.</figcaption>
-  </figure>
+  </section>
 
-  <h2>CAD and 3D printing</h2>
-  <p>A separate track takes students from a blank SOLIDWORKS sketch to a printed part: parametric modelling, STL and 3MF export, slicer configuration, supports and resolution, and choosing between FDM and SLA for a given part. Most attendees have never printed anything before and leave having sent a file to a printer themselves.</p>
-
-  <figure class="figure">
-    <div class="ph">
-      <div class="ph-file">images/workshop-prints.jpg</div>
-      <div class="ph-note">Printed parts from the CAD workshop.</div>
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">02 — Optical Morse link</p>
+        <h2>An LED that listens</h2>
+        <p>Two Particle Argon boards talking to each other over a beam of visible light. The sender drives an LED from a digital pin; the receiver wires a second LED in reverse and reads the photocurrent on an analog input, which works because an LED is a diode with a junction that responds to light as readily as it emits it. Pairs of students sent Morse across a table and then tested it with the room lights off.</p>
+        <p>Using an LED as its own detector is the part that makes the session teach something. It forces the question of what the component actually is, rather than what the tutorial calls it, and it lets students see a real analog signal instead of a boolean. The workshop covers voltage, current, resistance and grounding first, then board provisioning and cloud flashing, then the circuit.</p>
+      </div>
+      <div class="band-media mosaic-2 reveal">
+        <figure>
+          <img src="images/workshop-optical-circuit.jpg" alt="Breadboarded Particle Argon sender and receiver with LEDs and jumper wiring.">
+        </figure>
+        <figure>
+          <img src="images/workshop-students-building.jpg" alt="Three students gathered around a breadboard build, one wiring a component while the others watch.">
+        </figure>
+      </div>
     </div>
-    <figcaption>Parts printed by workshop attendees.</figcaption>
-  </figure>
+  </section>
 
-  <p class="next-project"><a href="map-phototherapy.html">Back to the top of the work: MAP phototherapy patch →</a></p>
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">03 — Two-way Wi-Fi audio</p>
+        <h2>Framing a sample stream</h2>
+        <p>A pair of ESP32 boards carrying live audio between them: a MEMS microphone on one end and a Class-D amplifier on the other, both over I²S. The session works through the interface properly — bit clock, word select, and how a sample stream is framed — because those are the concepts that transfer to any synchronous digital bus a student meets later.</p>
+      </div>
+      <div class="band-media reveal">
+        <figure>
+          <img src="images/workshop-audio-build.jpg" alt="Students building the ESP32 audio link, with the I²S microphone and amplifier wiring diagram projected behind them.">
+          <figcaption>ESP32 with I²S microphone and Class-D amplifier.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">04 — CAD and 3D printing</p>
+        <h2>From blank sketch to printed part</h2>
+        <p>A separate track takes students from a blank SOLIDWORKS sketch to a printed part: parametric modelling, STL and 3MF export, slicer configuration, supports and resolution, and choosing between FDM and SLA for a given part. Most attendees have never printed anything before and leave having sent a file to a printer themselves.</p>
+      </div>
+      <div class="band-media mosaic-2 reveal">
+        <figure>
+          <img src="images/workshop-cad-teaching.jpg" alt="Teaching a parametric SOLIDWORKS sketch, dimensioning an extruded profile on the projected screen.">
+        </figure>
+        <figure>
+          <img src="images/workshop-3dprint-lecture.jpg" alt="Presenting the 3D printing workflow — modelling, export, slicing, and printer choice — to the room.">
+        </figure>
+      </div>
+    </div>
+  </section>
 
 </main>
+
+<div class="wrap">
+  <p class="next-project"><a href="map-phototherapy.html">Back to the top of the work: MAP phototherapy patch →</a></p>
+</div>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -101,5 +120,6 @@
   </div>
 </footer>
 
+<script src="reveal.js"></script>
 </body>
 </html>
