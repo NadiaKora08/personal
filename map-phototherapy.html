@@ -36,15 +36,14 @@
   </div>
 </div>
 
-<main class="wrap">
-
+<div class="wrap">
   <div class="results">
     <div>
-      <div class="result-value">30 °C</div>
+      <div class="result-value">30 &deg;C</div>
       <div class="result-label">reduction in peak device temperature</div>
     </div>
     <div>
-      <div class="result-value">100×</div>
+      <div class="result-value">100&times;</div>
       <div class="result-label">lower power consumption</div>
     </div>
     <div>
@@ -56,75 +55,100 @@
       <div class="result-label">from joining the lab to a first-author paper</div>
     </div>
   </div>
+</div>
 
-  <h2>The problem</h2>
-  <p>Blue light in the 400–470 nm band is antimicrobial and does not drive resistance the way antibiotics do, which makes it attractive for infected and chronic wounds. The difficulty is delivery. Skin and eschar scatter and absorb light heavily, so surface illumination reaches only the top layer, and reaching the wound bed by turning the source up means more heat and more power than a wearable can carry.</p>
+<main class="bands">
 
-  <figure class="figure">
-    <div class="ph">
-      <div class="ph-file">images/map-array-micrograph.jpg</div>
-      <div class="ph-note">Microscope image of the microneedle-microlens array. This is the single most valuable image on the site — include a scale bar if you have one.</div>
-    </div>
-    <figcaption>The microneedle-microlens array that forms the optical path through the skin.</figcaption>
-  </figure>
-
-  <h2>The approach</h2>
-  <p>Rather than illuminating the surface harder, the patch moves the light source's output through the skin barrier mechanically. A microlens array couples LED output into microneedles that penetrate the stratum corneum, so light is released at depth instead of scattering at the surface. The result is a device that reaches the wound bed at a fraction of the optical power a surface emitter would need.</p>
-  <p>I led the project end to end: device architecture, CAD, fabrication process, and the electronics that drive the array. Two failure modes dominated early builds — the device ran far too hot against skin, and drew far more power than a wearable format allows. Resolving those meant reworking both the drive circuitry and the mechanical stack rather than treating them separately, since the thermal path and the electrical design are the same problem seen from two directions.</p>
-
-  <div class="figure-pair">
-    <figure class="figure">
-      <div class="ph">
-        <div class="ph-file">images/map-cad-exploded.png</div>
-        <div class="ph-note">SOLIDWORKS render of the device stack, ideally exploded so the layers read clearly.</div>
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">01 — The problem</p>
+        <h2>Light that stops at the surface</h2>
+        <p>Blue light in the 400–470 nm band is antimicrobial and does not drive resistance the way antibiotics do, which makes it attractive for infected and chronic wounds. The difficulty is delivery. Skin and eschar scatter and absorb light heavily, so surface illumination reaches only the top layer, and reaching the wound bed by turning the source up means more heat and more power than a wearable can carry.</p>
       </div>
-      <figcaption>Device stack in CAD.</figcaption>
-    </figure>
-    <figure class="figure">
-      <div class="ph">
-        <div class="ph-file">images/map-comsol-thermal.png</div>
-        <div class="ph-note">COMSOL thermal model. If you have before and after versions, use the pair — the 30 °C claim becomes visible rather than asserted.</div>
+      <div class="band-media mosaic-2 reveal">
+        <figure>
+          <img src="images/map-array-micrograph.jpg" alt="Micrograph of the moulded microlens array, the close-packed plano-convex lenses filling the frame with a scale bar at the lower edge.">
+        </figure>
+        <figure>
+          <img src="images/map-array-dark.jpg" alt="The same close-packed lens array imaged against a dark background, showing the regular hexagonal packing across the device.">
+        </figure>
       </div>
-      <figcaption>Thermal modelling of the patch against tissue.</figcaption>
-    </figure>
-  </div>
-
-  <h2>Fabrication</h2>
-  <p>The array is produced through a cleanroom process I developed and then ran at volume, with more than a hundred devices fabricated across design iterations. Building at that count is what made the design converge: each batch surfaced yield and assembly problems that were invisible in single prototypes.</p>
-
-  <figure class="figure">
-    <div class="ph">
-      <div class="ph-file">images/map-fabrication.jpg</div>
-      <div class="ph-note">Process shot — mould, cleanroom step, or a tray of finished devices. A batch photo communicates the 100+ number better than the number does.</div>
     </div>
-    <figcaption>Fabrication in progress.</figcaption>
-  </figure>
+  </section>
 
-  <h2>Results</h2>
-  <p>The redesigned device runs 30 °C cooler at peak and consumes two orders of magnitude less power than the initial build, which is what moved the concept from bench demonstration to something wearable. In vitro results were strong enough to write up within the first month of the project, published as a first-author paper at IEEE MEMS 2026. The device has since advanced through in vivo validation.</p>
-
-  <figure class="figure">
-    <div class="ph">
-      <div class="ph-file">images/map-invitro-results.png</div>
-      <div class="ph-note">A results figure from the paper — bacterial reduction, irradiance at depth, or the thermal comparison. Published figures are safe to post; check with Dr. Kim on anything unpublished.</div>
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">02 — The approach</p>
+        <h2>Carrying the light past the barrier</h2>
+        <p>Rather than illuminating the surface harder, the patch moves the light source's output through the skin barrier mechanically. A microlens array couples LED output into microneedles that penetrate the stratum corneum, so light is released at depth instead of scattering at the surface. The result is a device that reaches the wound bed at a fraction of the optical power a surface emitter would need.</p>
+        <p>I led the project end to end: device architecture, CAD, fabrication process, and the electronics that drive the array.</p>
+      </div>
+      <div class="band-media reveal">
+        <figure class="fit">
+          <img src="images/map-array-drawing.png" alt="CAD drawing of the microneedle array: plan view with the needle pattern and registration cut-outs dimensioned, a sectional view giving the 0.10 needle height, and an isometric view of the array.">
+          <figcaption>Microneedle array in CAD — plan, section and isometric views of the patterned substrate.</figcaption>
+        </figure>
+      </div>
     </div>
-    <figcaption>In vitro validation of antimicrobial efficacy.</figcaption>
-  </figure>
+  </section>
 
-  <figure class="figure">
-    <div class="ph">
-      <div class="ph-file">images/map-poster.jpg</div>
-      <div class="ph-note">Your IEEE MEMS poster, or a photo of you presenting it.</div>
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">03 — Fabrication and drive</p>
+        <h2>Built in batches</h2>
+        <p>The array is produced through a cleanroom process I developed and then ran at volume, with more than a hundred devices fabricated across design iterations. Building at that count is what made the design converge: each batch surfaced yield and assembly problems that were invisible in single prototypes.</p>
+        <p>Two failure modes dominated early builds — the device ran far too hot against skin, and drew far more power than a wearable format allows. Resolving those meant reworking both the drive circuitry and the mechanical stack rather than treating them separately, since the thermal path and the electrical design are the same problem seen from two directions.</p>
+      </div>
+      <div class="band-media reveal">
+        <figure>
+          <img src="images/map-led-source.jpg" alt="The LED source array running, individual emitters visible through the lens optic against saturated red illumination.">
+          <figcaption>The source array under drive.</figcaption>
+        </figure>
+      </div>
     </div>
-    <figcaption>IEEE MEMS 2026 conference poster.</figcaption>
-  </figure>
+  </section>
 
-  <h2>What I took from it</h2>
-  <p>The useful lesson was that the thermal and power problems were not separate bugs to fix in sequence. They shared a root cause in how the array was driven, and finding that meant measuring the device rather than reasoning about it. The habit of building in batches and letting yield data drive the next revision is the part I would carry into any device programme.</p>
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">04 — Results</p>
+        <h2>Cooler, cheaper, and it works in vitro</h2>
+        <p>The redesigned device runs 30 °C cooler at peak and consumes two orders of magnitude less power than the initial build, which is what moved the concept from bench demonstration to something wearable. In vitro results were strong enough to write up within the first month of the project, published as a first-author paper at IEEE MEMS 2026. The device has since advanced through in vivo validation.</p>
+      </div>
+      <div class="band-media reveal">
+        <figure>
+          <img src="images/map-invitro-plate.jpg" alt="Three MAP devices illuminating wells of a six-well culture plate from beneath, each showing a three-by-three array of emitters through the plate base.">
+          <figcaption>In vitro setup: MAP devices delivering red light into a six-well plate of fibroblasts.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-  <p class="next-project"><a href="brain-slice-chamber.html">Next: microfluidic perfusion chamber for brain slices →</a></p>
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">05 — Published</p>
+        <h2>IEEE MEMS 2026</h2>
+        <p>The work was written up as a first-author conference paper and poster: device concept, design and fabrication, irradiance characterisation with and without the microlens array, and fibroblast scratch and viability assays showing accelerated closure and increased proliferation.</p>
+        <p>The useful lesson was that the thermal and power problems were not separate bugs to fix in sequence. They shared a root cause in how the array was driven, and finding that meant measuring the device rather than reasoning about it.</p>
+      </div>
+      <div class="band-media reveal">
+        <figure class="tall">
+          <img src="images/map-poster.jpg" alt="Holding the IEEE MEMS 2026 poster, titled Microneedle-Mediated Adaptive Phototherapy (MAP) Wound Patch with Microlenses.">
+          <figcaption>The IEEE MEMS 2026 poster.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
 </main>
+
+<div class="wrap">
+  <p class="next-project"><a href="brain-slice-chamber.html">Next: microfluidic perfusion chamber for brain slices &rarr;</a></p>
+</div>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -132,5 +156,6 @@
   </div>
 </footer>
 
+<script src="reveal.js"></script>
 </body>
 </html>

@@ -36,68 +36,86 @@
   </div>
 </div>
 
-<main class="wrap">
-
+<div class="wrap">
   <div class="results">
     <div>
       <div class="result-value">30×</div>
       <div class="result-label">target extension of slice viability</div>
     </div>
     <div>
-      <div class="result-value">48 h → 2 h</div>
+      <div class="result-value">48 h &rarr; 2 h</div>
       <div class="result-label">device build time after process redesign</div>
     </div>
   </div>
+</div>
 
-  <h2>The problem</h2>
-  <p>Acute brain slices are the workhorse preparation for studying neural circuits, and optogenetics has made them more useful still. But a slice in a conventional chamber degrades within hours, which rules out any protocol that needs to observe the same tissue over a long window — repeated stimulation, slow plasticity, anything where the interesting change takes longer than the tissue lasts.</p>
+<main class="bands">
 
-  <figure class="figure">
-    <div class="ph">
-      <div class="ph-file">images/chamber-cad.png</div>
-      <div class="ph-note">CAD render of the chamber showing the flow path. Confirm with Dr. Kim before posting geometry from unpublished work.</div>
-    </div>
-    <figcaption>Chamber design in CAD.</figcaption>
-  </figure>
-
-  <h2>The approach</h2>
-  <p>The chamber perfuses the slice continuously rather than bathing it, keeping oxygen and nutrient delivery steady across the tissue instead of letting gradients build. Designing it is a fluidics problem constrained by an optical one: the slice has to be accessible to light and to a probe while the flow field stays uniform over it.</p>
-  <p>I lead the device side of the collaboration. The first version worked but took two full days to build, which made iteration impossibly slow. Reworking the microfabrication process brought that down to two hours, and the design has gone through many more revisions since as a direct result.</p>
-
-  <div class="figure-pair">
-    <figure class="figure">
-      <div class="ph">
-        <div class="ph-file">images/chamber-fabricated.jpg</div>
-        <div class="ph-note">Photo of the machined or fabricated chamber, ideally with something for scale.</div>
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">01 — The problem</p>
+        <h2>Hours, not days</h2>
+        <p>Acute brain slices are the workhorse preparation for studying neural circuits, and optogenetics has made them more useful still. But a slice in a conventional chamber degrades within hours, which rules out any protocol that needs to observe the same tissue over a long window — repeated stimulation, slow plasticity, anything where the interesting change takes longer than the tissue lasts.</p>
       </div>
-      <figcaption>Fabricated chamber.</figcaption>
-    </figure>
-    <figure class="figure">
-      <div class="ph">
-        <div class="ph-file">images/chamber-setup.jpg</div>
-        <div class="ph-note">The chamber installed in the rig — tubing, perfusion lines, microscope stage.</div>
+      <div class="band-media reveal">
+        <figure class="fit">
+          <img src="images/chamber-schematic.png" alt="Side and top view schematics of the perfusion chamber, labelling the inlet, outlet, flow equalisers, light probes, resealable PTFE plug, pH and oxygen sensing, and the porous membrane under the slice.">
+          <figcaption>Chamber architecture in side and top view: perfusion path, light probes, and in-line pH, CO₂, O₂ and temperature sensing.</figcaption>
+        </figure>
       </div>
-      <figcaption>Chamber integrated into the experimental setup.</figcaption>
-    </figure>
-  </div>
-
-  <h2>Where it stands</h2>
-  <p>The platform is being brought to full functionality now: CNC machining of the chamber body, probe integration for stimulation and recording, and cleanroom fabrication of the microfluidic layer. Each of the three has to work with the other two, so the current phase is as much integration as it is fabrication.</p>
-
-  <figure class="figure">
-    <div class="ph">
-      <div class="ph-file">images/chamber-slice.jpg</div>
-      <div class="ph-note">A slice in the chamber, or viability imaging if you have it. Optional — skip if the data is unpublished.</div>
     </div>
-    <figcaption>Tissue in the chamber.</figcaption>
-  </figure>
+  </section>
 
-  <h2>What I took from it</h2>
-  <p>The build-time result mattered more than it sounds. Cutting a two-day process to two hours did not improve the device directly; it improved the rate at which the device could be wrong and get fixed. On a project with three interacting subsystems, iteration speed turned out to be the real constraint.</p>
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">02 — The approach</p>
+        <h2>A fluidics problem with optical constraints</h2>
+        <p>The chamber perfuses the slice continuously rather than bathing it, keeping oxygen and nutrient delivery steady across the tissue instead of letting gradients build. Designing it is a fluidics problem constrained by an optical one: the slice has to be accessible to light and to a probe while the flow field stays uniform over it.</p>
+        <p>Modelling the velocity field is how that uniformity gets checked before anything is machined — the flow equalisers exist because the first geometries put a gradient straight across the tissue.</p>
+      </div>
+      <div class="band-media reveal">
+        <figure class="fit">
+          <img src="images/chamber-comsol-flow.png" alt="COMSOL simulation showing velocity magnitude on a slice plane through the chamber, with the tissue region outlined at the centre.">
+          <figcaption>COMSOL velocity magnitude across the chamber, checking flow uniformity over the tissue region.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-  <p class="next-project"><a href="blood-pressure-system.html">Next: semi-automated blood pressure regulation →</a></p>
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">03 — Where it stands</p>
+        <h2>Two days down to two hours</h2>
+        <p>I lead the device side of the collaboration. The first version worked but took two full days to build, which made iteration impossibly slow. Reworking the microfabrication process brought that down to two hours, and the design has gone through many more revisions since as a direct result.</p>
+        <p>The platform is being brought to full functionality now: CNC machining of the chamber body, probe integration for stimulation and recording, and cleanroom fabrication of the microfluidic layer. Each of the three has to work with the other two, so the current phase is as much integration as it is fabrication.</p>
+      </div>
+      <div class="band-media reveal">
+        <figure>
+          <img src="images/chamber-fabricated.jpg" alt="A fabricated microfluidic chamber layer held in a gloved hand, the channel network visible in the clear polymer.">
+          <figcaption>A fabricated microfluidic layer, channel network visible in the cast polymer.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-solo">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">04 — What I took from it</p>
+        <h2>Iteration speed was the real constraint</h2>
+        <p>The build-time result mattered more than it sounds. Cutting a two-day process to two hours did not improve the device directly; it improved the rate at which the device could be wrong and get fixed. On a project with three interacting subsystems, iteration speed turned out to be the real constraint.</p>
+      </div>
+    </div>
+  </section>
 
 </main>
+
+<div class="wrap">
+  <p class="next-project"><a href="blood-pressure-system.html">Next: semi-automated blood pressure regulation &rarr;</a></p>
+</div>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -105,5 +123,6 @@
   </div>
 </footer>
 
+<script src="reveal.js"></script>
 </body>
 </html>

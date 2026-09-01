@@ -36,65 +36,87 @@
   </div>
 </div>
 
-<main class="wrap">
+<main class="bands">
 
-  <h2>The problem</h2>
-  <p>ICU patients on nicardipine need their blood pressure held inside a narrow window. In practice a nurse measures, adjusts the infusion rate, waits, and measures again. The lag between those steps is where the patient drifts out of range, and the workload scales badly across a ward.</p>
-
-  <figure class="figure">
-    <div class="ph">
-      <div class="ph-file">images/bp-system-overview.jpg</div>
-      <div class="ph-note">The assembled system — cuff and pump together. If you have a system block diagram, it works well here instead.</div>
-    </div>
-    <figcaption>The system: non-invasive cuff, peristaltic pump, and clinician-facing control application.</figcaption>
-  </figure>
-
-  <h2>What we built</h2>
-  <p>Three of us built the whole thing from nothing: a non-invasive oscillometric cuff for continuous monitoring, a peristaltic pump for nicardipine delivery, and the software connecting them. I designed and built the CAD and hardware for both devices, and owned the software stack across Python, C++ and MATLAB.</p>
-  <p>The control side models how an individual patient responds to a dose rather than applying a fixed schedule, using machine learning over the measured response. Around that sit real-time signal processing on the cuff waveform, an encrypted wireless link between the devices, and a clinician application that holds final authority over dosing — the loop is deliberately semi-automated, not autonomous.</p>
-
-  <div class="figure-pair">
-    <figure class="figure">
-      <div class="ph">
-        <div class="ph-file">images/bp-cuff-cad.png</div>
-        <div class="ph-note">CAD of the cuff assembly.</div>
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">01 — The problem</p>
+        <h2>The lag between readings</h2>
+        <p>ICU patients on nicardipine need their blood pressure held inside a narrow window. In practice a nurse measures, adjusts the infusion rate, waits, and measures again. The lag between those steps is where the patient drifts out of range, and the workload scales badly across a ward.</p>
       </div>
-      <figcaption>Blood pressure cuff, designed to ISO 81060-2.</figcaption>
-    </figure>
-    <figure class="figure">
-      <div class="ph">
-        <div class="ph-file">images/bp-pump.jpg</div>
-        <div class="ph-note">The peristaltic pump — CAD render or the built hardware.</div>
+      <div class="band-media reveal">
+        <figure>
+          <img src="images/bp-cuff-on-arm.png" alt="The non-invasive cuff fitted on an upper arm, tubing running to the pole-mounted monitoring enclosure.">
+          <figcaption>The non-invasive oscillometric cuff in use.</figcaption>
+        </figure>
       </div>
-      <figcaption>Peristaltic pump for nicardipine delivery.</figcaption>
-    </figure>
-  </div>
-
-  <h2>Designing inside the standards</h2>
-  <p>This was the project where regulatory work stopped being abstract. ISO 14971 risk management ran alongside the design rather than after it, ISO 81060-2 set what the cuff had to demonstrate, and IEC 60601-2-24 governed the infusion side. Working that way changes what you build: several design choices exist because a hazard analysis asked for them, not because they were the neatest engineering answer.</p>
-
-  <figure class="figure">
-    <div class="ph">
-      <div class="ph-file">images/bp-clinician-app.png</div>
-      <div class="ph-note">Screenshot of the clinician application showing the dose control and monitoring view.</div>
     </div>
-    <figcaption>Clinician-facing application for dose control.</figcaption>
-  </figure>
+  </section>
 
-  <h2>Validation</h2>
-  <p>We took the cuff through IRB-approved testing on human subjects, which meant the protocol, the consent process and the data handling all had to hold up before a single measurement was taken. Getting a student-built device to that point was most of the work.</p>
-
-  <figure class="figure">
-    <div class="ph">
-      <div class="ph-file">images/bp-testing.jpg</div>
-      <div class="ph-note">Testing session or validation data plot. Use a photo with no identifiable subject, or a measurement comparison plot.</div>
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">02 — What we built</p>
+        <h2>Cuff, pump, and the software between them</h2>
+        <p>Three of us built the whole thing from nothing: a non-invasive oscillometric cuff for continuous monitoring, a peristaltic pump for nicardipine delivery, and the software connecting them. I designed and built the CAD and hardware for both devices, and owned the software stack across Python, C++ and MATLAB.</p>
+        <p>The control side models how an individual patient responds to a dose rather than applying a fixed schedule, using machine learning over the measured response. Around that sit real-time signal processing on the cuff waveform, an encrypted wireless link between the devices, and a clinician application that holds final authority over dosing — the loop is deliberately semi-automated, not autonomous.</p>
+      </div>
+      <div class="band-media mosaic-3 reveal">
+        <figure class="tall">
+          <img src="images/bp-iv-pole.png" alt="The full system mounted on an IV pole: monitoring enclosure, pump module, and infusion lines running to two bags.">
+        </figure>
+        <figure>
+          <img src="images/bp-pump.png" alt="The peristaltic pump head mounted on the front of the medication administration enclosure.">
+        </figure>
+        <figure>
+          <img src="images/bp-pump-internals.png" alt="Inside the pump enclosure: drive motor, tubing path and wiring.">
+        </figure>
+      </div>
     </div>
-    <figcaption>Human subject testing of the cuff device.</figcaption>
-  </figure>
+  </section>
 
-  <p class="next-project"><a href="eog-wearable.html">Next: wireless EOG drowsiness monitor →</a></p>
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">03 — Designing inside the standards</p>
+        <h2>Hazard analysis as a design input</h2>
+        <p>This was the project where regulatory work stopped being abstract. ISO 14971 risk management ran alongside the design rather than after it, ISO 81060-2 set what the cuff had to demonstrate, and IEC 60601-2-24 governed the infusion side. Working that way changes what you build: several design choices exist because a hazard analysis asked for them, not because they were the neatest engineering answer.</p>
+        <p>The clinician application is the clearest example. It surfaces the computed pressure, heart rate and a suggested nicardipine rate, but the dose is never applied until a clinician commits it.</p>
+      </div>
+      <div class="band-media reveal">
+        <figure class="fit">
+          <img src="images/bp-clinician-app.png" alt="The clinician application showing measured blood pressure and heart rate, a suggested nicardipine dose, an editable rate field, and an Administer button.">
+          <figcaption>The clinician application. The suggested dose is editable, and nothing is delivered without an explicit Administer.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">04 — Validation</p>
+        <h2>Getting a student build to human testing</h2>
+        <p>We took the cuff through IRB-approved testing on human subjects, which meant the protocol, the consent process and the data handling all had to hold up before a single measurement was taken. Getting a student-built device to that point was most of the work.</p>
+        <p>Blood pressure is recovered from the cuff deflation curve: the pressure trace is bandpass filtered to isolate the oscillometric pulses, and systolic and diastolic values are read off fixed ratios of the peak envelope.</p>
+      </div>
+      <div class="band-media mosaic-2 reveal">
+        <figure class="fit">
+          <img src="images/bp-pressure-decay.png" alt="Measured cuff pressure decaying from about 155 to 50 mmHg over roughly nine seconds, with small oscillometric pulses visible on the curve.">
+        </figure>
+        <figure class="fit">
+          <img src="images/bp-oscillometric.png" alt="The extracted oscillometric pulse envelope with detected peaks marked, and horizontal thresholds for the systolic and diastolic ratios.">
+        </figure>
+      </div>
+    </div>
+  </section>
 
 </main>
+
+<div class="wrap">
+  <p class="next-project"><a href="eog-wearable.html">Next: wireless EOG drowsiness monitor &rarr;</a></p>
+</div>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -102,5 +124,6 @@
   </div>
 </footer>
 
+<script src="reveal.js"></script>
 </body>
 </html>

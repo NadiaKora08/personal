@@ -385,6 +385,13 @@ section { padding-top: 0.5rem; }
 
 .bands { display: block; }
 
+/* the paragraph that sets up the bands, between header and first band */
+.lead-note {
+  max-width: 60ch;
+  margin: clamp(1.8rem, 4vw, 2.6rem) auto clamp(1.8rem, 4vw, 2.6rem);
+  font-size: clamp(1.02rem, 1rem + 0.3vw, 1.15rem);
+}
+
 .band {
   padding: clamp(3rem, 7vh, 5.5rem) 0;
   border-bottom: 1px solid var(--rule);
@@ -413,6 +420,9 @@ section { padding-top: 0.5rem; }
 
   /* chess order: on even bands the pictures take the left column instead */
   .band:nth-child(even) .band-media { order: -1; }
+
+  /* a band with no pictures centres its column rather than leaving a gap */
+  .band-solo .band-inner { grid-template-columns: minmax(0, 62ch); justify-content: center; }
 }
 
 .band-text > :first-child { margin-top: 0; }
@@ -455,6 +465,17 @@ section { padding-top: 0.5rem; }
   margin-top: 0.5rem;
   line-height: 1.45;
 }
+
+/* Plots, screenshots and CAD drawings must not lose their edges to a crop, so
+   they sit inside the tile whole and the tile takes the letterboxing. */
+.band-media .fit img {
+  object-fit: contain;
+  background: var(--paper);
+  padding: 0.6rem;
+}
+
+/* for portrait sources that a landscape crop would gut */
+.band-media .tall img { aspect-ratio: 3 / 4; }
 
 /* two side by side — cropped to portrait so the pair still fills the band */
 .mosaic-2 { grid-template-columns: 1fr 1fr; }
