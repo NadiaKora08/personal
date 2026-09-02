@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Senior design — MiracleBots — Nadezhda Korostyleva</title>
+<meta name="description" content="Semi-automated blood pressure regulation for ICU patients: BLE between two ESP32s, a Python clinician application, oscillometric signal processing, and design against four standards.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <a class="wordmark" href="index.html">Nadezhda Korostyleva</a>
+    <nav>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#publications">Publications</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="project-header">
+  <div class="wrap">
+    <p class="eyebrow"><a href="index.html#experience">← Experience</a></p>
+    <h1>Semi-automated blood pressure regulation</h1>
+    <p class="dek">Titrating a vasoactive drug by hand is slow, and the patient moves between readings. This system closes the loop and keeps the clinician in charge of it.</p>
+    <p class="factline">
+      Senior design, University of South Florida, partnered with MiracleBots, LLC<br>
+      August 2024 to May 2025 — team of three<br>
+      ISO 14971 · ISO 13485 · ISO 81060-2 · IEC 60601-2-24
+    </p>
+  </div>
+</div>
+
+<main class="bands">
+
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">01 — The problem</p>
+        <h2>The lag between readings</h2>
+        <p>ICU patients on nicardipine need their blood pressure held inside a narrow window. In practice a nurse measures, adjusts the infusion rate, waits, and measures again. The lag between those steps is where the patient drifts out of range, and the workload scales badly across a ward.</p>
+        <p>Three of us built the whole system from nothing: a non-invasive oscillometric cuff, a peristaltic pump for drug delivery, and the software connecting them.</p>
+      </div>
+      <div class="band-media reveal">
+        <figure class="tall">
+          <img src="images/bp-iv-pole.png" alt="The full system mounted on an IV pole: monitoring enclosure, pump module, and infusion lines running to two bags.">
+          <figcaption>The system on an IV pole.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">02 — Wireless communication</p>
+        <h2>Two boards and a laptop in one loop</h2>
+        <p>The cuff and the pump never talk to each other directly. Each is an ESP32 running a BLE GATT server, and the Python application is the single client that connects to both — it subscribes to pressure notifications from the cuff, computes a dose, and writes rate, duration and drug type to the pump as a packed characteristic.</p>
+        <p>Putting the application in the middle is a safety decision as much as an architectural one: there is no path by which a cuff reading reaches the pump without passing through the software that a clinician has authority over.</p>
+      </div>
+      <div class="band-media reveal">
+        <figure>
+          <div class="ph">
+            <div class="ph-file">images/bp-ble-architecture.png</div>
+            <div class="ph-note">The concept diagram: cuff ESP32 and pump ESP32 either side of the laptop, with the BLE links and what flows over each. Draw it or screenshot your report figure.</div>
+          </div>
+          <figcaption>BLE architecture: two GATT servers, one client.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">03 — Code and the clinician GUI</p>
+        <h2>The interface holds the authority</h2>
+        <p>I owned the software stack across Python, C++ and MATLAB. The clinician application surfaces the computed pressure, heart rate and a suggested nicardipine rate — but the dose is never applied until a clinician commits it. The loop is deliberately semi-automated, not autonomous.</p>
+        <p>The control side models how an individual patient responds to a dose rather than applying a fixed schedule, using machine learning over the measured response.</p>
+      </div>
+      <div class="band-media reveal mosaic-2">
+        <figure class="fit tall">
+          <img src="images/bp-clinician-app.png" alt="The clinician application: authorization options for logging in or creating an account, then the measured blood pressure of 107.3 over 66.2 and heart rate of 56, a suggested nicardipine dose of 6 mg per hour, an editable rate field, and an Administer button.">
+        </figure>
+        <figure>
+          <div class="ph">
+            <div class="ph-file">images/bp-code.png</div>
+            <div class="ph-note">A screenshot of the code — the BLE notification handler or the dosage logic reads well. Use a light editor theme so it prints.</div>
+          </div>
+          <figcaption>The clinician application and the code behind it.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">04 — Signal processing</p>
+        <h2>Recovering a pressure from a deflation curve</h2>
+        <p>Blood pressure is not measured directly. The cuff is inflated and bled down, and the pressure trace is bandpass filtered to isolate the oscillometric pulses riding on the decay. Systolic and diastolic values are then read off fixed ratios of the peak envelope.</p>
+        <p>Real-time filtering, peak detection and the ratio logic all run on the incoming stream rather than on a stored recording, because the next dose decision depends on the reading that just arrived.</p>
+      </div>
+      <div class="band-media reveal mosaic-2">
+        <figure class="fit">
+          <img src="images/bp-pressure-decay.png" alt="Measured cuff pressure decaying from about 155 to 50 mmHg over roughly nine seconds, with small oscillometric pulses visible on the curve.">
+        </figure>
+        <figure class="fit">
+          <img src="images/bp-oscillometric.png" alt="The extracted oscillometric pulse envelope with detected peaks marked, and horizontal thresholds for the systolic and diastolic ratios.">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">05 — Hardware and CAD</p>
+        <h2>Both devices, from model to build</h2>
+        <p>I designed and built the CAD and hardware for the cuff and the pump: enclosures, the peristaltic pump mechanism and its drive, and the mounting that puts the whole system on a standard IV pole.</p>
+      </div>
+      <div class="band-media reveal mosaic-2">
+        <figure>
+          <img src="images/bp-pump.png" alt="The peristaltic pump head mounted on the front of the medication administration enclosure.">
+        </figure>
+        <figure>
+          <img src="images/bp-pump-internals.png" alt="Inside the pump enclosure: drive motor, tubing path and wiring.">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band-solo">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">06 — Designing to standards</p>
+        <h2>Each standard, and what it changed</h2>
+        <p>This was the project where regulatory work stopped being abstract. Four standards shaped the design, and each one is visible in the result.</p>
+        <div class="iso-table">
+          <div class="iso-row"><div class="iso-std">ISO 14971</div><div class="iso-use">Risk management ran alongside the design rather than after it. Several design choices exist because a hazard analysis asked for them, not because they were the neatest engineering answer.</div></div>
+          <div class="iso-row"><div class="iso-std">ISO 13485</div><div class="iso-use">Quality system practice — design history, controlled revisions, and traceability from a requirement to the thing that satisfies it.</div></div>
+          <div class="iso-row"><div class="iso-std">ISO 81060-2</div><div class="iso-use">Set what the non-invasive cuff had to demonstrate, and therefore what the human subject protocol had to measure.</div></div>
+          <div class="iso-row"><div class="iso-std">IEC 60601-2-24</div><div class="iso-use">Governed the infusion side: pump accuracy, occlusion behaviour, and the conditions under which delivery has to stop.</div></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-inner">
+      <div class="band-text reveal">
+        <p class="band-num">07 — Validation</p>
+        <h2>Getting a student build to human testing</h2>
+        <p>We took the cuff through IRB-approved testing on human subjects, which meant the protocol, the consent process and the data handling all had to hold up before a single measurement was taken. Getting a student-built device to that point was most of the work.</p>
+      </div>
+      <div class="band-media reveal">
+        <figure>
+          <img src="images/bp-cuff-on-arm.png" alt="The non-invasive cuff fitted on an upper arm, tubing running to the pole-mounted monitoring enclosure.">
+          <figcaption>The cuff in use during validation.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="wrap">
+  <p class="next-project"><a href="junior-design-eog.html">Next: Junior design — EOG wearable &rarr;</a></p>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Nadezhda Korostyleva — <a href="mailto:nadezhda.kor08@gmail.com">nadezhda.kor08@gmail.com</a> — <a href="https://www.linkedin.com/in/nadezhda890/">LinkedIn</a></p>
+  </div>
+</footer>
+
+<script src="reveal.js"></script>
+</body>
+</html>

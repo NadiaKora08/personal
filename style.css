@@ -498,6 +498,57 @@ section { padding-top: 0.5rem; }
   .band-media img { aspect-ratio: 4 / 3; }
 }
 
+/* Placeholder tiles hold a band's shape before the photo exists, and name the
+   file they are waiting for. Same footprint as an image so dropping the real
+   picture in does not reflow the page. */
+.band-media .ph {
+  aspect-ratio: 4 / 3;
+  min-height: 0;
+  border: 1px dashed #b9c0cb;
+  background:
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 9px,
+      rgba(21, 51, 204, 0.045) 9px 18px
+    ),
+    var(--paper);
+}
+
+.mosaic-2 .ph { aspect-ratio: 3 / 4; }
+.band-media .tall .ph { aspect-ratio: 3 / 4; }
+
+@media (max-width: 620px) {
+  .band-media .ph { aspect-ratio: 4 / 3; }
+}
+
+/* ---------- standards table ---------- */
+
+.iso-table {
+  margin: 1.4rem 0 0;
+  border-top: 1px solid var(--rule);
+  max-width: var(--measure);
+}
+
+.iso-row {
+  display: grid;
+  gap: 0.2rem 1.4rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+@media (min-width: 620px) {
+  .iso-row { grid-template-columns: 9.5rem minmax(0, 1fr); }
+}
+
+.iso-std {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--blue);
+}
+
+.iso-use { font-size: 0.98rem; }
+
 /* ---------- scroll reveal ----------
    Bands enter from the side they live on and leave the same way, so scrolling
    back up replays it. Everything is opt-in: without JS the .reveal class is
