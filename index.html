@@ -41,46 +41,540 @@
 
   <section id="experience">
     <div class="section-head"><h2>Experience</h2></div>
-
-    <div class="projects">
-
-      <a class="project-row" href="lab-acousto-bioelectronics.html">
-        <p class="project-title">Graduate Research Engineer — Acousto-Bioelectronics Lab</p>
-        <p class="project-meta">Dr. Albert Kim, University of South Florida — May 2025 to present</p>
-        <p class="project-blurb">Project lead on two device programmes: a wearable microneedle phototherapy patch and a microfluidic perfusion chamber for brain slices. Cleanroom fabrication at volume, CAD and 3D printing, drive electronics, thermal design, and the in vitro work that validates all of it.</p>
-        <p class="project-tags"><span>Cleanroom fabrication</span><span>3D printing &amp; CAD</span><span>Electrical troubleshooting</span><span>Thermal control</span><span>Time optimization</span><span>In vitro / in vivo</span></p>
-      </a>
-
-      <a class="project-row" href="lab-regenerative-medicine.html">
-        <p class="project-title">Regenerative Medicine Lab</p>
-        <p class="project-meta">Dr. Anna Bulysheva — contributed to two publications</p>
-        <p class="project-blurb">Wet lab work on electro gene therapy: cell culture and transfection, in vivo rodent studies including surgery and imaging, and the analysis that turned both into published figures.</p>
-        <p class="project-tags"><span>In vitro</span><span>In vivo</span><span>Analysis</span><span>IACUC certified</span></p>
-      </a>
-
-      <a class="project-row" href="ieee-computer-society.html">
-        <p class="project-title">Hardware Tech Lead — IEEE Computer Society at USF</p>
-        <p class="project-meta">August 2025 to present — 200+ attendees, 100+ devices built</p>
-        <p class="project-blurb">I design and teach the chapter's hardware curriculum: an optical Morse link that uses a reverse-biased LED as its own photodetector, a two-way Wi-Fi audio system over I²S, and a CAD and 3D printing track.</p>
-        <p class="project-tags"><span>Embedded systems</span><span>Particle Argon</span><span>ESP32 / I²S</span><span>Curriculum</span></p>
-      </a>
-
-      <a class="project-row" href="senior-design-miraclebots.html">
-        <p class="project-title">Senior design — semi-automated blood pressure regulation</p>
-        <p class="project-meta">University of South Florida with MiracleBots, LLC — 2024 to 2025</p>
-        <p class="project-blurb">A closed-loop ICU system pairing a non-invasive cuff with a peristaltic pump. Two ESP32s over BLE with a Python clinician application as the only client between them, real-time oscillometric signal processing, and a design built against four standards.</p>
-        <p class="project-tags"><span>BLE</span><span>Python / C++ / MATLAB</span><span>Signal processing</span><span>ISO 14971 / 13485 / 81060-2</span><span>Human subject testing</span></p>
-      </a>
-
-      <a class="project-row" href="junior-design-eog.html">
-        <p class="project-title">Junior design — wireless EOG drowsiness monitor</p>
-        <p class="project-meta">University of South Florida — 2024</p>
-        <p class="project-blurb">A wearable that reads eye movement to track blink frequency, a validated sleepiness marker, and streams it over BLE to a companion phone app. Top three of fifteen teams at the 2024 Florida Medical Manufacturing Consortium.</p>
-        <p class="project-tags"><span>Biopotential sensing</span><span>BLE</span><span>Mobile app</span></p>
-      </a>
-
-    </div>
+    <p>Five positions, and the skills each one demanded. Everything is on this
+    page — the links below jump to a section.</p>
+    <ol class="jump">
+      <li><a href="#abl">Graduate Research Engineer — Acousto-Bioelectronics Lab</a><span>Cleanroom · CAD &amp; 3D printing · Electronics · Thermal · In vitro</span></li>
+      <li><a href="#regen">Regenerative Medicine Lab</a><span>In vitro · In vivo · Analysis</span></li>
+      <li><a href="#ieee">Hardware Tech Lead — IEEE Computer Society at USF</a><span>Embedded workshops · Curriculum</span></li>
+      <li><a href="#senior">Senior design — blood pressure regulation</a><span>BLE · Python/C++ · Signal processing · ISO</span></li>
+      <li><a href="#junior">Junior design — EOG drowsiness monitor</a><span>Biopotential sensing · BLE · Mobile app</span></li>
+    </ol>
   </section>
+
+</main>
+
+<div class="positions">
+  <section class="position" id="abl">
+    <div class="position-head">
+      <p class="position-num">01 — Acousto-Bioelectronics Lab</p>
+      <h2>Acousto-Bioelectronics Lab</h2>
+      <p class="position-meta">Graduate Research Engineer — Dr. Albert Kim, University of South Florida<br>
+      May 2025 to present — project lead on both programmes<br>
+      MAP phototherapy patch · microfluidic brain slice perfusion chamber</p>
+      <p class="position-dek">Two device programmes, and the fabrication, electronics and modelling skills that both of them run on.</p>
+    </div>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">01 — Cleanroom fabrication</p>
+          <h2>Processing at wafer scale</h2>
+          <p>Both of my lab projects live or die on the cleanroom process behind them. I develop the process, qualify it, and then run it at volume — photolithography and mask design in L-Edit, mould production, casting and release, and the inspection step that decides whether a batch is usable.</p>
+          <p>For the MAP patch that meant more than a hundred devices across design iterations. Building at that count is what made the design converge: each batch surfaced yield and assembly problems that were invisible in single prototypes.</p>
+        </div>
+        <div class="band-media reveal mosaic-2">
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/cleanroom-suited.jpg</div>
+              <div class="ph-note">You in the cleanroom, gowned up at a bench or aligner. This is the photo that shows you have actually done the work.</div>
+            </div>
+            <figcaption>Cleanroom processing at USF.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/map-array-micrograph.jpg" alt="Micrograph of the moulded microlens array, close-packed plano-convex lenses filling the frame with a scale bar at the lower edge.">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">02 — 3D printing and CAD</p>
+          <h2>From parametric sketch to released part</h2>
+          <p>Device housings, moulds, fixtures and alignment jigs all start as SOLIDWORKS models. I design them parametrically so a dimension change propagates instead of forcing a redraw, and I print them in-house — FDM for fixtures and fit checks, SLA where the feature size or the surface finish demands it.</p>
+          <p>The microneedle array is the clearest case: needle pitch, height and the registration cut-outs are all driven parameters, because every fabrication round moved at least one of them.</p>
+        </div>
+        <div class="band-media reveal mosaic-2">
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/3d-prints-batch.jpg</div>
+              <div class="ph-note">A batch of your prints — housings, moulds, jigs. Several parts together reads better than one.</div>
+            </div>
+            <figcaption>Printed housings, moulds and fixtures.</figcaption>
+          </figure>
+          <figure class="fit">
+            <img src="images/map-array-drawing.png" alt="CAD drawing of the microneedle array: plan view with the needle pattern and registration cut-outs dimensioned, a sectional view giving the needle height, and an isometric view.">
+            <figcaption>Microneedle array in CAD — plan, section and isometric.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">03 — Electrical troubleshooting</p>
+          <h2>Measuring the device instead of reasoning about it</h2>
+          <p>Early MAP builds drew far more power than a wearable format allows. Finding out why meant instrumenting the drive circuitry rather than reading the schematic harder — current draw per emitter, duty cycle, and where the losses actually sat.</p>
+          <p>The redesigned drive consumes two orders of magnitude less power than the first build. That result came out of measurement, and it is the habit I would carry into any device programme.</p>
+        </div>
+        <div class="band-media reveal">
+          <figure>
+            <img src="images/map-led-source.jpg" alt="The LED source array running, individual emitters visible through the lens optic against saturated red illumination.">
+            <figcaption>The source array under drive.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">04 — Thermal control</p>
+          <h2>Thirty degrees of headroom</h2>
+          <p>A patch worn against a wound has a hard temperature ceiling, and the first build ran far past it. The thermal path and the electrical design turned out to be the same problem seen from two directions — the emitters were being driven in a way that dumped heat exactly where the device touches skin.</p>
+          <p>Reworking both together took 30 °C off the peak. That is what moved the concept from a bench demonstration to something wearable.</p>
+        </div>
+        <div class="band-media reveal">
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/map-comsol-thermal.png</div>
+              <div class="ph-note">The COMSOL thermal model, ideally the before and after pair — it turns the 30 °C claim from an assertion into something the reader can see.</div>
+            </div>
+            <figcaption>COMSOL thermal model of the patch against tissue.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">05 — Time optimization</p>
+          <h2>Cutting a two-day build to two hours</h2>
+          <p>The first perfusion chamber worked, but took two full days to fabricate. That made iteration impossibly slow: any design question cost two days to answer, so most questions went unasked.</p>
+          <p>Reworking the microfabrication process brought the build down to two hours. It did not make the device better directly — it made the device able to be wrong and get fixed, and the design has been through many more revisions since as a direct result. On a project with three interacting subsystems, iteration speed turned out to be the real constraint.</p>
+        </div>
+        <div class="band-media reveal">
+          <figure>
+            <img src="images/chamber-fabricated.jpg" alt="A fabricated microfluidic chamber layer held in a gloved hand, the channel network visible in the cast polymer.">
+            <figcaption>A fabricated microfluidic layer.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">06 — Modelling and design</p>
+          <h2>Checking it before it is machined</h2>
+          <p>The perfusion chamber is a fluidics problem constrained by an optical one: the brain slice has to stay accessible to light and to a probe while the flow field over it stays uniform. Modelling the velocity field is how that uniformity gets checked before anything is cut — the flow equalisers exist because early geometries put a gradient straight across the tissue.</p>
+        </div>
+        <div class="band-media reveal mosaic-2">
+          <figure class="fit">
+            <img src="images/chamber-schematic.png" alt="Side and top view schematics of the perfusion chamber, labelling the inlet, outlet, flow equalisers, light probes, resealable PTFE plug, pH and oxygen sensing, and the porous membrane under the slice.">
+          </figure>
+          <figure class="fit">
+            <img src="images/chamber-comsol-flow.png" alt="COMSOL simulation showing velocity magnitude on a slice plane through the chamber, with the tissue region outlined at the centre.">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">07 — In vitro and in vivo validation</p>
+          <h2>Showing that it does something</h2>
+          <p>A device that runs cool and draws little power still has to work. The MAP patch went through in vitro validation with fibroblasts — irradiance characterised with and without the microlens array, then scratch and viability assays showing accelerated closure and increased proliferation.</p>
+          <p>Those results were strong enough to write up within the first month of the project. The device has since advanced through in vivo validation.</p>
+        </div>
+        <div class="band-media reveal">
+          <figure>
+            <img src="images/map-invitro-plate.jpg" alt="Three MAP devices illuminating wells of a six-well culture plate from beneath, each showing a three-by-three array of emitters through the plate base.">
+            <figcaption>MAP devices delivering red light into a six-well plate of fibroblasts.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">08 — Publishing</p>
+          <h2>First author at IEEE MEMS 2026</h2>
+          <p>The work became a <a href="https://ieeexplore.ieee.org/document/11419300">first-author conference paper</a> and poster one month after I joined the lab: device concept, design and fabrication, irradiance characterisation, and the in vitro assays.</p>
+        </div>
+        <div class="band-media reveal">
+          <figure class="tall">
+            <img src="images/map-poster.jpg" alt="Holding the IEEE MEMS 2026 poster, titled Microneedle-Mediated Adaptive Phototherapy (MAP) Wound Patch with Microlenses.">
+            <figcaption>The IEEE MEMS 2026 poster.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <section class="position" id="regen">
+    <div class="position-head">
+      <p class="position-num">02 — Regenerative Medicine Lab</p>
+      <h2>Regenerative Medicine Lab</h2>
+      <p class="position-meta">Dr. Anna Bulysheva<br>
+      Contributed to two publications<br>
+      IACUC certified</p>
+      <p class="position-dek">Wet lab work on electro gene therapy — cells, animals, and the analysis that turned both into published figures.</p>
+    </div>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">01 — In vitro</p>
+          <h2>Cell work at the bench</h2>
+          <p>Cell culture and transfection work supporting the lab's electro gene therapy programme — maintaining lines, running treatment conditions, and preparing the samples that the downstream analysis depends on.</p>
+          <p><!-- Replace this paragraph with the specifics: which lines, which assays, what you personally ran. --></p>
+        </div>
+        <div class="band-media reveal">
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/rml-invitro.jpg</div>
+              <div class="ph-note">Your in vitro work — hood, plates, or a stained result you are allowed to show.</div>
+            </div>
+            <figcaption>In vitro work.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">02 — In vivo</p>
+          <h2>Animal studies, IACUC certified</h2>
+          <p>In vivo rodent work on the same programme, including surgery and imaging. I am IACUC certified.</p>
+          <p>The published results this fed into cover localized in vivo electro gene therapy for skeletal muscle protein reprogramming, and pulse protocols that trade delivery efficiency against muscle contraction.</p>
+          <p><!-- Replace with your specifics: your role in the surgeries, the imaging modality, the endpoints. --></p>
+        </div>
+        <div class="band-media reveal">
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/rml-invivo.jpg</div>
+              <div class="ph-note">A photo from the in vivo side — the rig, the imaging setup, or you at the bench. No animal photos: they add nothing for a device reviewer and the site rules them out.</div>
+            </div>
+            <figcaption>In vivo study setup.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">03 — Analysis</p>
+          <h2>From raw data to a figure that argues</h2>
+          <p>Quantifying the results and taking them through statistics — image analysis, expression quantification, and the tests behind the figures. Two publications came out of this work.</p>
+          <p><!-- Replace with your specifics: which software, which tests, which figures were yours. --></p>
+        </div>
+        <div class="band-media reveal">
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/rml-analysis.png</div>
+              <div class="ph-note">A figure or plot you produced. A published figure is safest — check anything unpublished with Dr. Bulysheva first.</div>
+            </div>
+            <figcaption>Analysis output.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <section class="position" id="ieee">
+    <div class="position-head">
+      <p class="position-num">03 — IEEE Computer Society</p>
+      <h2>IEEE Computer Society at USF</h2>
+      <p class="position-meta">Hardware Tech Lead<br>
+      August 2025 to present<br>
+      200+ attendees, 100+ devices built</p>
+      <p class="position-dek">Teaching embedded hardware by building devices that only work if you understand why.</p>
+    </div>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">01 — Optical Morse link</p>
+          <h2>An LED that listens</h2>
+          <p>Two Particle Argon boards talking over a beam of visible light. The sender drives an LED from a digital pin; the receiver wires a second LED in reverse and reads the photocurrent on an analog input, which works because an LED is a diode with a junction that responds to light as readily as it emits it.</p>
+          <p>Using an LED as its own detector is what makes the session teach something. It forces the question of what the component actually is, rather than what the tutorial calls it, and it lets students see a real analog signal instead of a boolean. Pairs sent Morse across a table, then tested it with the room lights off.</p>
+        </div>
+        <div class="band-media reveal">
+          <figure class="tall">
+            <img src="images/workshop-room.jpg" alt="Walking a full room through the sender assembly, with the breadboard wiring diagram projected on screen.">
+            <figcaption>Walking the room through the sender assembly.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">02 — Two-way Wi-Fi audio</p>
+          <h2>Framing a sample stream</h2>
+          <p>A pair of ESP32 boards carrying live audio between them: a MEMS microphone on one end and a Class-D amplifier on the other, both over I²S. The session works through the interface properly — bit clock, word select, and how a sample stream is framed — because those are the concepts that transfer to any synchronous digital bus a student meets later.</p>
+        </div>
+        <div class="band-media reveal">
+          <figure>
+            <img src="images/workshop-students-building.jpg" alt="Wiring a speaker into an ESP32 breadboard build while two attendees look on.">
+            <figcaption>Debugging a build mid-session.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">03 — CAD and 3D printing</p>
+          <h2>From blank sketch to printed part</h2>
+          <p>A separate track takes students from a blank SOLIDWORKS sketch to a printed part: parametric modelling, STL and 3MF export, slicer configuration, supports and resolution, and choosing between FDM and SLA for a given part. Most attendees have never printed anything before and leave having sent a file to a printer themselves.</p>
+        </div>
+        <div class="band-media reveal mosaic-2">
+          <figure>
+            <img src="images/workshop-cad-teaching.jpg" alt="Teaching a parametric SOLIDWORKS sketch, dimensioning an extruded profile on the projected screen.">
+          </figure>
+          <figure>
+            <img src="images/workshop-3dprint-lecture.jpg" alt="Presenting the 3D printing workflow — modelling, export, slicing, and choosing a printer.">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill skill-solo">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">04 — Curriculum</p>
+          <h2>Built backwards from a device that has to work</h2>
+          <p>Most students meet embedded hardware through a tutorial they can follow without understanding. I build the workshops backwards from that: a device that only works if you understand why. I design and teach the whole curriculum — the circuits, the firmware, the slides, and the debugging that happens when thirty breadboards fail in thirty different ways.</p>
+          <p>Sessions run in pairs so nobody watches someone else do the build. Over 200 attendees so far, and more than 100 devices built.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </section>
+  <section class="position" id="senior">
+    <div class="position-head">
+      <p class="position-num">04 — Senior design</p>
+      <h2>Semi-automated blood pressure regulation</h2>
+      <p class="position-meta">Senior design, University of South Florida, partnered with MiracleBots, LLC<br>
+      August 2024 to May 2025 — team of three<br>
+      ISO 14971 · ISO 13485 · ISO 81060-2 · IEC 60601-2-24</p>
+      <p class="position-dek">Titrating a vasoactive drug by hand is slow, and the patient moves between readings. This system closes the loop and keeps the clinician in charge of it.</p>
+    </div>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">01 — The problem</p>
+          <h2>The lag between readings</h2>
+          <p>ICU patients on nicardipine need their blood pressure held inside a narrow window. In practice a nurse measures, adjusts the infusion rate, waits, and measures again. The lag between those steps is where the patient drifts out of range, and the workload scales badly across a ward.</p>
+          <p>Three of us built the whole system from nothing: a non-invasive oscillometric cuff, a peristaltic pump for drug delivery, and the software connecting them.</p>
+        </div>
+        <div class="band-media reveal">
+          <figure class="tall">
+            <img src="images/bp-iv-pole.png" alt="The full system mounted on an IV pole: monitoring enclosure, pump module, and infusion lines running to two bags.">
+            <figcaption>The system on an IV pole.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">02 — Wireless communication</p>
+          <h2>Two boards and a laptop in one loop</h2>
+          <p>The cuff and the pump never talk to each other directly. Each is an ESP32 running a BLE GATT server, and the Python application is the single client that connects to both — it subscribes to pressure notifications from the cuff, computes a dose, and writes rate, duration and drug type to the pump as a packed characteristic.</p>
+          <p>Putting the application in the middle is a safety decision as much as an architectural one: there is no path by which a cuff reading reaches the pump without passing through the software that a clinician has authority over.</p>
+        </div>
+        <div class="band-media reveal">
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/bp-ble-architecture.png</div>
+              <div class="ph-note">The concept diagram: cuff ESP32 and pump ESP32 either side of the laptop, with the BLE links and what flows over each. Draw it or screenshot your report figure.</div>
+            </div>
+            <figcaption>BLE architecture: two GATT servers, one client.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">03 — Code and the clinician GUI</p>
+          <h2>The interface holds the authority</h2>
+          <p>I owned the software stack across Python, C++ and MATLAB. The clinician application surfaces the computed pressure, heart rate and a suggested nicardipine rate — but the dose is never applied until a clinician commits it. The loop is deliberately semi-automated, not autonomous.</p>
+          <p>The control side models how an individual patient responds to a dose rather than applying a fixed schedule, using machine learning over the measured response.</p>
+        </div>
+        <div class="band-media reveal mosaic-2">
+          <figure class="fit tall">
+            <img src="images/bp-clinician-app.png" alt="The clinician application: authorization options for logging in or creating an account, then the measured blood pressure of 107.3 over 66.2 and heart rate of 56, a suggested nicardipine dose of 6 mg per hour, an editable rate field, and an Administer button.">
+          </figure>
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/bp-code.png</div>
+              <div class="ph-note">A screenshot of the code — the BLE notification handler or the dosage logic reads well. Use a light editor theme so it prints.</div>
+            </div>
+            <figcaption>The clinician application and the code behind it.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">04 — Signal processing</p>
+          <h2>Recovering a pressure from a deflation curve</h2>
+          <p>Blood pressure is not measured directly. The cuff is inflated and bled down, and the pressure trace is bandpass filtered to isolate the oscillometric pulses riding on the decay. Systolic and diastolic values are then read off fixed ratios of the peak envelope.</p>
+          <p>Real-time filtering, peak detection and the ratio logic all run on the incoming stream rather than on a stored recording, because the next dose decision depends on the reading that just arrived.</p>
+        </div>
+        <div class="band-media reveal mosaic-2">
+          <figure class="fit">
+            <img src="images/bp-pressure-decay.png" alt="Measured cuff pressure decaying from about 155 to 50 mmHg over roughly nine seconds, with small oscillometric pulses visible on the curve.">
+          </figure>
+          <figure class="fit">
+            <img src="images/bp-oscillometric.png" alt="The extracted oscillometric pulse envelope with detected peaks marked, and horizontal thresholds for the systolic and diastolic ratios.">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">05 — Hardware and CAD</p>
+          <h2>Both devices, from model to build</h2>
+          <p>I designed and built the CAD and hardware for the cuff and the pump: enclosures, the peristaltic pump mechanism and its drive, and the mounting that puts the whole system on a standard IV pole.</p>
+        </div>
+        <div class="band-media reveal mosaic-2">
+          <figure>
+            <img src="images/bp-pump.png" alt="The peristaltic pump head mounted on the front of the medication administration enclosure.">
+          </figure>
+          <figure>
+            <img src="images/bp-pump-internals.png" alt="Inside the pump enclosure: drive motor, tubing path and wiring.">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill skill-solo">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">06 — Designing to standards</p>
+          <h2>Each standard, and what it changed</h2>
+          <p>This was the project where regulatory work stopped being abstract. Four standards shaped the design, and each one is visible in the result.</p>
+          <div class="iso-table">
+            <div class="iso-row"><div class="iso-std">ISO 14971</div><div class="iso-use">Risk management ran alongside the design rather than after it. Several design choices exist because a hazard analysis asked for them, not because they were the neatest engineering answer.</div></div>
+            <div class="iso-row"><div class="iso-std">ISO 13485</div><div class="iso-use">Quality system practice — design history, controlled revisions, and traceability from a requirement to the thing that satisfies it.</div></div>
+            <div class="iso-row"><div class="iso-std">ISO 81060-2</div><div class="iso-use">Set what the non-invasive cuff had to demonstrate, and therefore what the human subject protocol had to measure.</div></div>
+            <div class="iso-row"><div class="iso-std">IEC 60601-2-24</div><div class="iso-use">Governed the infusion side: pump accuracy, occlusion behaviour, and the conditions under which delivery has to stop.</div></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">07 — Validation</p>
+          <h2>Getting a student build to human testing</h2>
+          <p>We took the cuff through IRB-approved testing on human subjects, which meant the protocol, the consent process and the data handling all had to hold up before a single measurement was taken. Getting a student-built device to that point was most of the work.</p>
+        </div>
+        <div class="band-media reveal">
+          <figure>
+            <img src="images/bp-cuff-on-arm.png" alt="The non-invasive cuff fitted on an upper arm, tubing running to the pole-mounted monitoring enclosure.">
+            <figcaption>The cuff in use during validation.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <section class="position" id="junior">
+    <div class="position-head">
+      <p class="position-num">05 — Junior design</p>
+      <h2>Wireless EOG drowsiness monitor</h2>
+      <p class="position-meta">Junior design, University of South Florida<br>
+      April to May 2024<br>
+      Top three of fifteen teams, 2024 Florida Medical Manufacturing Consortium</p>
+      <p class="position-dek">Blink rate is a validated marker of sleepiness. A wearable that measures it can warn a driver before the driver notices.</p>
+    </div>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">01 — Biopotential sensing</p>
+          <h2>Reading the eye directly</h2>
+          <p>Electrooculography measures the corneo-retinal potential, so eye movement and blinks appear directly in the signal. Blink frequency is a clinically validated sleepiness marker, which makes it a reasonable thing to monitor continuously in a driver — the measurement is unobtrusive and the signal is large enough to work with outside a lab.</p>
+        </div>
+        <div class="band-media reveal">
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/eog-device.jpg</div>
+              <div class="ph-note">The wearable itself, ideally worn or beside something for scale.</div>
+            </div>
+            <figcaption>The EOG wearable.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">02 — Wireless and app</p>
+          <h2>BLE to a phone, readable at a glance</h2>
+          <p>The device acquires the EOG signal, extracts blink events, and streams the result over Bluetooth Low Energy to a paired phone application. I built the app and the full BLE communication layer in C++, with an interface designed to be readable at a glance — anything demanding attention defeats the purpose of a drowsiness warning.</p>
+        </div>
+        <div class="band-media reveal mosaic-2">
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/eog-app.png</div>
+              <div class="ph-note">Screenshot of the mobile app.</div>
+            </div>
+            <figcaption>Companion app showing live blink data over BLE.</figcaption>
+          </figure>
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/eog-signal.png</div>
+              <div class="ph-note">A plot of raw EOG with detected blinks marked. This is the figure that proves the device worked.</div>
+            </div>
+            <figcaption>EOG trace with detected blink events.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill skill-solo">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">03 — Outcome</p>
+          <h2>Top three of fifteen</h2>
+          <p>We presented at the 2024 Florida Medical Manufacturing Consortium, where the project was selected as one of the top three of fifteen teams in the cohort.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </section>
+</div>
+
+<main class="wrap">
 
   <section id="publications">
     <div class="section-head"><h2>Publications</h2></div>

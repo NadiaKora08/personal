@@ -63,7 +63,14 @@ a:hover { text-decoration-thickness: 2px; }
 .masthead {
   border-bottom: 1px solid var(--rule);
   background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
+
+/* Anchored sections would otherwise land under the sticky masthead. */
+:target { scroll-margin-top: 4.5rem; }
+.position { scroll-margin-top: 3.5rem; }
 
 .masthead-inner {
   display: flex;
@@ -178,6 +185,47 @@ section { padding-top: 0.5rem; }
   padding: 0.1rem 0.45rem;
   margin: 0 0.3rem 0.3rem 0;
   background: var(--paper);
+}
+
+/* ---------- jump menu ---------- */
+
+.jump {
+  list-style: none;
+  margin: 1.4rem 0 0;
+  padding: 0;
+  counter-reset: jump;
+}
+
+.jump li {
+  border-top: 1px solid var(--rule);
+  padding: 0.95rem 0;
+  counter-increment: jump;
+}
+
+.jump li::before {
+  content: counter(jump, decimal-leading-zero);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-right: 0.9rem;
+}
+
+.jump a {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.02rem;
+  text-decoration: none;
+}
+
+.jump a:hover { text-decoration: underline; }
+
+.jump span {
+  display: block;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.84rem;
+  color: var(--muted);
+  margin: 0.25rem 0 0 2.5rem;
 }
 
 /* ---------- results strip ---------- */
@@ -378,52 +426,85 @@ section { padding-top: 0.5rem; }
 
 .spacer { height: 1.5rem; }
 
-/* ---------- alternating full-bleed bands ----------
-   Each band is roughly one laptop viewport. Text and pictures swap sides down
-   the page, and the background alternates with them so the seam between two
-   bands is legible without a rule. */
+/* ---------- positions and their skill rows ----------
+   The page is one scroll. Each position is a full-bleed section carrying its
+   own background, and the skills inside it are rows that alternate sides.
 
-.bands { display: block; }
+   The rows are sized by their content rather than pinned to the viewport:
+   with twenty-odd skills on one page, a screen-height row per skill would be
+   twenty screens of scrolling to read a paragraph each. */
 
-/* the paragraph that sets up the bands, between header and first band */
-.lead-note {
-  max-width: 60ch;
-  margin: clamp(1.8rem, 4vw, 2.6rem) auto clamp(1.8rem, 4vw, 2.6rem);
-  font-size: clamp(1.02rem, 1rem + 0.3vw, 1.15rem);
+.positions { display: block; }
+
+.position { border-top: 1px solid var(--rule); }
+.position:nth-of-type(odd) { background: var(--paper); }
+.position:nth-of-type(even) { background: var(--ground); }
+
+.position-head {
+  max-width: 78rem;
+  margin: 0 auto;
+  padding: clamp(2.8rem, 6vw, 4.5rem) var(--pad) 0;
 }
 
-.band {
-  padding: clamp(3rem, 7vh, 5.5rem) 0;
-  border-bottom: 1px solid var(--rule);
+.position-num {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.6rem;
+}
+
+.position-head h2 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.25rem);
+}
+
+.position-meta {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0 0 0.9rem;
+}
+
+.position-dek {
+  font-size: clamp(1.02rem, 1rem + 0.35vw, 1.18rem);
+  max-width: 54ch;
+  margin: 0;
+}
+
+/* --- one skill --- */
+
+.skill {
+  padding: clamp(2rem, 4.5vw, 3.4rem) 0;
   overflow: hidden; /* contains the slide-in transform before it settles */
 }
 
-@media (min-width: 900px) {
-  .band { min-height: 88vh; display: flex; align-items: center; }
-}
-
-.band:nth-child(odd) { background: var(--paper); }
-.band:nth-child(even) { background: var(--ground); }
-
-.band-inner {
+.skill-inner {
   width: 100%;
   max-width: 78rem;
   margin: 0 auto;
   padding: 0 var(--pad);
   display: grid;
-  gap: clamp(1.8rem, 4vw, 3.5rem);
+  gap: clamp(1.5rem, 3.5vw, 3rem);
   align-items: center;
 }
 
 @media (min-width: 900px) {
-  .band-inner { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
+  .skill-inner { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
 
-  /* chess order: on even bands the pictures take the left column instead */
-  .band:nth-child(even) .band-media { order: -1; }
+  /* chess order: on even rows the pictures take the left column instead */
+  .skill:nth-of-type(even) .band-media { order: -1; }
 
-  /* a band with no pictures centres its column rather than leaving a gap */
-  .band-solo .band-inner { grid-template-columns: minmax(0, 62ch); justify-content: center; }
+  /* a row with no pictures centres its column rather than leaving a gap */
+  .skill-solo .skill-inner { grid-template-columns: minmax(0, 64ch); justify-content: center; }
 }
+
+/* Pictures carry less height here than in a viewport-tall band, so cap them
+   rather than letting a tall mosaic set the row height. */
+.skill .band-media img { max-height: 60vh; }
 
 .band-text > :first-child { margin-top: 0; }
 .band-text h2 { margin-top: 0; }
@@ -566,10 +647,10 @@ section { padding-top: 0.5rem; }
   transform: none;
 }
 
-.band-text { --from: -3.5rem; }
-.band-media { --from: 3.5rem; }
-.band:nth-child(even) .band-text { --from: 3.5rem; }
-.band:nth-child(even) .band-media { --from: -3.5rem; }
+.band-text { --from: -3rem; }
+.band-media { --from: 3rem; }
+.skill:nth-of-type(even) .band-text { --from: 3rem; }
+.skill:nth-of-type(even) .band-media { --from: -3rem; }
 
 /* the media half trails the text half slightly */
 .js .band-media.reveal { transition-delay: 0.08s; }
