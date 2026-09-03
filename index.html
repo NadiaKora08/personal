@@ -47,7 +47,7 @@
       <li><a href="#abl">Graduate Research Engineer — Acousto-Bioelectronics Lab</a><span>Cleanroom · CAD &amp; 3D printing · Electronics · Thermal · In vitro</span></li>
       <li><a href="#regen">Regenerative Medicine Lab</a><span>In vitro · In vivo · Analysis</span></li>
       <li><a href="#ieee">Hardware Tech Lead — IEEE Computer Society at USF</a><span>Embedded workshops · Curriculum</span></li>
-      <li><a href="#senior">Senior design — blood pressure regulation</a><span>BLE · Python/C++ · Signal processing · ISO</span></li>
+      <li><a href="#senior">Senior design — blood pressure regulation</a><span>Wireless &amp; code · Electronics · Signal processing · Standards · 3D printing</span></li>
       <li><a href="#junior">Junior design — EOG drowsiness monitor</a><span>Biopotential sensing · BLE · Mobile app</span></li>
     </ol>
   </section>
@@ -374,61 +374,33 @@
       <p class="position-meta">Senior design, University of South Florida, partnered with MiracleBots, LLC<br>
       August 2024 to May 2025 — team of three<br>
       ISO 14971 · ISO 13485 · ISO 81060-2 · IEC 60601-2-24</p>
-      <p class="position-dek">Titrating a vasoactive drug by hand is slow, and the patient moves between readings. This system closes the loop and keeps the clinician in charge of it.</p>
+      <p class="position-dek">Titrating a vasoactive drug by hand is slow, and the patient moves between readings. This system closes the loop and keeps the clinician in charge of it. Three of us built the whole thing from nothing: a non-invasive oscillometric cuff, a peristaltic pump for nicardipine delivery, and the software connecting them.</p>
     </div>
 
     <section class="skill">
       <div class="skill-inner">
         <div class="band-text reveal">
-          <p class="band-num">01 — The problem</p>
-          <h2>The lag between readings</h2>
-          <p>ICU patients on nicardipine need their blood pressure held inside a narrow window. In practice a nurse measures, adjusts the infusion rate, waits, and measures again. The lag between those steps is where the patient drifts out of range, and the workload scales badly across a ward.</p>
-          <p>Three of us built the whole system from nothing: a non-invasive oscillometric cuff, a peristaltic pump for drug delivery, and the software connecting them.</p>
-        </div>
-        <div class="band-media reveal">
-          <figure class="tall">
-            <img src="images/bp-iv-pole.png" alt="The full system mounted on an IV pole: monitoring enclosure, pump module, and infusion lines running to two bags.">
-            <figcaption>The system on an IV pole.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="skill">
-      <div class="skill-inner">
-        <div class="band-text reveal">
-          <p class="band-num">02 — Wireless communication</p>
-          <h2>Two boards and a laptop in one loop</h2>
+          <p class="band-num">01 — Wireless communication and code</p>
+          <h2>Two boards, one client, and the interface between them</h2>
           <p>The cuff and the pump never talk to each other directly. Each is an ESP32 running a BLE GATT server, and the Python application is the single client that connects to both — it subscribes to pressure notifications from the cuff, computes a dose, and writes rate, duration and drug type to the pump as a packed characteristic.</p>
-          <p>Putting the application in the middle is a safety decision as much as an architectural one: there is no path by which a cuff reading reaches the pump without passing through the software that a clinician has authority over.</p>
+          <p>Putting the application in the middle is a safety decision as much as an architectural one: there is no path by which a cuff reading reaches the pump without passing through the software that a clinician has authority over. The interface surfaces the computed pressure, heart rate and a suggested rate, but nothing is delivered until a clinician commits it.</p>
+          <p>I owned the software stack across Python, C++ and MATLAB. The control side models how an individual patient responds to a dose rather than applying a fixed schedule, using machine learning over the measured response.</p>
         </div>
-        <div class="band-media reveal">
+        <div class="band-media reveal mosaic-4">
           <figure class="fit">
             <img src="images/bp-ble-architecture.png" alt="System flow titled BLE and GUI: the BP cuff sends its pressure value over Bluetooth Low Energy to the user PC, where the GUI processes the values, computes a dose and duration from the systolic pressure, and asks the clinician to confirm; on confirmation a second BLE link sends the rate to the IV pump, which administers the dose.">
             <figcaption>The loop end to end — cuff to PC over BLE, a dose the clinician confirms, then PC to pump.</figcaption>
           </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="skill">
-      <div class="skill-inner">
-        <div class="band-text reveal">
-          <p class="band-num">03 — Code and the clinician GUI</p>
-          <h2>The interface holds the authority</h2>
-          <p>I owned the software stack across Python, C++ and MATLAB. The clinician application surfaces the computed pressure, heart rate and a suggested nicardipine rate — but the dose is never applied until a clinician commits it. The loop is deliberately semi-automated, not autonomous.</p>
-          <p>The control side models how an individual patient responds to a dose rather than applying a fixed schedule, using machine learning over the measured response.</p>
-        </div>
-        <div class="band-media reveal mosaic-2">
-          <figure class="fit tall">
+          <figure class="fit">
             <img src="images/bp-clinician-app.png" alt="The clinician application: authorization options for logging in or creating an account, then the measured blood pressure of 107.3 over 66.2 and heart rate of 56, a suggested nicardipine dose of 6 mg per hour, an editable rate field, and an Administer button.">
+            <figcaption>The clinician application. The suggested dose is editable, and nothing is delivered without an explicit Administer.</figcaption>
           </figure>
           <figure>
             <div class="ph">
               <div class="ph-file">images/bp-code.png</div>
               <div class="ph-note">A screenshot of the code — the BLE notification handler or the dosage logic reads well. Use a light editor theme so it prints.</div>
             </div>
-            <figcaption>The clinician application and the code behind it.</figcaption>
+            <figcaption>The code behind the link.</figcaption>
           </figure>
         </div>
       </div>
@@ -437,7 +409,36 @@
     <section class="skill">
       <div class="skill-inner">
         <div class="band-text reveal">
-          <p class="band-num">04 — Signal processing</p>
+          <p class="band-num">02 — Electronic components</p>
+          <h2>What is inside each box</h2>
+          <p>Each enclosure carries its own supply and control. A 24 V wall supply is bucked down to 5 V for the logic; an ESP32 Wroom holds the BLE link and drives a motor driver over RS485, which turns the peristaltic pump head. A micro-servo handles the medication switch.</p>
+          <p>The cuff side is the same idea with different actuators: a driver board and an ESP32 wired to a solenoid valve and a diaphragm pump that inflate the cuff and bleed it at a controlled rate, since the deflation slope is what the measurement depends on.</p>
+        </div>
+        <div class="band-media reveal mosaic-4">
+          <figure class="fit">
+            <img src="images/bp-pump-wiring-diagram.png" alt="Annotated wiring diagram of the pump module: a 24 volt wall supply feeding a buck converter down to 5 volts, an ESP32 Wroom and a MODBUS RS485 chip on a prototyping board, a motor driver running the peristaltic pump, and a micro-servo.">
+            <figcaption>Pump module wiring — 24 V in, buck to 5 V, ESP32 driving the motor over RS485.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/bp-cuff-enclosure-internals.png" alt="Inside the printed cuff enclosure: a motor driver board and an ESP32 on a prototyping board wired to a solenoid valve and a diaphragm air pump seated in printed brackets.">
+            <figcaption>The cuff enclosure — driver, ESP32, solenoid valve and air pump.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/bp-pump-enclosure-wiring.jpg" alt="Inside the pump enclosure: a microcontroller board on a standoff rail above a bank of colour-coded terminal blocks, with looms running down to the components below.">
+            <figcaption>The pump enclosure, wired.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/bp-pump-internals.png" alt="A closer view inside the pump enclosure showing the drive motor, the tubing path and the wiring around it.">
+            <figcaption>Drive motor and tubing path.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">03 — Signal processing</p>
           <h2>Recovering a pressure from a deflation curve</h2>
           <p>Blood pressure is not measured directly. The cuff is inflated and bled down, and the pressure trace is bandpass filtered to isolate the oscillometric pulses riding on the decay. Systolic and diastolic values are then read off fixed ratios of the peak envelope.</p>
           <p>Real-time filtering, peak detection and the ratio logic all run on the incoming stream rather than on a stored recording, because the next dose decision depends on the reading that just arrived.</p>
@@ -457,69 +458,46 @@
       </div>
     </section>
 
-    <section class="skill">
-      <div class="skill-inner">
-        <div class="band-text reveal">
-          <p class="band-num">05 — Hardware and CAD</p>
-          <h2>Both devices, from model to build</h2>
-          <p>I designed and built the CAD and hardware for the cuff and the pump: enclosures, the peristaltic pump mechanism and its drive, and the mounting that puts the whole system on a standard IV pole.</p>
-          <p>Each enclosure carries its own supply and control — a 24 V input bucked to 5 V, an ESP32 for the BLE link, a motor driver, and on the cuff side the solenoid valve and diaphragm pump that inflate and bleed it. The printed brackets exist so the boards and the pneumatics land in a repeatable place rather than wherever the loom pulls them.</p>
-        </div>
-        <div class="band-media reveal mosaic-4">
-          <figure>
-            <img src="images/bp-pump.png" alt="The peristaltic pump head mounted on the front of the medication administration enclosure.">
-          </figure>
-          <figure>
-            <img src="images/bp-pump-internals.png" alt="Inside the pump enclosure: drive motor, tubing path and wiring.">
-          </figure>
-          <figure class="fit">
-            <img src="images/cad-peristaltic-pump.png" alt="Isometric CAD render of the assembled peristaltic pump: roller head on a shaft inside a machined block, with tubing routed around the rollers and out of the housing.">
-            <figcaption>The pump assembly in CAD — roller head, shaft and tubing path.</figcaption>
-          </figure>
-          <figure class="fit">
-            <img src="images/bp-pump-wiring-diagram.png" alt="Annotated wiring diagram of the pump module: a 24 volt wall supply feeding a buck converter down to 5 volts, an ESP32 Wroom and a MODBUS RS485 chip on a prototyping board, a motor driver running the peristaltic pump, and a micro-servo.">
-            <figcaption>Pump module wiring — 24 V in, buck to 5 V, ESP32 driving the motor over RS485.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/bp-pump-enclosure-wiring.jpg" alt="Inside the pump enclosure: a microcontroller board on a standoff rail above a bank of colour-coded terminal blocks, with looms running down to the components below.">
-            <figcaption>The pump enclosure, wired.</figcaption>
-          </figure>
-          <figure>
-            <img src="images/bp-cuff-enclosure-internals.png" alt="Inside the printed cuff enclosure: a motor driver board and an ESP32 on a prototyping board wired to a solenoid valve and a diaphragm air pump seated in printed brackets.">
-            <figcaption>The cuff enclosure — driver, ESP32, solenoid valve and air pump in printed brackets.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
     <section class="skill skill-solo">
       <div class="skill-inner">
         <div class="band-text reveal">
-          <p class="band-num">06 — Designing to standards</p>
+          <p class="band-num">04 — Standards</p>
           <h2>Each standard, and what it changed</h2>
           <p>This was the project where regulatory work stopped being abstract. Four standards shaped the design, and each one is visible in the result.</p>
           <div class="iso-table">
             <div class="iso-row"><div class="iso-std">ISO 14971</div><div class="iso-use">Risk management ran alongside the design rather than after it. Several design choices exist because a hazard analysis asked for them, not because they were the neatest engineering answer.</div></div>
             <div class="iso-row"><div class="iso-std">ISO 13485</div><div class="iso-use">Quality system practice — design history, controlled revisions, and traceability from a requirement to the thing that satisfies it.</div></div>
-            <div class="iso-row"><div class="iso-std">ISO 81060-2</div><div class="iso-use">Set what the non-invasive cuff had to demonstrate, and therefore what the human subject protocol had to measure.</div></div>
+            <div class="iso-row"><div class="iso-std">ISO 81060-2</div><div class="iso-use">Set what the non-invasive cuff had to demonstrate: the accuracy the measurement has to reach, and the conditions it has to reach it under.</div></div>
             <div class="iso-row"><div class="iso-std">IEC 60601-2-24</div><div class="iso-use">Governed the infusion side: pump accuracy, occlusion behaviour, and the conditions under which delivery has to stop.</div></div>
           </div>
         </div>
-
       </div>
     </section>
 
     <section class="skill">
       <div class="skill-inner">
         <div class="band-text reveal">
-          <p class="band-num">07 — Validation</p>
-          <h2>Getting a student build to human testing</h2>
-          <p>We took the cuff through IRB-approved testing on human subjects, which meant the protocol, the consent process and the data handling all had to hold up before a single measurement was taken. Getting a student-built device to that point was most of the work.</p>
+          <p class="band-num">05 — 3D printing</p>
+          <h2>Printed housings for both devices</h2>
+          <p>Both enclosures are printed, and so are the internal brackets that seat the boards, the solenoid and the diaphragm pump. The brackets exist so components land in a repeatable place rather than wherever the loom pulls them, which matters once a box has been opened and closed a few dozen times.</p>
+          <p>The peristaltic pump head was modelled from the roller geometry outward — roller spacing and the tubing path set how much fluid moves per revolution, so those are the dimensions the rest of the housing is built around. The mounting puts the whole system on a standard IV pole.</p>
         </div>
-        <div class="band-media reveal">
+        <div class="band-media reveal mosaic-4">
+          <figure class="fit">
+            <img src="images/cad-peristaltic-pump.png" alt="Isometric CAD render of the assembled peristaltic pump: roller head on a shaft inside a machined block, with tubing routed around the rollers and out of the housing.">
+            <figcaption>The pump assembly in CAD — roller head, shaft and tubing path.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/bp-pump.png" alt="The peristaltic pump head mounted on the front of the printed medication administration enclosure.">
+            <figcaption>The pump head on the printed enclosure.</figcaption>
+          </figure>
+          <figure class="tall">
+            <img src="images/bp-iv-pole.png" alt="The full system mounted on an IV pole: monitoring enclosure, pump module, and infusion lines running to two bags.">
+            <figcaption>Both printed enclosures mounted on a standard IV pole.</figcaption>
+          </figure>
           <figure>
             <img src="images/bp-cuff-on-arm.png" alt="The non-invasive cuff fitted on an upper arm, tubing running to the pole-mounted monitoring enclosure.">
-            <figcaption>The cuff in use during validation.</figcaption>
+            <figcaption>The cuff fitted for a measurement.</figcaption>
           </figure>
         </div>
       </div>
