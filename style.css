@@ -571,6 +571,11 @@ section { padding-top: 0.5rem; }
 .mosaic-4 { grid-template-columns: 1fr 1fr; }
 .mosaic-4 img { aspect-ratio: 4 / 3; }
 
+/* An odd number of tiles would leave the last one stranded beside a gap, so
+   let it take the full width of the mosaic instead. */
+.mosaic-4 > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+.mosaic-4 > :last-child:nth-child(odd) img { aspect-ratio: 16 / 9; }
+
 @media (max-width: 620px) {
   .mosaic-2,
   .mosaic-3,
