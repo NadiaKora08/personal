@@ -73,16 +73,17 @@
           <p>Both of my lab projects live or die on the cleanroom process behind them. I develop the process, qualify it, and then run it at volume — photolithography and mask design in L-Edit, mould production, casting and release, and the inspection step that decides whether a batch is usable.</p>
           <p>For the MAP patch that meant more than a hundred devices across design iterations. Building at that count is what made the design converge: each batch surfaced yield and assembly problems that were invisible in single prototypes.</p>
         </div>
-        <div class="band-media reveal mosaic-2">
-          <figure>
-            <div class="ph">
-              <div class="ph-file">images/cleanroom-suited.jpg</div>
-              <div class="ph-note">You in the cleanroom, gowned up at a bench or aligner. This is the photo that shows you have actually done the work.</div>
-            </div>
-            <figcaption>Cleanroom processing at USF.</figcaption>
+        <div class="band-media reveal mosaic-4">
+          <figure class="tall">
+            <img src="images/cleanroom-suited.jpg" alt="Gowned in a full cleanroom suit, hood and overshoes, standing in the fabrication bay between benches of microscopes and process equipment.">
+            <figcaption>Gowned up in the cleanroom at USF.</figcaption>
           </figure>
           <figure>
             <img src="images/map-array-micrograph.jpg" alt="Micrograph of the moulded microlens array, close-packed plano-convex lenses filling the frame with a scale bar at the lower edge.">
+          </figure>
+          <figure>
+            <img src="images/map-device-in-hand.jpg" alt="A finished MAP device held between two gloved fingertips, a few millimetres across, the array just visible at this scale.">
+            <figcaption>A finished device. The whole thing is a few millimetres across.</figcaption>
           </figure>
         </div>
       </div>
@@ -104,6 +105,10 @@
           <figure class="fit">
             <img src="images/cad-stent-lattice.png" alt="CAD model of a stent: a tubular diamond lattice of struts, shown isometrically.">
             <figcaption>Stent lattice — modelled as a teaching example for the workshops.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/3d-printed-cats.jpg" alt="Three printed articulated cat models in white, orange and black, printed in one piece with multi-colour filament transitions.">
+            <figcaption>Multi-material prints — colour changes mid-print, no assembly.</figcaption>
           </figure>
         </div>
       </div>
@@ -154,10 +159,18 @@
           <p>The first perfusion chamber worked, but took two full days to fabricate. That made iteration impossibly slow: any design question cost two days to answer, so most questions went unasked.</p>
           <p>Reworking the microfabrication process brought the build down to two hours. It did not make the device better directly — it made the device able to be wrong and get fixed, and the design has been through many more revisions since as a direct result. On a project with three interacting subsystems, iteration speed turned out to be the real constraint.</p>
         </div>
-        <div class="band-media reveal">
+        <div class="band-media reveal mosaic-4">
           <figure>
             <img src="images/chamber-fabricated.jpg" alt="A fabricated microfluidic chamber layer held in a gloved hand, the channel network visible in the cast polymer.">
             <figcaption>A fabricated microfluidic layer.</figcaption>
+          </figure>
+          <figure class="tall">
+            <img src="images/chamber-cast-part.jpg" alt="A cast transparent chamber part held in a gloved hand, the moulded step and its textured edge catching the light.">
+            <figcaption>A cast part straight out of the mould.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/chamber-machined-part.jpg" alt="A machined transparent chamber body with two ports and short lengths of tubing pushed into them.">
+            <figcaption>The machined chamber body with its ports plumbed.</figcaption>
           </figure>
         </div>
       </div>
@@ -170,10 +183,14 @@
           <h2>Checking it before it is machined</h2>
           <p>The perfusion chamber is a fluidics problem constrained by an optical one: the brain slice has to stay accessible to light and to a probe while the flow field over it stays uniform. Modelling the velocity field is how that uniformity gets checked before anything is cut — the flow equalisers exist because early geometries put a gradient straight across the tissue.</p>
         </div>
-        <div class="band-media reveal">
+        <div class="band-media reveal mosaic-4">
           <figure class="fit">
             <img src="images/chamber-comsol-flow.png" alt="COMSOL simulation showing velocity magnitude on a slice plane through the chamber, with the tissue region outlined at the centre.">
-            <figcaption>COMSOL velocity magnitude across the chamber, checking flow uniformity over the tissue region.</figcaption>
+            <figcaption>COMSOL velocity magnitude, checking flow uniformity over the tissue region.</figcaption>
+          </figure>
+          <figure class="fit">
+            <img src="images/cam-toolpaths.jpg" alt="CAM software showing concentric toolpaths generated around two circular pockets, with the work origin and axes marked at the corner of the stock.">
+            <figcaption>Toolpaths for the chamber body, set up before cutting.</figcaption>
           </figure>
         </div>
       </div>
@@ -187,10 +204,14 @@
           <p>A device that runs cool and draws little power still has to work. The MAP patch went through in vitro validation with fibroblasts — irradiance characterised with and without the microlens array, then scratch and viability assays showing accelerated closure and increased proliferation.</p>
           <p>Those results were strong enough to write up within the first month of the project. The device has since advanced through in vivo validation.</p>
         </div>
-        <div class="band-media reveal">
+        <div class="band-media reveal mosaic-2">
           <figure>
             <img src="images/map-invitro-plate.jpg" alt="Three MAP devices illuminating wells of a six-well culture plate from beneath, each showing a three-by-three array of emitters through the plate base.">
-            <figcaption>MAP devices delivering red light into a six-well plate of fibroblasts.</figcaption>
+            <figcaption>MAP devices delivering red light into a six-well plate.</figcaption>
+          </figure>
+          <figure class="tall">
+            <img src="images/cell-culture-micrograph.jpg" alt="Phase contrast micrograph down the eyepiece: spindle-shaped adherent cells spread across the field at moderate confluence.">
+            <figcaption>The cells the assays are run on, checked under phase contrast.</figcaption>
           </figure>
         </div>
       </div>
@@ -513,13 +534,18 @@
           <h2>Reading the eye directly</h2>
           <p>Electrooculography measures the corneo-retinal potential, so eye movement and blinks appear directly in the signal. Blink frequency is a clinically validated sleepiness marker, which makes it a reasonable thing to monitor continuously in a driver — the measurement is unobtrusive and the signal is large enough to work with outside a lab.</p>
         </div>
-        <div class="band-media reveal">
-          <figure>
-            <div class="ph">
-              <div class="ph-file">images/eog-device.jpg</div>
-              <div class="ph-note">The wearable itself, ideally worn or beside something for scale.</div>
-            </div>
-            <figcaption>The EOG wearable.</figcaption>
+        <div class="band-media reveal mosaic-4">
+          <figure class="fit">
+            <img src="images/eog-electrode-placement.png" alt="Diagram of electrode placement on a face: the inverting input above the eyebrow, the non-inverting input beside the outer eye, and the reference on the jaw.">
+            <figcaption>Electrode placement — two inputs across the eye, reference on the jaw.</figcaption>
+          </figure>
+          <figure class="tall">
+            <img src="images/eog-worn.png" alt="The wearable in use: electrodes taped above and beside one eye, their leads running down to a printed yellow enclosure clipped at the shoulder.">
+            <figcaption>The wearable in use, enclosure clipped at the shoulder.</figcaption>
+          </figure>
+          <figure class="fit">
+            <img src="images/eog-circuit.png" alt="Circuit layout: an Arduino Uno and a breadboarded instrumentation amplifier stage with gain-setting resistors, a buzzer and an indicator LED, powered from two nine volt batteries.">
+            <figcaption>The acquisition circuit — instrumentation amplifier stage, split supply from two 9 V batteries.</figcaption>
           </figure>
         </div>
       </div>
@@ -533,12 +559,9 @@
           <p>The device acquires the EOG signal, extracts blink events, and streams the result over Bluetooth Low Energy to a paired phone application. I built the app and the full BLE communication layer in C++, with an interface designed to be readable at a glance — anything demanding attention defeats the purpose of a drowsiness warning.</p>
         </div>
         <div class="band-media reveal mosaic-2">
-          <figure>
-            <div class="ph">
-              <div class="ph-file">images/eog-app.png</div>
-              <div class="ph-note">Screenshot of the mobile app.</div>
-            </div>
-            <figcaption>Companion app showing live blink data over BLE.</figcaption>
+          <figure class="fit">
+            <img src="images/eog-app.jpg" alt="The companion app: a bar trace of blink events over time, a state readout showing awake, and Bluetooth connect and device selection controls along the bottom.">
+            <figcaption>The companion app — blink events, the awake or drowsy state, and the BLE connection controls.</figcaption>
           </figure>
           <figure>
             <div class="ph">
@@ -622,6 +645,11 @@
       <li>Barbara J. Lancor BME Excellence Achievement Award, 2025 — awarded to two of fifty graduating BME students</li>
       <li>iGEM Gold Medal, 2020 — Moscow team, CRISPR-Cas testing method for hepatitis C</li>
     </ul>
+
+    <figure class="figure award-figure">
+      <img src="images/senior-design-team.jpg" alt="Three of us standing side by side, each holding a framed certificate, after the senior design showcase.">
+      <figcaption>With my senior design teammates, April 2025.</figcaption>
+    </figure>
   </section>
 
 </main>

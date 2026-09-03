@@ -667,3 +667,6 @@ section { padding-top: 0.5rem; }
     transition: none;
   }
 }
+
+/* The awards list is prose; its one photograph sits under it at reading width. */
+.award-figure { max-width: 34rem; }
