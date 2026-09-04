@@ -501,7 +501,7 @@ section { padding-top: 0.5rem; }
      column widths swap with them, so a picture gets the wider side either
      way rather than shrinking on every second row. */
   .skill:nth-of-type(even) .band-media { order: -1; }
-  .skill:nth-of-type(even) .skill-inner { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
+  .skill:nth-of-type(even):not(.skill-solo) .skill-inner { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
 
   /* a row with no pictures centres its column rather than leaving a gap */
   .skill-solo .skill-inner { grid-template-columns: minmax(0, 64ch); justify-content: center; }
@@ -549,6 +549,11 @@ section { padding-top: 0.5rem; }
   max-height: 62vh;
   object-fit: contain;
 }
+
+/* Same as wide, but with no ceiling on height: the row grows to whatever the
+   picture needs at full column width, rather than the picture shrinking to
+   fit a row. For a tall photograph that must not be cropped. */
+.skill .band-media:has(> figure.wide.full:only-child) img { max-height: none; }
 
 .band-text > :first-child { margin-top: 0; }
 .band-text h2 { margin-top: 0; }
