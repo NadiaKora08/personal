@@ -541,10 +541,11 @@ section { padding-top: 0.5rem; }
 /* A landscape picture that should run the full width of the column rather
    than sitting inside the narrower bound a portrait one needs. */
 .skill .band-media:has(> figure.wide:only-child) { max-width: none; }
-.skill .band-media > figure.wide img {
+.skill .band-media:has(> figure.wide:only-child) img {
   aspect-ratio: auto;
   width: 100%;
   height: auto;
+  max-width: 100%;
   max-height: 62vh;
   object-fit: contain;
 }
