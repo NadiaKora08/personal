@@ -464,7 +464,7 @@
           <p><!-- Replace with your specifics: which software, which tests, which figures were yours. --></p>
         </div>
         <div class="band-media reveal">
-          <figure>
+          <figure = "fit">
             <img src="images/rml-expression-flux.png?v=22" alt="Bioluminescent flux in photons per second on a log axis against time in days, out past 300 days, comparing four electroporation pulse protocols with an injection-only control. The 90 volt 150 millisecond condition holds two to three orders of magnitude above the rest throughout.">
             <figcaption>Expression tracked out past 300 days by pulse protocol, from <a href="https://doi.org/10.3390/app142311298">our Applied Sciences paper</a>.</figcaption>
           </figure>
@@ -516,11 +516,11 @@
           <p>The device acquires the EOG signal, extracts blink events, and streams the result over Bluetooth Low Energy to a paired phone application. I built the app and the full BLE communication layer in C++, with an interface designed to be readable at a glance — anything demanding attention defeats the purpose of a drowsiness warning.</p>
         </div>
         <div class="band-media reveal mosaic-2">
-          <figure class="wide">
+          <figure class="fit">
             <img src="images/eog-app.jpg?v=22" alt="The companion app: a bar trace of blink events over time, a state readout showing awake, and Bluetooth connect and device selection controls along the bottom.">
             <figcaption>The companion app — blink events, the awake or drowsy state, and the BLE connection controls.</figcaption>
           </figure>
-          <figure>
+          <figure class="fit">
             <img src="images/eog-signal-trace.png?v=22" alt="A sample trace recorded from the wearable: amplitude in ADC units against time in milliseconds, showing four slow rising ramps with sharp falls over two and a half seconds.">
             <figcaption>A sample trace captured from the device.</figcaption>
           </figure>
