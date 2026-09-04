@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nadia Korostyleva — Biomedical Engineer</title>
-<meta name="description" content="Biomedical engineer working on MEMS devices: microneedle phototherapy patches, microfluidic brain-slice chambers, and the instrumentation around them.">
+<meta name="description" content="Biomedical engineer working on medical devices end to end — CAD and fabrication, electronics and firmware, signal processing, and design against ISO and IEC standards.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
 <div class="hero">
   <div class="wrap">
     <h1>Nadia Korostyleva</h1>
-    <p class="hero-lede">I build medical devices at the millimetre and micrometre scale — phototherapy patches you wear on a wound, microfluidic chambers that keep brain tissue alive, and the electronics that drive them.</p>
+    <p class="hero-lede">I like working on a device end to end — CAD and fabrication, the electronics and firmware that drive it, the signal processing that makes sense of what it measures, and the standards work that decides what it has to prove. I am looking for medical device work where that whole span is the job.</p>
     <p class="hero-facts">
       M.S. Biomedical Engineering, University of South Florida<br>
       Graduate Research Engineer, Acousto-Bioelectronics Lab<br>
@@ -41,13 +41,11 @@
 
   <section id="experience">
     <div class="section-head"><h2>Experience</h2></div>
-    <p>Five positions, and the skills each one demanded. Everything is on this
-    page — the links below jump to a section.</p>
     <ol class="jump">
-      <li><a href="#abl">Graduate Research Engineer — Acousto-Bioelectronics Lab</a><span>Cleanroom · CAD &amp; 3D printing · Electronics · Thermal · In vitro</span></li>
+      <li><a href="#abl">Graduate research — Acousto-Bioelectronics Lab</a><span>Cleanroom · 3D printing &amp; CNC · Fabrication &amp; troubleshooting · Modelling</span></li>
+      <li><a href="#senior">Senior capstone — blood pressure regulation</a><span>Wireless &amp; code · Electronics · Signal processing · Standards · 3D printing</span></li>
+      <li><a href="#ieee">Hardware Tech Lead — IEEE Computer Society at USF</a><span>Embedded workshops · CAD &amp; FDM printing · Curriculum</span></li>
       <li><a href="#regen">Regenerative Medicine Lab</a><span>In vitro · In vivo · Analysis</span></li>
-      <li><a href="#ieee">Hardware Tech Lead — IEEE Computer Society at USF</a><span>Embedded workshops · Curriculum</span></li>
-      <li><a href="#senior">Senior design — blood pressure regulation</a><span>Wireless &amp; code · Electronics · Signal processing · Standards · 3D printing</span></li>
       <li><a href="#junior">Junior design — EOG drowsiness monitor</a><span>Biopotential sensing · BLE · Mobile app</span></li>
     </ol>
   </section>
@@ -68,163 +66,111 @@
     <section class="skill">
       <div class="skill-inner">
         <div class="band-text reveal">
-          <p class="band-num">01 — Cleanroom fabrication</p>
-          <h2>Processing at wafer scale</h2>
-          <p>Both of my lab projects live or die on the cleanroom process behind them. I develop the process, qualify it, and then run it at volume — photolithography and mask design in L-Edit, mould production, casting and release, and the inspection step that decides whether a batch is usable.</p>
-          <p>For the MAP patch that meant more than a hundred devices across design iterations. Building at that count is what made the design converge: each batch surfaced yield and assembly problems that were invisible in single prototypes.</p>
+          <p class="band-num">01 — Cleanroom</p>
+          <h2>Processing at volume</h2>
+          <p>I develop the process, qualify it, then run it — photolithography and mask design in L-Edit, moulding, casting and release. More than a hundred MAP devices across design iterations.</p>
         </div>
-        <div class="band-media reveal mosaic-4">
+        <div class="band-media reveal">
           <figure class="tall">
             <img src="images/cleanroom-suited.jpg" alt="Gowned in a full cleanroom suit, hood and overshoes, standing in the fabrication bay between benches of microscopes and process equipment.">
             <figcaption>Gowned up in the cleanroom at USF.</figcaption>
           </figure>
-          <figure>
-            <img src="images/map-array-micrograph.jpg" alt="Micrograph of the moulded microlens array, close-packed plano-convex lenses filling the frame with a scale bar at the lower edge.">
-          </figure>
-          <figure>
-            <img src="images/map-device-in-hand.jpg" alt="A finished MAP device held between two gloved fingertips, a few millimetres across, the array just visible at this scale.">
-            <figcaption>A finished device. The whole thing is a few millimetres across.</figcaption>
-          </figure>
         </div>
       </div>
     </section>
-
     <section class="skill">
       <div class="skill-inner">
         <div class="band-text reveal">
-          <p class="band-num">02 — 3D printing and CAD</p>
-          <h2>From parametric sketch to released part</h2>
-          <p>Device housings, moulds, fixtures and alignment jigs all start as SOLIDWORKS models. I design them parametrically so a dimension change propagates instead of forcing a redraw, and I print them in-house — FDM for fixtures and fit checks, SLA where the feature size or the surface finish demands it.</p>
-          <p>The microneedle array is the clearest case: needle pitch, height and the registration cut-outs are all driven parameters, because every fabrication round moved at least one of them.</p>
+          <p class="band-num">02 — 3D printing and CNC</p>
+          <h2>Printed, and cut</h2>
+          <p>Housings, moulds and jigs are parametric SOLIDWORKS models, printed in-house on FDM and SLA. Chamber bodies are machined, so the toolpath is set up and proved before anything is cut.</p>
         </div>
         <div class="band-media reveal mosaic-4">
           <figure class="fit">
-            <img src="images/cad-microneedle-array.png" alt="A later microneedle array revision in CAD: plan view with the needle grid and two diameter callouts, beside an isometric view of the populated array.">
-            <figcaption>Microneedle array in CAD — plan view dimensioned, with the populated array beside it.</figcaption>
+            <img src="images/cam-toolpaths.jpg" alt="CAM software showing concentric toolpaths generated around two circular pockets, with the work origin and axes marked at the corner of the stock.">
+            <figcaption>Toolpaths set up before cutting.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/cnc-machined-part.jpg" alt="A machined aluminium ring off the mill, concentric tool marks across the face and two small slots cut into the bore.">
+            <figcaption>A sample part off the mill.</figcaption>
           </figure>
           <figure class="fit">
             <img src="images/cad-stent-lattice.png" alt="CAD model of a stent: a tubular diamond lattice of struts, shown isometrically.">
-            <figcaption>Stent lattice — modelled as a teaching example for the workshops.</figcaption>
+            <figcaption>Stent lattice.</figcaption>
           </figure>
           <figure>
-            <img src="images/3d-printed-cats.jpg" alt="Three printed articulated cat models in white, orange and black, printed in one piece with multi-colour filament transitions.">
-            <figcaption>Multi-material prints — colour changes mid-print, no assembly.</figcaption>
+            <img src="images/map-device-in-hand.jpg" alt="A finished MAP device held between two gloved fingertips, a few millimetres across.">
+            <figcaption>A finished device, a few millimetres across.</figcaption>
+          </figure>
+          <figure class="fit">
+            <img src="images/cad-microneedle-array.png" alt="Microneedle array in CAD: plan view with the needle grid and two diameter callouts, beside an isometric view of the populated array.">
+            <figcaption>Microneedle array in CAD — plan view dimensioned, populated array beside it.</figcaption>
           </figure>
         </div>
       </div>
     </section>
-
     <section class="skill">
       <div class="skill-inner">
         <div class="band-text reveal">
-          <p class="band-num">03 — Electrical troubleshooting</p>
-          <h2>Measuring the device instead of reasoning about it</h2>
-          <p>Early MAP builds drew far more power than a wearable format allows. Finding out why meant instrumenting the drive circuitry rather than reading the schematic harder — current draw per emitter, duty cycle, and where the losses actually sat.</p>
-          <p>The redesigned drive consumes two orders of magnitude less power than the first build. That result came out of measurement, and it is the habit I would carry into any device programme.</p>
-        </div>
-        <div class="band-media reveal">
-          <figure>
-            <img src="images/map-led-source.jpg" alt="The LED source array running, individual emitters visible through the lens optic against saturated red illumination.">
-            <figcaption>The source array under drive.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="skill">
-      <div class="skill-inner">
-        <div class="band-text reveal">
-          <p class="band-num">04 — Thermal control</p>
-          <h2>Thirty degrees of headroom</h2>
-          <p>A patch worn against a wound has a hard temperature ceiling, and the first build ran far past it. The thermal path and the electrical design turned out to be the same problem seen from two directions — the emitters were being driven in a way that dumped heat exactly where the device touches skin.</p>
-          <p>Reworking both together took 30 °C off the peak. That is what moved the concept from a bench demonstration to something wearable.</p>
-        </div>
-        <div class="band-media reveal">
-          <figure>
-            <div class="ph">
-              <div class="ph-file">images/map-comsol-thermal.png</div>
-              <div class="ph-note">The COMSOL thermal model, ideally the before and after pair — it turns the 30 °C claim from an assertion into something the reader can see.</div>
-            </div>
-            <figcaption>COMSOL thermal model of the patch against tissue.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="skill">
-      <div class="skill-inner">
-        <div class="band-text reveal">
-          <p class="band-num">05 — Time optimization</p>
-          <h2>Cutting a two-day build to two hours</h2>
-          <p>The first perfusion chamber worked, but took two full days to fabricate. That made iteration impossibly slow: any design question cost two days to answer, so most questions went unasked.</p>
-          <p>Reworking the microfabrication process brought the build down to two hours. It did not make the device better directly — it made the device able to be wrong and get fixed, and the design has been through many more revisions since as a direct result. On a project with three interacting subsystems, iteration speed turned out to be the real constraint.</p>
+          <p class="band-num">03 — End-to-end fabrication and troubleshooting</p>
+          <h2>From mould to measurement</h2>
+          <p>I take a device the whole way: cast and release the part, build the drive, then find out why it misbehaves. Early MAP builds ran far too hot and drew far more power than a wearable allows.</p>
+          <p>Instrumenting the drive rather than re-reading the schematic found the cause. The redesign took 30 °C off the peak and two orders of magnitude off the power.</p>
         </div>
         <div class="band-media reveal mosaic-4">
-          <figure>
-            <img src="images/chamber-fabricated.jpg" alt="A fabricated microfluidic chamber layer held in a gloved hand, the channel network visible in the cast polymer.">
-            <figcaption>A fabricated microfluidic layer.</figcaption>
-          </figure>
           <figure class="tall">
             <img src="images/chamber-cast-part.jpg" alt="A cast transparent chamber part held in a gloved hand, the moulded step and its textured edge catching the light.">
             <figcaption>A cast part straight out of the mould.</figcaption>
           </figure>
           <figure>
-            <img src="images/chamber-machined-part.jpg" alt="A machined transparent chamber body with two ports and short lengths of tubing pushed into them.">
-            <figcaption>The machined chamber body with its ports plumbed.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="skill">
-      <div class="skill-inner">
-        <div class="band-text reveal">
-          <p class="band-num">06 — Modelling and design</p>
-          <h2>Checking it before it is machined</h2>
-          <p>The perfusion chamber is a fluidics problem constrained by an optical one: the brain slice has to stay accessible to light and to a probe while the flow field over it stays uniform. Modelling the velocity field is how that uniformity gets checked before anything is cut — the flow equalisers exist because early geometries put a gradient straight across the tissue.</p>
-        </div>
-        <div class="band-media reveal mosaic-4">
-          <figure class="fit">
-            <img src="images/chamber-comsol-flow.png" alt="COMSOL simulation showing velocity magnitude on a slice plane through the chamber, with the tissue region outlined at the centre.">
-            <figcaption>COMSOL velocity magnitude, checking flow uniformity over the tissue region.</figcaption>
-          </figure>
-          <figure class="fit">
-            <img src="images/cam-toolpaths.jpg" alt="CAM software showing concentric toolpaths generated around two circular pockets, with the work origin and axes marked at the corner of the stock.">
-            <figcaption>Toolpaths for the chamber body, set up before cutting.</figcaption>
+            <img src="images/chamber-fabricated.jpg" alt="A fabricated microfluidic chamber layer held in a gloved hand, the channel network visible in the cast polymer.">
+            <figcaption>A fabricated microfluidic layer.</figcaption>
           </figure>
           <figure>
-            <img src="images/cnc-machined-part.jpg" alt="The machined aluminium ring off the mill, concentric tool marks across the face and two small slots cut into the bore.">
-            <figcaption>The same part off the mill.</figcaption>
+            <img src="images/map-array-micrograph.jpg" alt="Micrograph of the moulded microlens array, close-packed plano-convex lenses filling the frame with a scale bar at the lower edge.">
+            <figcaption>The moulded microlens array.</figcaption>
           </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="skill">
-      <div class="skill-inner">
-        <div class="band-text reveal">
-          <p class="band-num">07 — In vitro and in vivo validation</p>
-          <h2>Showing that it does something</h2>
-          <p>A device that runs cool and draws little power still has to work. The MAP patch went through in vitro validation with fibroblasts — irradiance characterised with and without the microlens array, then scratch and viability assays showing accelerated closure and increased proliferation.</p>
-          <p>Those results were strong enough to write up within the first month of the project. The device has since advanced through in vivo validation.</p>
-        </div>
-        <div class="band-media reveal mosaic-2">
+          <figure>
+            <img src="images/map-led-source.jpg" alt="The LED source array running, individual emitters visible through the lens optic against saturated red illumination.">
+            <figcaption>The source array under drive.</figcaption>
+          </figure>
           <figure>
             <img src="images/map-invitro-plate.jpg" alt="Three MAP devices illuminating wells of a six-well culture plate from beneath, each showing a three-by-three array of emitters through the plate base.">
             <figcaption>MAP devices delivering red light into a six-well plate.</figcaption>
           </figure>
-          <figure class="tall">
-            <img src="images/cell-culture-micrograph.jpg" alt="Phase contrast micrograph down the eyepiece: spindle-shaped adherent cells spread across the field at moderate confluence.">
-            <figcaption>The cells the assays are run on, checked under phase contrast.</figcaption>
+          <figure>
+            <img src="images/chamber-machined-part.jpg" alt="A machined transparent chamber body with two ports and short lengths of tubing pushed into them.">
+            <figcaption>The machined chamber body, plumbed.</figcaption>
           </figure>
         </div>
       </div>
     </section>
-
     <section class="skill">
       <div class="skill-inner">
         <div class="band-text reveal">
-          <p class="band-num">08 — Publishing</p>
+          <p class="band-num">04 — Modelling</p>
+          <h2>Checked before it is built</h2>
+          <p>Flow and thermal models decide the geometry before anything is cut or driven — whether the field over the tissue stays uniform, and how hard the array can be run against skin.</p>
+        </div>
+        <div class="band-media reveal mosaic-4">
+          <figure class="fit">
+            <img src="images/chamber-comsol-flow.png" alt="COMSOL simulation showing velocity magnitude on a slice plane through the chip, with the tissue region outlined at the centre.">
+            <figcaption>Chip flow test in COMSOL.</figcaption>
+          </figure>
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/map-comsol-thermal.png</div>
+              <div class="ph-note">The COMSOL thermal model, ideally the before and after pair — it turns the 30 °C claim from an assertion into something the reader can see.</div>
+            </div>
+            <figcaption>Thermal model of the patch against tissue.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">05 — Publishing</p>
           <h2>First author at IEEE MEMS 2026</h2>
           <p>The work became a <a href="https://ieeexplore.ieee.org/document/11419300">first-author conference paper</a> and poster one month after I joined the lab: device concept, design and fabrication, irradiance characterisation, and the in vitro assays.</p>
         </div>
@@ -238,159 +184,10 @@
     </section>
 
   </section>
-  <section class="position" id="regen">
-    <div class="position-head">
-      <p class="position-num">02 — Regenerative Medicine Lab</p>
-      <h2>Regenerative Medicine Lab</h2>
-      <p class="position-meta">Dr. Anna Bulysheva<br>
-      Contributed to two publications<br>
-      IACUC certified</p>
-      <p class="position-dek">Wet lab work on electro gene therapy — cells, animals, and the analysis that turned both into published figures.</p>
-    </div>
 
-    <section class="skill">
-      <div class="skill-inner">
-        <div class="band-text reveal">
-          <p class="band-num">01 — In vitro</p>
-          <h2>Cell work at the bench</h2>
-          <p>Cell culture and transfection work supporting the lab's electro gene therapy programme — maintaining lines, running treatment conditions, and preparing the samples that the downstream analysis depends on.</p>
-          <p><!-- Replace this paragraph with the specifics: which lines, which assays, what you personally ran. --></p>
-        </div>
-        <div class="band-media reveal">
-          <figure>
-            <div class="ph">
-              <div class="ph-file">images/rml-invitro.jpg</div>
-              <div class="ph-note">Your in vitro work — hood, plates, or a stained result you are allowed to show.</div>
-            </div>
-            <figcaption>In vitro work.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="skill">
-      <div class="skill-inner">
-        <div class="band-text reveal">
-          <p class="band-num">02 — In vivo</p>
-          <h2>Animal studies, IACUC certified</h2>
-          <p>In vivo rodent work on the same programme, including surgery and imaging. I am IACUC certified.</p>
-          <p>The published results this fed into cover localized in vivo electro gene therapy for skeletal muscle protein reprogramming, and pulse protocols that trade delivery efficiency against muscle contraction.</p>
-          <p><!-- Replace with your specifics: your role in the surgeries, the imaging modality, the endpoints. --></p>
-        </div>
-        <div class="band-media reveal">
-          <figure>
-            <div class="ph">
-              <div class="ph-file">images/rml-invivo.jpg</div>
-              <div class="ph-note">A photo from the in vivo side — the rig, the imaging setup, or you at the bench. No animal photos: they add nothing for a device reviewer and the site rules them out.</div>
-            </div>
-            <figcaption>In vivo study setup.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="skill">
-      <div class="skill-inner">
-        <div class="band-text reveal">
-          <p class="band-num">03 — Analysis</p>
-          <h2>From raw data to a figure that argues</h2>
-          <p>Quantifying the results and taking them through statistics — image analysis, expression quantification, and the tests behind the figures. Two publications came out of this work.</p>
-          <p><!-- Replace with your specifics: which software, which tests, which figures were yours. --></p>
-        </div>
-        <div class="band-media reveal">
-          <figure>
-            <div class="ph">
-              <div class="ph-file">images/rml-analysis.png</div>
-              <div class="ph-note">A figure or plot you produced. A published figure is safest — check anything unpublished with Dr. Bulysheva first.</div>
-            </div>
-            <figcaption>Analysis output.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-  </section>
-  <section class="position" id="ieee">
-    <div class="position-head">
-      <p class="position-num">03 — IEEE Computer Society</p>
-      <h2>IEEE Computer Society at USF</h2>
-      <p class="position-meta">Hardware Tech Lead<br>
-      August 2025 to present<br>
-      200+ attendees, 100+ devices built</p>
-      <p class="position-dek">Teaching embedded hardware by building devices that only work if you understand why.</p>
-    </div>
-
-    <section class="skill">
-      <div class="skill-inner">
-        <div class="band-text reveal">
-          <p class="band-num">01 — Optical Morse link</p>
-          <h2>An LED that listens</h2>
-          <p>Two Particle Argon boards talking over a beam of visible light. The sender drives an LED from a digital pin; the receiver wires a second LED in reverse and reads the photocurrent on an analog input, which works because an LED is a diode with a junction that responds to light as readily as it emits it.</p>
-          <p>Using an LED as its own detector is what makes the session teach something. It forces the question of what the component actually is, rather than what the tutorial calls it, and it lets students see a real analog signal instead of a boolean. Pairs sent Morse across a table, then tested it with the room lights off.</p>
-        </div>
-        <div class="band-media reveal">
-          <figure class="tall">
-            <img src="images/workshop-room.jpg" alt="Walking a full room through the sender assembly, with the breadboard wiring diagram projected on screen.">
-            <figcaption>Walking the room through the sender assembly.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="skill">
-      <div class="skill-inner">
-        <div class="band-text reveal">
-          <p class="band-num">02 — Two-way Wi-Fi audio</p>
-          <h2>Framing a sample stream</h2>
-          <p>A pair of ESP32 boards carrying live audio between them: a MEMS microphone on one end and a Class-D amplifier on the other, both over I²S. The session works through the interface properly — bit clock, word select, and how a sample stream is framed — because those are the concepts that transfer to any synchronous digital bus a student meets later.</p>
-        </div>
-        <div class="band-media reveal">
-          <figure>
-            <img src="images/workshop-students-building.jpg" alt="Wiring a speaker into an ESP32 breadboard build while two attendees look on.">
-            <figcaption>Debugging a build mid-session.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="skill">
-      <div class="skill-inner">
-        <div class="band-text reveal">
-          <p class="band-num">03 — CAD and 3D printing</p>
-          <h2>From blank sketch to printed part</h2>
-          <p>A separate track takes students from a blank SOLIDWORKS sketch to a printed part: parametric modelling, STL and 3MF export, slicer configuration, supports and resolution, and choosing between FDM and SLA for a given part. Most attendees have never printed anything before and leave having sent a file to a printer themselves.</p>
-        </div>
-        <div class="band-media reveal mosaic-4">
-          <figure>
-            <img src="images/workshop-cad-teaching.jpg" alt="Teaching a parametric SOLIDWORKS sketch, dimensioning an extruded profile on the projected screen.">
-          </figure>
-          <figure>
-            <img src="images/workshop-3dprint-lecture.jpg" alt="Presenting the 3D printing workflow — modelling, export, slicing, and choosing a printer.">
-          </figure>
-          <figure class="fit">
-            <img src="images/cad-glasses-nose-pad.png" alt="Dimensioned SOLIDWORKS drawing of a glasses nose pad in millimetres: front, side and bottom views with a shaded isometric.">
-            <figcaption>A worked example for the CAD track — a glasses nose pad, fully dimensioned.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="skill skill-solo">
-      <div class="skill-inner">
-        <div class="band-text reveal">
-          <p class="band-num">04 — Curriculum</p>
-          <h2>Built backwards from a device that has to work</h2>
-          <p>Most students meet embedded hardware through a tutorial they can follow without understanding. I build the workshops backwards from that: a device that only works if you understand why. I design and teach the whole curriculum — the circuits, the firmware, the slides, and the debugging that happens when thirty breadboards fail in thirty different ways.</p>
-          <p>Sessions run in pairs so nobody watches someone else do the build. Over 200 attendees so far, and more than 100 devices built.</p>
-        </div>
-
-      </div>
-    </section>
-
-  </section>
   <section class="position" id="senior">
     <div class="position-head">
-      <p class="position-num">04 — Senior design</p>
+      <p class="position-num">02 — Senior design</p>
       <h2>Semi-automated blood pressure regulation</h2>
       <p class="position-meta">Senior design, University of South Florida, partnered with MiracleBots, LLC<br>
       August 2024 to May 2025 — team of three<br>
@@ -448,7 +245,7 @@
             <img src="images/bp-pump-enclosure-wiring.jpg" alt="Inside the pump enclosure: a microcontroller board on a standoff rail above a bank of colour-coded terminal blocks, with looms running down to the components below.">
             <figcaption>The pump enclosure, wired.</figcaption>
           </figure>
-          <figure>
+          <figure class="fit">
             <img src="images/bp-pump-internals.png" alt="A closer view inside the pump enclosure showing the drive motor, the tubing path and the wiring around it.">
             <figcaption>Drive motor and tubing path.</figcaption>
           </figure>
@@ -501,18 +298,10 @@
         </div>
         <div class="band-media reveal mosaic-4">
           <figure class="fit">
-            <img src="images/cad-peristaltic-pump.png" alt="Isometric CAD render of the assembled peristaltic pump: roller head on a shaft inside a machined block, with tubing routed around the rollers and out of the housing.">
-            <figcaption>The pump assembly in CAD — roller head, shaft and tubing path.</figcaption>
-          </figure>
-          <figure class="fit">
             <img src="images/cad-pump-exploded.png" alt="The pump drawn as two parts side by side: the housing with its tubing channel cut away, and the four-roller head on its shaft with the tubing wrapped around it.">
             <figcaption>The same pump split open — housing beside the roller head and its tubing path.</figcaption>
           </figure>
-          <figure>
-            <img src="images/bp-pump.png" alt="The peristaltic pump head mounted on the front of the printed medication administration enclosure.">
-            <figcaption>The pump head on the printed enclosure.</figcaption>
-          </figure>
-          <figure class="tall">
+          <figure class="fit">
             <img src="images/bp-iv-pole.png" alt="The full system mounted on an IV pole: monitoring enclosure, pump module, and infusion lines running to two bags.">
             <figcaption>Both printed enclosures mounted on a standard IV pole.</figcaption>
           </figure>
@@ -525,6 +314,160 @@
     </section>
 
   </section>
+
+  <section class="position" id="ieee">
+    <div class="position-head">
+      <p class="position-num">03 — IEEE Computer Society</p>
+      <h2>IEEE Computer Society at USF</h2>
+      <p class="position-meta">Hardware Tech Lead<br>
+      August 2025 to present<br>
+      200+ attendees, 100+ devices built</p>
+      <p class="position-dek">Teaching embedded hardware by building devices that only work if you understand why.</p>
+    </div>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">01 — Optical Morse link</p>
+          <h2>An LED that listens</h2>
+          <p>Two Particle Argon boards talking over a beam of visible light. The sender drives an LED from a digital pin; the receiver wires a second LED in reverse and reads the photocurrent on an analog input, which works because an LED is a diode with a junction that responds to light as readily as it emits it.</p>
+          <p>Using an LED as its own detector is what makes the session teach something. It forces the question of what the component actually is, rather than what the tutorial calls it, and it lets students see a real analog signal instead of a boolean. Pairs sent Morse across a table, then tested it with the room lights off.</p>
+        </div>
+        <div class="band-media reveal">
+          <figure class="tall">
+            <img src="images/workshop-room.jpg" alt="Walking a full room through the sender assembly, with the breadboard wiring diagram projected on screen.">
+            <figcaption>Walking the room through the sender assembly.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">02 — Two-way Wi-Fi audio</p>
+          <h2>Framing a sample stream</h2>
+          <p>A pair of ESP32 boards carrying live audio between them: a MEMS microphone on one end and a Class-D amplifier on the other, both over I²S. The session works through the interface properly — bit clock, word select, and how a sample stream is framed — because those are the concepts that transfer to any synchronous digital bus a student meets later.</p>
+        </div>
+        <div class="band-media reveal">
+          <figure>
+            <img src="images/workshop-students-building.jpg" alt="Wiring a speaker into an ESP32 breadboard build while two attendees look on.">
+            <figcaption>Debugging a build mid-session.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">03 — CAD and FDM printing</p>
+          <h2>From blank sketch to printed part</h2>
+          <p>A separate track takes students from a blank SOLIDWORKS sketch to a printed part: parametric modelling, STL and 3MF export, slicer configuration, supports and resolution, and choosing between FDM and SLA for a given part. Most attendees have never printed anything before and leave having sent a file to a printer themselves.</p>
+        </div>
+        <div class="band-media reveal mosaic-4">
+          <figure>
+            <img src="images/workshop-cad-teaching.jpg" alt="Teaching a parametric SOLIDWORKS sketch, dimensioning an extruded profile on the projected screen.">
+          </figure>
+          <figure>
+            <img src="images/workshop-3dprint-lecture.jpg" alt="Presenting the 3D printing workflow — modelling, export, slicing, and choosing a printer.">
+          </figure>
+          <figure class="fit">
+            <img src="images/cad-glasses-nose-pad.png" alt="Dimensioned SOLIDWORKS drawing of a glasses nose pad in millimetres: front, side and bottom views with a shaded isometric.">
+            <figcaption>A worked example for the CAD track — a glasses nose pad, fully dimensioned.</figcaption>
+          </figure>
+          <figure>
+            <img src="images/3d-printed-cats.jpg" alt="Three painted Minecraft cat models, printed in one piece and hand painted in white, orange and black.">
+            <figcaption>Printed Minecraft cats, hand painted — a build students take home.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill skill-solo">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">04 — Curriculum</p>
+          <h2>Built backwards from a device that has to work</h2>
+          <p>Most students meet embedded hardware through a tutorial they can follow without understanding. I build the workshops backwards from that: a device that only works if you understand why. I design and teach the whole curriculum — the circuits, the firmware, the slides, and the debugging that happens when thirty breadboards fail in thirty different ways.</p>
+          <p>Sessions run in pairs so nobody watches someone else do the build. Over 200 attendees so far, and more than 100 devices built.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </section>
+
+  <section class="position" id="regen">
+    <div class="position-head">
+      <p class="position-num">04 — Regenerative Medicine Lab</p>
+      <h2>Regenerative Medicine Lab</h2>
+      <p class="position-meta">Dr. Anna Bulysheva<br>
+      Contributed to two publications<br>
+      IACUC certified</p>
+      <p class="position-dek">Wet lab work on electro gene therapy — cells, animals, and the analysis that turned both into published figures.</p>
+    </div>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">01 — In vitro</p>
+          <h2>Cell work at the bench</h2>
+          <p>Cell culture and transfection work supporting the lab's electro gene therapy programme — maintaining lines, running treatment conditions, and preparing the samples that the downstream analysis depends on.</p>
+          <p><!-- Replace this paragraph with the specifics: which lines, which assays, what you personally ran. --></p>
+        </div>
+        <div class="band-media reveal">
+          <figure class="tall">
+            <img src="images/cell-culture-micrograph.jpg" alt="Phase contrast micrograph down the eyepiece: spindle-shaped adherent cells spread across the field at moderate confluence.">
+            <figcaption>Cells checked under phase contrast before a run.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">02 — In vivo</p>
+          <h2>Animal studies, IACUC certified</h2>
+          <p>In vivo rodent work on the same programme, including surgery and imaging. I am IACUC certified.</p>
+          <p>The published results this fed into cover localized in vivo electro gene therapy for skeletal muscle protein reprogramming, and pulse protocols that trade delivery efficiency against muscle contraction.</p>
+          <p><!-- Replace with your specifics: your role in the surgeries, the imaging modality, the endpoints. --></p>
+        </div>
+        <div class="band-media reveal">
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/rml-invivo.jpg</div>
+              <div class="ph-note">A photo from the in vivo side — the rig, the imaging setup, or you at the bench. No animal photos: they add nothing for a device reviewer and the site rules them out.</div>
+            </div>
+            <figcaption>In vivo study setup.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="skill">
+      <div class="skill-inner">
+        <div class="band-text reveal">
+          <p class="band-num">03 — Analysis</p>
+          <h2>From raw data to a figure that argues</h2>
+          <p>Quantifying the results and taking them through statistics — image analysis, expression quantification, and the tests behind the figures. Two publications came out of this work.</p>
+          <p><!-- Replace with your specifics: which software, which tests, which figures were yours. --></p>
+        </div>
+        <div class="band-media reveal">
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/rml-analysis.png</div>
+              <div class="ph-note">A figure or plot you produced. A published figure is safest — check anything unpublished with Dr. Bulysheva first.</div>
+            </div>
+            <figcaption>Analysis output.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
   <section class="position" id="junior">
     <div class="position-head">
       <p class="position-num">05 — Junior design</p>
@@ -582,18 +525,27 @@
       </div>
     </section>
 
-    <section class="skill skill-solo">
+    <section class="skill">
       <div class="skill-inner">
         <div class="band-text reveal">
           <p class="band-num">03 — Outcome</p>
           <h2>Top three of fifteen</h2>
           <p>We presented at the 2024 Florida Medical Manufacturing Consortium, where the project was selected as one of the top three of fifteen teams in the cohort.</p>
         </div>
-
+        <div class="band-media reveal">
+          <figure>
+            <div class="ph">
+              <div class="ph-file">images/fmmc-poster.jpg</div>
+              <div class="ph-note">The poster you presented at the Florida Medical Manufacturing Consortium, or a photo of you presenting it.</div>
+            </div>
+            <figcaption>The FMMC poster.</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
   </section>
+
 </div>
 
 <main class="wrap">
