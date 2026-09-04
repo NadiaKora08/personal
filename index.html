@@ -215,11 +215,11 @@
             <img src="images/bp-ble-architecture.png?v=21" alt="System flow titled BLE and GUI: the BP cuff sends its pressure value over Bluetooth Low Energy to the user PC, where the GUI processes the values, computes a dose and duration from the systolic pressure, and asks the clinician to confirm; on confirmation a second BLE link sends the rate to the IV pump, which administers the dose.">
             <figcaption>The loop end to end — cuff to PC over BLE, a dose the clinician confirms, then PC to pump.</figcaption>
           </figure>
-          <figure class="fit fit-w">
+          <figure class="fit">
             <img src="images/bp-code.png?v=21" alt="ESP32 firmware in an editor: the BLE service and characteristic UUIDs defined as constants, state flags for connection and measurement, systolic and diastolic thresholds, and a BLEServerCallbacks class with onConnect and onDisconnect setting the connected flag.">
             <figcaption>The BLE server on the ESP32 — service and characteristic UUIDs, and the connect and disconnect callbacks.</figcaption>
           </figure>
-          <figure class="fit fit-w">
+          <figure class="fit">
             <img src="images/bp-clinician-app.png?v=21" alt="The clinician application: authorization options for logging in or creating an account, then the measured blood pressure of 107.3 over 66.2 and heart rate of 56, a suggested nicardipine dose of 6 mg per hour, an editable rate field, and an Administer button.">
             <figcaption>The clinician application. The suggested dose is editable, and nothing is delivered without an explicit Administer.</figcaption>
           </figure>
