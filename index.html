@@ -231,24 +231,24 @@
           <p class="band-num">02 — Electronic components</p>
           <h2>What is inside each box</h2>
           <p>Each enclosure carries its own supply and control. A 24 V wall supply is bucked down to 5 V for the logic; an ESP32 Wroom holds the BLE link and drives a motor driver over RS485, which turns the peristaltic pump head. A micro-servo handles the medication switch.</p>
-          <p>The cuff side is the same idea with different actuators: a driver board and an ESP32 wired to a solenoid valve and a diaphragm pump that inflate the cuff and bleed it at a controlled rate, since the deflation slope is what the measurement depends on.</p>
+          <p>The cuff side is the same idea with different actuators: 7.5 V bucked to 5 V, an ESP32 driving an H-bridge that runs a diaphragm air pump and a solenoid valve, and a pressure sensor tapped into the cuff line. Those two inflate the cuff and bleed it at a controlled rate, since the deflation slope is what the measurement depends on.</p>
         </div>
         <div class="band-media reveal mosaic-4">
           <figure class="fit">
             <img src="images/bp-pump-wiring-diagram.png" alt="Annotated wiring diagram of the pump module: a 24 volt wall supply feeding a buck converter down to 5 volts, an ESP32 Wroom and a MODBUS RS485 chip on a prototyping board, a motor driver running the peristaltic pump, and a micro-servo.">
-            <figcaption>Pump module wiring — 24 V in, buck to 5 V, ESP32 driving the motor over RS485.</figcaption>
+            <figcaption>Pump module — 24 V in, buck to 5 V, ESP32 driving the motor over RS485.</figcaption>
           </figure>
-          <figure>
-            <img src="images/bp-cuff-enclosure-internals.png" alt="Inside the printed cuff enclosure: a motor driver board and an ESP32 on a prototyping board wired to a solenoid valve and a diaphragm air pump seated in printed brackets.">
-            <figcaption>The cuff enclosure — driver, ESP32, solenoid valve and air pump.</figcaption>
+          <figure class="fit">
+            <img src="images/bp-cuff-wiring-diagram.png" alt="Annotated wiring diagram of the cuff module: a 7.5 volt wall mount feeding a buck converter to 5 volts, an ESP32 Wroom driving an H-bridge that runs an air pump and a solenoid valve, with a pressure sensor tapped into the cuff line.">
+            <figcaption>Cuff module — air pump and solenoid valve off an H-bridge, pressure sensor on the cuff line.</figcaption>
           </figure>
           <figure>
             <img src="images/bp-pump-enclosure-wiring.jpg" alt="Inside the pump enclosure: a microcontroller board on a standoff rail above a bank of colour-coded terminal blocks, with looms running down to the components below.">
             <figcaption>The pump enclosure, wired.</figcaption>
           </figure>
-          <figure class="fit">
-            <img src="images/bp-pump-internals.png" alt="A closer view inside the pump enclosure showing the drive motor, the tubing path and the wiring around it.">
-            <figcaption>Drive motor and tubing path.</figcaption>
+          <figure>
+            <img src="images/bp-cuff-enclosure-internals.png" alt="Inside the printed cuff enclosure: a motor driver board and an ESP32 on a prototyping board wired to a solenoid valve and a diaphragm air pump seated in printed brackets.">
+            <figcaption>The cuff enclosure — driver, ESP32, solenoid valve and air pump.</figcaption>
           </figure>
         </div>
       </div>
@@ -302,8 +302,8 @@
             <img src="images/cad-pump-exploded.png" alt="The pump drawn as two parts side by side: the housing with its tubing channel cut away, and the four-roller head on its shaft with the tubing wrapped around it.">
             <figcaption>Initial design idea.</figcaption>
           </figure>
-          <figure class="fit">
-            <img src="images/bp-iv-pole.png" alt="The full system mounted on an IV pole: monitoring enclosure, pump module, and infusion lines running to two bags.">
+          <figure class="tall">
+            <img src="images/bp-system-pole.png" alt="The system on the pole seen from further back: an IV bag hung above the printed monitoring enclosure, the pump module below it, and lines running down to the bench.">
             <figcaption>Both printed enclosures mounted on a standard IV pole.</figcaption>
           </figure>
           <figure>
