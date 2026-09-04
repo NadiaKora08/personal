@@ -585,7 +585,7 @@ section { padding-top: 0.5rem; }
 
 /* ---------- picture mosaics inside a band ---------- */
 
-.band-media { display: grid; gap: 0.9rem; }
+.band-media { display: grid; gap: 0.9rem; align-items: start; }
 
 /* Tiles are cropped to a fixed shape rather than sized by the photo, so a band
    holds its height whatever mix of landscape and portrait shots goes in it. */
@@ -613,10 +613,14 @@ section { padding-top: 0.5rem; }
 
 /* Plots, screenshots and CAD drawings must not lose their edges to a crop, so
    they sit inside the tile whole and the tile takes the letterboxing. */
+/* Keep the whole picture, and let the tile take the picture's own shape. The
+   old version sat the picture inside a fixed tile on a paper-coloured ground
+   with padding, which showed as a visible margin around it. */
 .band-media .fit img {
+  aspect-ratio: auto;
+  width: 100%;
+  height: auto;
   object-fit: contain;
-  background: var(--paper);
-  padding: 0.6rem;
 }
 
 /* for portrait sources that a landscape crop would gut */
@@ -658,6 +662,9 @@ section { padding-top: 0.5rem; }
 /* Widen one tile deliberately, to pair off the ones that follow it. */
 .band-media .span-2 { grid-column: 1 / -1; }
 .band-media .span-2 img { aspect-ratio: 16 / 9; }
+
+/* fit means the picture's own shape wins, including where it spans the row */
+.band-media .fit img { aspect-ratio: auto; }
 
 @media (max-width: 620px) {
   .mosaic-2,
