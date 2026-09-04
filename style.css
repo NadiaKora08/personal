@@ -622,6 +622,17 @@ section { padding-top: 0.5rem; }
 /* for portrait sources that a landscape crop would gut */
 .band-media .tall img { aspect-ratio: 3 / 4; }
 
+/* Fills the column width and takes whatever height that needs. Fitting inside
+   a fixed tile shape instead leaves the picture short of the column on one
+   axis; this trades a taller row for using the full width. */
+.skill .band-media .fit-w img {
+  aspect-ratio: auto;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
 /* a square tile, for pairing two pictures that must match in height */
 .band-media .sq img { aspect-ratio: 1 / 1; }
 
