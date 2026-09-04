@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=10">
+<link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
@@ -63,14 +63,14 @@
       <p class="position-dek">Two device programmes, and the fabrication, electronics and modelling skills that both of them run on.</p>
     </div>
 
-    <section class="skill">
+    <section class="skill holds">
       <div class="skill-inner">
         <div class="band-text reveal">
           <p class="band-num">01 — 3D printing and CNC</p>
           <h2>Printed, and cut</h2>
           <p>Housings, moulds and jigs are parametric SOLIDWORKS models, printed in-house on FDM and SLA. Chamber bodies are machined, with the toolpath set up and proved before anything is cut.</p>
         </div>
-        <div class="band-media reveal mosaic-4">
+        <div class="band-media reveal mosaic-4 has-span">
           <figure class="fit span-2">
             <img src="images/cad-microneedle-array.png?v=10" alt="Microneedle array in CAD: plan view with the needle grid and two diameter callouts, beside an isometric view of the populated array.">
             <figcaption>Microneedle array in CAD — plan view dimensioned, populated array beside it.</figcaption>
@@ -94,7 +94,7 @@
         </div>
       </div>
     </section>
-    <section class="skill">
+    <section class="skill holds">
       <div class="skill-inner">
         <div class="band-text reveal">
           <p class="band-num">02 — End-to-end fabrication</p>
@@ -130,7 +130,7 @@
           <p>Early MAP builds ran far too hot against skin and drew far more power than a wearable allows. I found out why by measuring the device under drive rather than re-reading the schematic — temperature logged live, current per emitter, duty cycle.</p>
           <p>The redesign took 30 °C off the peak and two orders of magnitude off the power.</p>
         </div>
-        <div class="band-media reveal">
+        <div class="band-media reveal media-single">
           <figure>
             <img src="images/map-led-source.jpg?v=10" alt="The LED source array running, individual emitters visible through the lens optic against saturated red illumination.">
             <figcaption>The source array under drive, where the thermal and current measurements are taken.</figcaption>
@@ -145,7 +145,7 @@
           <h2>Training on semiconductor process</h2>
           <p>I am training to fabricate chips through the NSF Research Traineeship in Semiconductors and Microelectronics Technology, and run the cleanroom process behind both of the lab's devices. Mask design in L-Edit.</p>
         </div>
-        <div class="band-media reveal">
+        <div class="band-media reveal media-single">
           <figure class="tall">
             <img src="images/cleanroom-suited.jpg?v=10" alt="Gowned in a full cleanroom suit, hood and overshoes, standing in the fabrication bay between benches of microscopes and process equipment.">
             <figcaption>Gowned up in the cleanroom at USF.</figcaption>
@@ -175,7 +175,7 @@
           <h2>First author at IEEE MEMS 2026</h2>
           <p>The work became a <a href="https://ieeexplore.ieee.org/document/11419300">first-author conference paper</a> and poster one month after I joined the lab: device concept, design and fabrication, irradiance characterisation, and the in vitro assays.</p>
         </div>
-        <div class="band-media reveal">
+        <div class="band-media reveal media-single">
           <figure>
             <img src="images/map-poster.jpg?v=10" alt="Holding the IEEE MEMS 2026 poster, titled Microneedle-Mediated Adaptive Phototherapy (MAP) Wound Patch with Microlenses.">
             <figcaption>The IEEE MEMS 2026 poster.</figcaption>
@@ -196,7 +196,7 @@
       <p class="position-dek">Titrating a vasoactive drug by hand is slow, and the patient moves between readings. This system closes the loop and keeps the clinician in charge of it. Three of us built the whole thing from nothing: a non-invasive oscillometric cuff, a peristaltic pump for nicardipine delivery, and the software connecting them.</p>
     </div>
 
-    <section class="skill">
+    <section class="skill holds">
       <div class="skill-inner">
         <div class="band-text reveal">
           <p class="band-num">01 — Wireless communication and code</p>
@@ -225,7 +225,7 @@
       </div>
     </section>
 
-    <section class="skill">
+    <section class="skill holds">
       <div class="skill-inner">
         <div class="band-text reveal">
           <p class="band-num">02 — Electronic components</p>
@@ -289,7 +289,7 @@
       </div>
     </section>
 
-    <section class="skill">
+    <section class="skill holds">
       <div class="skill-inner">
         <div class="band-text reveal">
           <p class="band-num">05 — 3D printing</p>
@@ -334,7 +334,7 @@
           <p>Two Particle Argon boards talking over a beam of visible light. The sender drives an LED from a digital pin; the receiver wires a second LED in reverse and reads the photocurrent on an analog input, which works because an LED is a diode with a junction that responds to light as readily as it emits it.</p>
           <p>Using an LED as its own detector is what makes the session teach something. It forces the question of what the component actually is, rather than what the tutorial calls it, and it lets students see a real analog signal instead of a boolean. Pairs sent Morse across a table, then tested it with the room lights off.</p>
         </div>
-        <div class="band-media reveal">
+        <div class="band-media reveal media-full">
           <figure class="wide full">
             <img src="images/workshop-room.jpg?v=10" alt="Walking a full room through the sender assembly, with the breadboard wiring diagram projected on screen.">
             <figcaption>Walking the room through the sender assembly.</figcaption>
@@ -350,7 +350,7 @@
           <h2>Framing a sample stream</h2>
           <p>A pair of ESP32 boards carrying live audio between them: a MEMS microphone on one end and a Class-D amplifier on the other, both over I²S. The session works through the interface properly — bit clock, word select, and how a sample stream is framed — because those are the concepts that transfer to any synchronous digital bus a student meets later.</p>
         </div>
-        <div class="band-media reveal">
+        <div class="band-media reveal media-single">
           <figure>
             <img src="images/workshop-students-building.jpg?v=10" alt="Wiring a speaker into an ESP32 breadboard build while two attendees look on.">
             <figcaption>Debugging a build mid-session.</figcaption>
@@ -359,7 +359,7 @@
       </div>
     </section>
 
-    <section class="skill">
+    <section class="skill holds">
       <div class="skill-inner">
         <div class="band-text reveal">
           <p class="band-num">03 — CAD and FDM printing</p>
@@ -393,7 +393,7 @@
           <p>Most students meet embedded hardware through a tutorial they can follow without understanding. I build the workshops backwards from that: a device that only works if you understand why. I design and teach the whole curriculum — the circuits, the firmware, the slides, and the debugging that happens when thirty breadboards fail in thirty different ways.</p>
           <p>Sessions run in pairs so nobody watches someone else do the build. Over 200 attendees so far, and more than 100 devices built.</p>
         </div>
-        <div class="band-media reveal">
+        <div class="band-media reveal media-wide">
           <figure class="wide">
             <img src="images/workshop-full-room.jpg?v=10" alt="A packed lecture room seen from the back: every seat taken, laptops open along the benches with kit boxes beside them, and a slide projected at the front.">
             <figcaption>A full room mid-workshop — every seat, every laptop, a kit each.</figcaption>
@@ -422,7 +422,7 @@
           <p>Cell culture and transfection work supporting the lab's electro gene therapy programme — maintaining lines, running treatment conditions, and preparing the samples that the downstream analysis depends on.</p>
           <p><!-- Replace this paragraph with the specifics: which lines, which assays, what you personally ran. --></p>
         </div>
-        <div class="band-media reveal">
+        <div class="band-media reveal media-wide">
           <figure class="wide">
             <img src="images/cell-culture-micrograph.jpg?v=10" alt="Phase contrast micrograph down the eyepiece: spindle-shaped adherent cells spread across the field at moderate confluence.">
             <figcaption>Cells checked under phase contrast before a run.</figcaption>
@@ -482,7 +482,7 @@
       <p class="position-dek">Blink rate is a validated marker of sleepiness. A wearable that measures it can warn a driver before the driver notices.</p>
     </div>
 
-    <section class="skill">
+    <section class="skill holds">
       <div class="skill-inner">
         <div class="band-text reveal">
           <p class="band-num">01 — Biopotential sensing</p>
@@ -533,7 +533,7 @@
           <h2>Top three of fifteen</h2>
           <p>We presented at the 2024 Florida Medical Manufacturing Consortium, where the project was selected as one of the top three of fifteen teams in the cohort.</p>
         </div>
-        <div class="band-media reveal">
+        <div class="band-media reveal media-wide">
           <figure class="wide">
             <img src="images/fmmc-symposium-team.jpg?v=10" alt="Six of us standing beside the welcome board at the Florida Medical Device Symposium in St. Petersburg, all wearing lanyards.">
             <figcaption>At the Florida Medical Device Symposium, May 2024.</figcaption>

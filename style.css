@@ -510,7 +510,7 @@ section { padding-top: 0.5rem; }
      releasing when the row ends. Only where the row carries three or more
      pictures: with one or two there is barely a screen to scroll through, and
      a hold that brief reads as a glitch rather than an effect. */
-  .skill:has(.band-media > figure:nth-child(3)) .band-text {
+  .skill.holds .band-text {
     position: sticky;
     top: calc(4.4rem + clamp(1rem, 4vh, 2.5rem));
   }
@@ -524,12 +524,12 @@ section { padding-top: 0.5rem; }
    roughly twice the size of a tile in any other row. Rein those in so the
    page keeps one scale. Diagrams and plots are exempt: they carry detail at
    the edges and stop being readable when narrowed. */
-.skill .band-media:has(> figure:only-child:not(.fit)) { max-width: 30rem; }
+.skill .band-media.media-single { max-width: 30rem; }
 
 /* A lone photograph keeps its own proportions rather than being cropped into
    a tile shape. A portrait shot forced into a near-square one lost a third of
    its height, which is the wrong trade for the only picture in a row. */
-.skill .band-media:has(> figure:only-child:not(.fit)) img {
+.skill .band-media.media-single img {
   aspect-ratio: auto;
   width: auto;
   height: auto;
@@ -540,8 +540,8 @@ section { padding-top: 0.5rem; }
 
 /* A landscape picture that should run the full width of the column rather
    than sitting inside the narrower bound a portrait one needs. */
-.skill .band-media:has(> figure.wide:only-child) { max-width: none; }
-.skill .band-media:has(> figure.wide:only-child) img {
+.skill .band-media.media-wide, .skill .band-media.media-full { max-width: none; }
+.skill .band-media.media-wide img, .skill .band-media.media-full img {
   aspect-ratio: auto;
   width: 100%;
   height: auto;
@@ -553,7 +553,7 @@ section { padding-top: 0.5rem; }
 /* Same as wide, but with no ceiling on height: the row grows to whatever the
    picture needs at full column width, rather than the picture shrinking to
    fit a row. For a tall photograph that must not be cropped. */
-.skill .band-media:has(> figure.wide.full:only-child) img { max-height: none; }
+.skill .band-media.media-full img { max-height: none; }
 
 .band-text > :first-child { margin-top: 0; }
 .band-text h2 { margin-top: 0; }
@@ -577,6 +577,7 @@ section { padding-top: 0.5rem; }
    holds its height whatever mix of landscape and portrait shots goes in it. */
 .band-media img {
   width: 100%;
+  max-width: 100%;
   height: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
@@ -626,8 +627,8 @@ section { padding-top: 0.5rem; }
 /* An odd number of tiles would leave the last one stranded beside a gap, so
    let it take the full width of the mosaic instead. Skipped when a tile has
    been widened by hand, which already balances the grid. */
-.mosaic-4:not(:has(.span-2)) > :last-child:nth-child(odd) { grid-column: 1 / -1; }
-.mosaic-4:not(:has(.span-2)) > :last-child:nth-child(odd) img { aspect-ratio: 16 / 9; }
+.mosaic-4:not(.has-span) > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+.mosaic-4:not(.has-span) > :last-child:nth-child(odd) img { aspect-ratio: 16 / 9; }
 
 /* Widen one tile deliberately, to pair off the ones that follow it. */
 .band-media .span-2 { grid-column: 1 / -1; }
