@@ -497,8 +497,11 @@ section { padding-top: 0.5rem; }
 @media (min-width: 900px) {
   .skill-inner { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
 
-  /* chess order: on even rows the pictures take the left column instead */
+  /* chess order: on even rows the pictures take the left column instead. The
+     column widths swap with them, so a picture gets the wider side either
+     way rather than shrinking on every second row. */
   .skill:nth-of-type(even) .band-media { order: -1; }
+  .skill:nth-of-type(even) .skill-inner { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
 
   /* a row with no pictures centres its column rather than leaving a gap */
   .skill-solo .skill-inner { grid-template-columns: minmax(0, 64ch); justify-content: center; }
@@ -531,6 +534,17 @@ section { padding-top: 0.5rem; }
   width: auto;
   height: auto;
   max-width: 100%;
+  max-height: 62vh;
+  object-fit: contain;
+}
+
+/* A landscape picture that should run the full width of the column rather
+   than sitting inside the narrower bound a portrait one needs. */
+.skill .band-media:has(> figure.wide:only-child) { max-width: none; }
+.skill .band-media > figure.wide img {
+  aspect-ratio: auto;
+  width: 100%;
+  height: auto;
   max-height: 62vh;
   object-fit: contain;
 }
