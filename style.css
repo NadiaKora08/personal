@@ -516,6 +516,13 @@ section { padding-top: 0.5rem; }
    rather than letting a tall mosaic set the row height. */
 .skill .band-media img { max-height: 60vh; }
 
+/* A row holding a single photograph gave it the whole column, which came out
+   roughly twice the size of a tile in any other row. Rein those in so the
+   page keeps one scale. Diagrams and plots are exempt: they carry detail at
+   the edges and stop being readable when narrowed. */
+.skill .band-media:has(> figure:only-child:not(.fit)) { max-width: 30rem; }
+.skill .band-media:has(> figure:only-child:not(.fit)) img { max-height: 50vh; }
+
 .band-text > :first-child { margin-top: 0; }
 .band-text h2 { margin-top: 0; }
 .band-text p:last-child { margin-bottom: 0; }
