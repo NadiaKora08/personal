@@ -572,9 +572,14 @@ section { padding-top: 0.5rem; }
 .mosaic-4 img { aspect-ratio: 4 / 3; }
 
 /* An odd number of tiles would leave the last one stranded beside a gap, so
-   let it take the full width of the mosaic instead. */
-.mosaic-4 > :last-child:nth-child(odd) { grid-column: 1 / -1; }
-.mosaic-4 > :last-child:nth-child(odd) img { aspect-ratio: 16 / 9; }
+   let it take the full width of the mosaic instead. Skipped when a tile has
+   been widened by hand, which already balances the grid. */
+.mosaic-4:not(:has(.span-2)) > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+.mosaic-4:not(:has(.span-2)) > :last-child:nth-child(odd) img { aspect-ratio: 16 / 9; }
+
+/* Widen one tile deliberately, to pair off the ones that follow it. */
+.band-media .span-2 { grid-column: 1 / -1; }
+.band-media .span-2 img { aspect-ratio: 16 / 9; }
 
 @media (max-width: 620px) {
   .mosaic-2,
