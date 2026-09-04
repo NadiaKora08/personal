@@ -503,6 +503,8 @@ section { padding-top: 0.5rem; }
   .skill:nth-of-type(even) .band-media { order: -1; }
   .skill:nth-of-type(even):not(.skill-solo) .skill-inner { grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); }
 
+  .skill:nth-of-type(odd) .band-media.media-single { margin-left: auto; }
+
   /* a row with no pictures centres its column rather than leaving a gap */
   .skill-solo .skill-inner { grid-template-columns: minmax(0, 64ch); justify-content: center; }
 
@@ -525,6 +527,11 @@ section { padding-top: 0.5rem; }
    page keeps one scale. Diagrams and plots are exempt: they carry detail at
    the edges and stop being readable when narrowed. */
 .skill .band-media.media-single { max-width: 30rem; }
+
+  /* Capped like that, it sits at the inner edge of its column and stops short
+     of the margin every other picture reaches. Push it out to that margin
+     where the pictures are on the right; on even rows the column is already
+     against the left margin, so it stays put. */
 
 /* A lone photograph keeps its own proportions rather than being cropped into
    a tile shape. A portrait shot forced into a near-square one lost a third of
