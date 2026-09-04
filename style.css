@@ -479,7 +479,9 @@ section { padding-top: 0.5rem; }
 
 .skill {
   padding: clamp(2rem, 4.5vw, 3.4rem) 0;
-  overflow: hidden; /* contains the slide-in transform before it settles */
+  /* Clips the slide-in like overflow: hidden would, but without becoming a
+     scroll container, which would stop the text column sticking. */
+  overflow-x: clip;
 }
 
 .skill-inner {
@@ -489,7 +491,7 @@ section { padding-top: 0.5rem; }
   padding: 0 var(--pad);
   display: grid;
   gap: clamp(1.5rem, 3.5vw, 3rem);
-  align-items: center;
+  align-items: start;
 }
 
 @media (min-width: 900px) {
@@ -500,6 +502,14 @@ section { padding-top: 0.5rem; }
 
   /* a row with no pictures centres its column rather than leaving a gap */
   .skill-solo .skill-inner { grid-template-columns: minmax(0, 64ch); justify-content: center; }
+
+  /* The text holds at the top of the row while its pictures scroll past it,
+     releasing when the row ends. Only worth doing where the two sit side by
+     side; stacked, there is nothing to hold against. */
+  .skill:not(.skill-solo) .band-text {
+    position: sticky;
+    top: calc(4.4rem + clamp(1rem, 4vh, 2.5rem));
+  }
 }
 
 /* Pictures carry less height here than in a viewport-tall band, so cap them
