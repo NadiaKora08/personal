@@ -495,7 +495,7 @@ section { padding-top: 0.5rem; }
 }
 
 @media (min-width: 900px) {
-  .skill-inner { grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); }
+  .skill-inner { grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); }
 
   /* chess order: on even rows the pictures take the left column instead */
   .skill:nth-of-type(even) .band-media { order: -1; }
@@ -512,8 +512,9 @@ section { padding-top: 0.5rem; }
   }
 }
 
-/* No cap on picture height: the text column sticks while its pictures scroll
-   past, and that needs the pictures to be taller than the screen. */
+/* Pictures carry less height here than in a viewport-tall band, so cap them
+   rather than letting a tall mosaic set the row height. */
+.skill .band-media img { max-height: 60vh; }
 
 .band-text > :first-child { margin-top: 0; }
 .band-text h2 { margin-top: 0; }
