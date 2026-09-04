@@ -504,9 +504,10 @@ section { padding-top: 0.5rem; }
   .skill-solo .skill-inner { grid-template-columns: minmax(0, 64ch); justify-content: center; }
 
   /* The text holds at the top of the row while its pictures scroll past it,
-     releasing when the row ends. Only worth doing where the two sit side by
-     side; stacked, there is nothing to hold against. */
-  .skill:not(.skill-solo) .band-text {
+     releasing when the row ends. Only where the row carries three or more
+     pictures: with one or two there is barely a screen to scroll through, and
+     a hold that brief reads as a glitch rather than an effect. */
+  .skill:has(.band-media > figure:nth-child(3)) .band-text {
     position: sticky;
     top: calc(4.4rem + clamp(1rem, 4vh, 2.5rem));
   }
@@ -574,6 +575,9 @@ section { padding-top: 0.5rem; }
 
 /* for portrait sources that a landscape crop would gut */
 .band-media .tall img { aspect-ratio: 3 / 4; }
+
+/* a square tile, for pairing two pictures that must match in height */
+.band-media .sq img { aspect-ratio: 1 / 1; }
 
 /* two side by side — cropped to portrait so the pair still fills the band */
 .mosaic-2 { grid-template-columns: 1fr 1fr; }
