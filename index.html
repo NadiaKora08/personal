@@ -244,11 +244,11 @@
             <img src="images/bp-cuff-wiring-diagram.png?v=22" alt="Annotated wiring diagram of the cuff module: a 7.5 volt wall mount feeding a buck converter to 5 volts, an ESP32 Wroom driving an H-bridge that runs an air pump and a solenoid valve, with a pressure sensor tapped into the cuff line.">
             <figcaption>Cuff module — air pump and solenoid valve off an H-bridge, pressure sensor on the cuff line.</figcaption>
           </figure>
-          <figure>
+          <figure class="sq">
             <img src="images/bp-pump-enclosure-wiring.jpg?v=24" alt="Inside the pump enclosure: a microcontroller board on a standoff rail above a bank of colour-coded terminal blocks, with looms running down to the components below.">
             <figcaption>The pump enclosure, wired.</figcaption>
           </figure>
-          <figure>
+          <figure class="sq">
             <img src="images/bp-cuff-enclosure-internals.png?v=22" alt="Inside the printed cuff enclosure: a motor driver board and an ESP32 on a prototyping board wired to a solenoid valve and a diaphragm air pump seated in printed brackets.">
             <figcaption>The cuff enclosure — driver, ESP32, solenoid valve and air pump.</figcaption>
           </figure>
@@ -265,10 +265,10 @@
           <p>Real-time filtering, peak detection and the ratio logic all run on the incoming stream rather than on a stored recording, because the next dose decision depends on the reading that just arrived.</p>
         </div>
         <div class="band-media reveal mosaic-4">
-          <figure class="fit">
+          <figure class="wide">
             <img src="images/bp-pressure-decay.png?v=22" alt="Measured cuff pressure decaying from about 155 to 50 mmHg over roughly nine seconds, with small oscillometric pulses visible on the curve.">
           </figure>
-          <figure class="fit">
+          <figure class="wide">
             <img src="images/bp-oscillometric.png?v=22" alt="The extracted oscillometric pulse envelope with detected peaks marked, and horizontal thresholds for the systolic and diastolic ratios.">
           </figure>
         </div>
@@ -304,7 +304,7 @@
             <img src="images/cad-pump-exploded.png?v=22" alt="The pump drawn as two parts side by side: the housing with its tubing channel cut away, and the four-roller head on its shaft with the tubing wrapped around it.">
             <figcaption>Initial design idea.</figcaption>
           </figure>
-          <figure class="wide">
+          <figure class="fit">
             <img src="images/bp-system-pole.png?v=25" alt="The system on the pole seen from further back: an IV bag hung above the printed monitoring enclosure, the pump module below it, and lines running down to the bench.">
             <figcaption>Both printed enclosures mounted on a standard IV pole.</figcaption>
           </figure>
@@ -464,7 +464,7 @@
           <p><!-- Replace with your specifics: which software, which tests, which figures were yours. --></p>
         </div>
         <div class="band-media reveal">
-          <figure class="tall">
+          <figure class="wide">
             <img src="images/rml-expression-flux.png?v=22" alt="Bioluminescent flux in photons per second on a log axis against time in days, out past 300 days, comparing four electroporation pulse protocols with an injection-only control. The 90 volt 150 millisecond condition holds two to three orders of magnitude above the rest throughout.">
             <figcaption>Expression tracked out past 300 days by pulse protocol, from <a href="https://doi.org/10.3390/app142311298">our Applied Sciences paper</a>.</figcaption>
           </figure>
