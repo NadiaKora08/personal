@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#1533cc">
-<link rel="stylesheet" href="style.css?v=25">
+<link rel="stylesheet" href="style.css?v=24">
 </head>
 <body>
 
@@ -32,7 +32,7 @@
 <div class="hero">
   <div class="wrap">
     <h1>Nadia Korostyleva</h1>
-    <p class="hero-lede">I work on medical devices end to end: CAD and fabrication, the electronics and firmware that run them, the signal processing behind what they measure, and the standards work that sets what they have to prove. I am looking for medical device work that covers that whole range.</p>
+    <p class="hero-lede">I like working on a device end to end — CAD and fabrication, the electronics and firmware that drive it, the signal processing that makes sense of what it measures, and the standards work that decides what it has to prove. I am looking for medical device work where that whole span is the job.</p>
     <p class="hero-facts">
       M.S. Biomedical Engineering, University of South Florida<br>
       Graduate Research Engineer, Acousto-Bioelectronics Lab<br>
@@ -47,10 +47,10 @@
   <section id="experience">
     <div class="section-head"><h2>Experience</h2></div>
     <ol class="jump">
-      <li><a href="#abl">Graduate Research Engineer — Acousto-Bioelectronics Lab</a><span>3D printing &amp; CNC · Fabrication · Troubleshooting · Cleanroom · Modelling</span></li>
-      <li><a href="#senior">Senior Capstone Engineer — blood pressure regulation</a><span>Wireless &amp; code · Electronics · Signal processing · Standards · 3D printing</span></li>
+      <li><a href="#abl">Graduate research — Acousto-Bioelectronics Lab</a><span>3D printing &amp; CNC · Fabrication · Troubleshooting · Cleanroom · Modelling</span></li>
+      <li><a href="#senior">Senior capstone — blood pressure regulation</a><span>Wireless &amp; code · Electronics · Signal processing · Standards · 3D printing</span></li>
       <li><a href="#ieee">Hardware Tech Lead — IEEE Computer Society at USF</a><span>Embedded workshops · CAD &amp; FDM printing · Curriculum</span></li>
-      <li><a href="#regen">Research Engineer — Regenerative Medicine Lab</a><span>In vitro · In vivo · Analysis</span></li>
+      <li><a href="#regen">Regenerative Medicine Lab</a><span>In vitro · In vivo · Analysis</span></li>
       <li><a href="#junior">Junior design — EOG drowsiness monitor</a><span>Biopotential sensing · BLE · Mobile app</span></li>
     </ol>
   </section>
@@ -60,27 +60,20 @@
 <div class="positions">
   <section class="position" id="abl">
     <div class="position-head">
-      <p class="position-num">01 — Graduate Research Engineer</p>
-      <h2>Acousto-Bioelectronics Lab</h2>
-      <p class="position-meta">Dr. Albert Kim, University of South Florida<br>
-      May 2025 to present — project lead on both<br>
+      <p class="position-num">01 — Acousto-Bioelectronics Lab</p>
+      <h2>Graduate Research Engineer</h2>
+      <p class="position-meta">Acousto-Bioelectronics Lab — Dr. Albert Kim, University of South Florida<br>
+      May 2025 to present — project lead on both programmes<br>
       MAP phototherapy patch · microfluidic brain slice perfusion chamber</p>
-      <p class="position-dek">Two device projects, and the fabrication, electronics and modelling skills that both of them run on.</p>
+      <p class="position-dek">Two device programmes, and the fabrication, electronics and modelling skills that both of them run on.</p>
     </div>
 
     <section class="skill holds">
       <div class="skill-inner">
         <div class="band-text reveal">
-          <p class="band-num">Additive &amp; Subtractive Manufacturing</p>
+          <p class="band-num">Additive and subtractive manufacturing</p>
           <h2>3D-printing, CNC, and laser cutting</h2>
-          <p>I build most of my devices using additive or subtractive manufacturing. This covers:</p>
-          <ul class="plain">
-            <li>CAD modelling in SOLIDWORKS</li>
-            <li>3D printing on FDM and SLA</li>
-            <li>CNC machining of the chamber bodies</li>
-            <li>Laser fabrication of smaller components, on both UV and CO<sub>2</sub> lasers</li>
-            <li>Metal sputtering</li>
-          </ul>
+          <p>Housings, moulds and jigs are parametric SOLIDWORKS models, printed in-house on FDM and SLA. Chamber bodies are machined, with the toolpath set up and proved before anything is cut.</p>
         </div>
         <div class="band-media reveal mosaic-4">
           <figure class="wide">
@@ -107,8 +100,8 @@
         <div class="band-text reveal">
           <p class="band-num">End-to-end fabrication</p>
           <h2>From ideas to finished devices</h2>
-          <p>I fabricate devices from the first idea through to a finished build, and then keep iterating on them. So far these include LED phototherapy patches, chemical sensors for the chamber, and microfluidic platforms.</p>
-          <p>I have built more than a hundred MAP devices across design iterations. Building that many is what made the design settle, because each batch showed up problems with yield and assembly that a single prototype would hide.</p>
+          <p>I take a device the whole way — casting and release, assembly, and the inspection that decides whether a batch is usable.</p>
+          <p>More than a hundred MAP devices across design iterations. Building at that count is what made the design converge: each batch surfaced yield and assembly problems that single prototypes hid.</p>
         </div>
         <div class="band-media reveal mosaic-4">
           <figure>
@@ -135,10 +128,8 @@
         <div class="band-text reveal">
           <p class="band-num">Post-fabrication processes</p>
           <h2>Troubleshooting and validation</h2>
-          <p>This ran as a cycle: fix a problem, try to validate it, find that the validation fails, and go back to fix it again.</p>
-          <p>The electrical side came first. Early MAP builds drew far more power than a wearable allows, so I measured the device while it was running rather than re-reading the schematic — current against voltage, the power that follows from them, and duty cycle. Heat came next, because the LEDs were overheating the device against skin. Fans and heatsinking fixed that, and I validated the result at 37 °C.</p>
-          <p>The needles were validated mechanically as well, tested against a skin model to confirm they penetrate.</p>
-          <p>The redesign took 30 °C off the peak temperature and cut power consumption by two orders of magnitude.</p>
+          <p>Early MAP builds ran far too hot against skin and drew far more power than a wearable allows. I found out why by measuring the device under drive rather than re-reading the schematic — temperature logged live, current per emitter, duty cycle.</p>
+          <p>The redesign took 30 °C off the peak and two orders of magnitude off the power.</p>
         </div>
         <div class="band-media reveal mosaic-4">
           <figure>
@@ -202,12 +193,12 @@
 
   <section class="position" id="senior">
     <div class="position-head">
-      <p class="position-num">02 — Senior Capstone Engineer</p>
+      <p class="position-num">02 — Senior design</p>
       <h2>Semi-automated blood pressure regulation</h2>
       <p class="position-meta">Senior design, University of South Florida, partnered with MiracleBots, LLC<br>
       August 2024 to May 2025 — team of three<br>
       ISO 14971 · ISO 13485 · ISO 81060-2 · IEC 60601-2-24</p>
-      <p class="position-dek">We built this so a clinician does not have to adjust a blood pressure drug by hand every few minutes while a patient’s pressure moves. Three of us made the whole system: a non-invasive blood pressure cuff, a peristaltic pump that delivers nicardipine, and the software that connects them.</p>
+      <p class="position-dek">Titrating a vasoactive drug by hand is slow, and the patient moves between readings. This system closes the loop and keeps the clinician in charge of it. Three of us built the whole thing from nothing: a non-invasive oscillometric cuff, a peristaltic pump for nicardipine delivery, and the software connecting them.</p>
     </div>
 
     <section class="skill holds">
@@ -215,10 +206,9 @@
         <div class="band-text reveal">
           <p class="band-num">Wireless communication and code</p>
           <h2>Two boards, one client, and user interface between them</h2>
-          <p>The system holds a patient’s blood pressure where the clinician wants it, using the prescribed medication, without anyone adjusting the rate by hand. That helps in an emergency, and for patients who need fluids whenever their pressure drops, or medication to bring a high pressure down.</p>
-          <p>The cuff and the pump never talk to each other directly. Each one is an ESP32 running a BLE server, and a single Python application connects to both. It reads the pressure from the cuff, works out a dose, and sends the rate, duration and drug type to the pump.</p>
-          <p>Everything passes through that application, so a cuff reading cannot reach the pump on its own. The interface shows the measured pressure, the heart rate and a suggested rate, and nothing is delivered until the clinician confirms it.</p>
-          <p>I wrote the software across Python, C++ and MATLAB: the signal processing, the wireless communication, the safety checks in the code, and the hardware programming. The dosing model learns how an individual patient responds to a dose instead of following a fixed schedule.</p>
+          <p>The cuff and the pump never talk to each other directly. Each is an ESP32 running a BLE GATT server, and the Python application is the single client that connects to both — it subscribes to pressure notifications from the cuff, computes a dose, and writes rate, duration and drug type to the pump as a packed characteristic.</p>
+          <p>Putting the application in the middle is a safety decision as much as an architectural one: there is no path by which a cuff reading reaches the pump without passing through the software that a clinician has authority over. The interface surfaces the computed pressure, heart rate and a suggested rate, but nothing is delivered until a clinician commits it.</p>
+          <p>I owned the software stack across Python, C++ and MATLAB. The control side models how an individual patient responds to a dose rather than applying a fixed schedule, using machine learning over the measured response.</p>
         </div>
         <div class="band-media reveal mosaic-4 has-span">
           <figure class="fit span-2">
@@ -243,7 +233,7 @@
           <p class="band-num">Electronic components</p>
           <h2>Building the pump and the cuff</h2>
           <p>Each enclosure carries its own supply and control. A 24 V wall supply is bucked down to 5 V for the logic; an ESP32 Wroom holds the BLE link and drives a motor driver over RS485, which turns the peristaltic pump head. A micro-servo handles the medication switch.</p>
-          <p>The cuff side is the same idea with different actuators: 7.5 V bucked to 5 V, an ESP32 driving an H-bridge that runs a diaphragm air pump and a solenoid valve, and a pressure sensor tapped into the cuff line. Those two inflate the cuff and then let the air out at a controlled rate, since the measurement depends on how fast the pressure falls.</p>
+          <p>The cuff side is the same idea with different actuators: 7.5 V bucked to 5 V, an ESP32 driving an H-bridge that runs a diaphragm air pump and a solenoid valve, and a pressure sensor tapped into the cuff line. Those two inflate the cuff and bleed it at a controlled rate, since the deflation slope is what the measurement depends on.</p>
         </div>
         <div class="band-media reveal mosaic-4">
           <figure class="wide">
@@ -271,8 +261,8 @@
         <div class="band-text reveal">
           <p class="band-num">Signal processing</p>
           <h2>Recovering a pressure from a deflation curve</h2>
-          <p>Blood pressure is not measured directly. The cuff inflates and the pressure then falls slowly, and every heartbeat shows up as a small oscillation riding on that falling curve. I wrote the signal processing that separates those oscillations out with a bandpass filter and reads the systolic and diastolic values from the size of the pulses.</p>
-          <p>The filtering and the peak detection run on the signal as it arrives rather than on a saved recording, because the next dose depends on the reading that just came in.</p>
+          <p>Blood pressure is not measured directly. The cuff is inflated and bled down, and the pressure trace is bandpass filtered to isolate the oscillometric pulses riding on the decay. Systolic and diastolic values are then read off fixed ratios of the peak envelope.</p>
+          <p>Real-time filtering, peak detection and the ratio logic all run on the incoming stream rather than on a stored recording, because the next dose decision depends on the reading that just arrived.</p>
         </div>
         <div class="band-media reveal mosaic-4">
           <figure class="wide">
@@ -292,12 +282,12 @@
         <div class="band-text reveal">
           <p class="band-num">Standards</p>
           <h2>Following ISO protocols to fix and validate</h2>
-          <p>Four standards shaped the design, and each one changed something in the result.</p>
+          <p>This was the project where regulatory work stopped being abstract. Four standards shaped the design, and each one is visible in the result.</p>
           <div class="iso-table">
-            <div class="iso-row"><div class="iso-std">ISO 14971</div><div class="iso-use">We ran risk management while designing rather than after it. Several design choices are there to remove a hazard we had identified, not because they were the neatest engineering answer.</div></div>
-            <div class="iso-row"><div class="iso-std">ISO 13485</div><div class="iso-use">We kept a design history, controlled the revisions, and could trace every requirement to the part of the device that meets it.</div></div>
-            <div class="iso-row"><div class="iso-std">ISO 81060-2</div><div class="iso-use">Set what the non-invasive cuff had to prove: how accurate the measurement has to be, and the conditions it has to hold that accuracy under.</div></div>
-            <div class="iso-row"><div class="iso-std">IEC 60601-2-24</div><div class="iso-use">Covered the infusion side: pump accuracy, what happens when a line blocks, and when delivery has to stop.</div></div>
+            <div class="iso-row"><div class="iso-std">ISO 14971</div><div class="iso-use">Risk management ran alongside the design rather than after it. Several design choices exist because a hazard analysis asked for them, not because they were the neatest engineering answer.</div></div>
+            <div class="iso-row"><div class="iso-std">ISO 13485</div><div class="iso-use">Quality system practice — design history, controlled revisions, and traceability from a requirement to the thing that satisfies it.</div></div>
+            <div class="iso-row"><div class="iso-std">ISO 81060-2</div><div class="iso-use">Set what the non-invasive cuff had to demonstrate: the accuracy the measurement has to reach, and the conditions it has to reach it under.</div></div>
+            <div class="iso-row"><div class="iso-std">IEC 60601-2-24</div><div class="iso-use">Governed the infusion side: pump accuracy, occlusion behaviour, and the conditions under which delivery has to stop.</div></div>
           </div>
         </div>
       </div>
@@ -308,8 +298,8 @@
         <div class="band-text reveal">
           <p class="band-num">CAD & 3D-printing</p>
           <h2>Printed housings for both devices</h2>
-          <p>Both enclosures are printed. Every component has its own seat inside, so nothing moves around and the clearances that medical electrical safety needs stay intact. The boxes carry vents for cooling, a hole for the power inlet, routing for the tubing that connects to the IV line and the switch between lines, and fixtures that clamp the system to a standard IV pole. The motor and the commercial pump head sit outside the box, with their electrical connections inside.</p>
-          <p>We designed the first pump head ourselves, modelling the roller spacing and the tubing path that set how much fluid moves per turn, and then moved to a commercial head.</p>
+          <p>Both enclosures are printed, and so are the internal brackets that seat the boards, the solenoid and the diaphragm pump. The brackets exist so components land in a repeatable place rather than wherever the loom pulls them, which matters once a box has been opened and closed a few dozen times.</p>
+          <p>The first pump was ours: modelled from the roller geometry outward, since roller spacing and the tubing path set how much fluid moves per revolution. We moved to a commercial pump head after that, and the printed work became the housing and the mounting that puts the system on a standard IV pole.</p>
         </div>
         <div class="band-media reveal mosaic-4">
           <figure class="wide">
@@ -420,7 +410,7 @@
 
   <section class="position" id="regen">
     <div class="position-head">
-      <p class="position-num">04 — Research Engineer</p>
+      <p class="position-num">04 — Regenerative Medicine Lab</p>
       <h2>Regenerative Medicine Lab</h2>
       <p class="position-meta">Dr. Anna Bulysheva<br>
       Contributed to two publications<br>
@@ -433,7 +423,7 @@
         <div class="band-text reveal">
           <p class="band-num">In vitro</p>
           <h2>Cell work at the bench</h2>
-          <p>Cell culture and transfection work supporting the lab's electro gene therapy project — maintaining lines, running treatment conditions, and preparing the samples that the downstream analysis depends on.</p>
+          <p>Cell culture and transfection work supporting the lab's electro gene therapy programme — maintaining lines, running treatment conditions, and preparing the samples that the downstream analysis depends on.</p>
           <p><!-- Replace this paragraph with the specifics: which lines, which assays, what you personally ran. --></p>
         </div>
         <div class="band-media reveal media-wide">
@@ -450,7 +440,7 @@
         <div class="band-text reveal">
           <p class="band-num">In vivo</p>
           <h2>Animal studies, IACUC certified</h2>
-          <p>In vivo rodent work on the same project, including surgery and imaging. Certified through USF IACUC in rodent aseptic surgical technique.</p>
+          <p>In vivo rodent work on the same programme, including surgery and imaging. Certified through USF IACUC in rodent aseptic surgical technique.</p>
           <p>The published results this fed into cover localized in vivo electro gene therapy for skeletal muscle protein reprogramming, and pulse protocols that trade delivery efficiency against muscle contraction.</p>
           <p><!-- Replace with your specifics: your role in the surgeries, the imaging modality, the endpoints. --></p>
         </div>
