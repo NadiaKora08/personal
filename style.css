@@ -505,6 +505,16 @@ section { padding-top: 0.5rem; }
 
   .skill:nth-of-type(odd) .band-media.media-single { margin-left: auto; }
 
+  /* A lone capped picture fills only 30rem of its column, and the rest of
+     that column then reads as a gap between the picture and the text. Size
+     the column to the picture so the text starts beside it instead. */
+  .skill.single-media:nth-of-type(odd):not(.skill-solo) .skill-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
+  }
+  .skill.single-media:nth-of-type(even):not(.skill-solo) .skill-inner {
+    grid-template-columns: minmax(0, 30rem) minmax(0, 1fr);
+  }
+
   /* a row with no pictures centres its column rather than leaving a gap */
   .skill-solo .skill-inner { grid-template-columns: minmax(0, 64ch); justify-content: center; }
 
