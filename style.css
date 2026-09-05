@@ -572,6 +572,10 @@ section { padding-top: 0.5rem; }
 .band-text > :first-child { margin-top: 0; }
 .band-text h2 { margin-top: 0; }
 .band-text p:last-child { margin-bottom: 0; }
+/* a bulleted list reads better than prose where a band is listing processes */
+.band-text .plain { margin: 0.9rem 0 0; }
+.band-text .plain li { margin-bottom: 0.35rem; }
+.band-text .plain li:last-child { margin-bottom: 0; }
 
 .band-num {
   font-family: "IBM Plex Sans", sans-serif;
