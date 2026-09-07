@@ -124,6 +124,10 @@ a:hover { text-decoration-thickness: 2px; }
   margin: 0;
 }
 
+/* The same link row as the footer, repeated up here so the way to reach her is
+   on screen before any scrolling. */
+.hero-links { margin-top: 1.5rem; }
+
 /* ---------- sections ---------- */
 
 section { padding-top: 0.5rem; }
