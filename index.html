@@ -338,8 +338,8 @@
         <div class="band-text reveal">
           <p class="band-num">Morse-code IoT device workshop</p>
           <h2>LED and photosensor data transmission</h2>
-          <p>Two Particle Argon boards talking over a beam of visible light. The sender drives an LED from a digital pin; the receiver wires a second LED in reverse and reads the photocurrent on an analog input, which works because an LED is a diode with a junction that responds to light as readily as it emits it.</p>
-          <p>Using an LED as its own detector is what makes the session teach something. It forces the question of what the component actually is, rather than what the tutorial calls it, and it lets students see a real analog signal instead of a boolean. Pairs sent Morse across a table, then tested it with the room lights off.</p>
+          <p>I built this session around two Particle Argon boards that talk over a beam of visible light. The sender drives an LED from a digital pin, and the receiver that reads photocurrent from the photosensor as analog input and wires a second LED to follow the increases and decreses in the input.</p>
+          <p>Working in pairs, the student were tasked with building both components step-by-step, program their devices and troubleshoot to make their devices work and be able to replicate them in the future. The students then encoded and transmitted Morse code at the sender and decoded information on the receiver end, testing it with the room lights off.</p>
         </div>
         <div class="band-media reveal media-full">
           <figure class="wide">
@@ -355,7 +355,8 @@
         <div class="band-text reveal">
           <p class="band-num">Mobile Phone IoT Workshop</p>
           <h2>Talking from microphone to dynamic over WiFi</h2>
-          <p>A pair of ESP32 boards carrying live audio between them: a MEMS microphone on one end and a Class-D amplifier on the other, both over I²S. The session works through the interface properly — bit clock, word select, and how a sample stream is framed — because those are the concepts that transfer to any synchronous digital bus a student meets later.</p>
+          <p>The second workshop moves to audio: two ESP32 boards carrying sound between them over I²S, with a MEMS microphone on one end and a Class-D amplifier driving a speaker on the other.</p>
+          <p>Students built both ends, programmed the boards, and worked through the I²S interface: bit clock, word select, and how a sample stream is framed. By the end each pair could talk into their microphone and hear it come out of the speaker across the room.</p>
         </div>
         <div class="band-media reveal media-single">
           <figure>
@@ -371,7 +372,9 @@
         <div class="band-text reveal">
           <p class="band-num">Solidworksa and FDM printing</p>
           <h2>Building Minecraft cat CAD</h2>
-          <p>A separate track takes students from a blank SOLIDWORKS sketch to a printed part: parametric modelling, STL and 3MF export, slicer configuration, supports and resolution, and choosing between FDM and SLA for a given part. Most attendees have never printed anything before and leave having sent a file to a printer themselves.</p>
+          <p>I built this session around a Minecraft cat model in SOLIDWORKS. The build goes through the basic CAD functions one at a time — sketching, extrusion, and the buttons students keep coming back to.
+
+Working along with me, the students were tasked with modelling the cat step-by-step, so they could repeat the process on their own parts later. We then went through the slicer software, SLA and FDM printing and what each is good for, and the resources available to them on campus and online.</p>
         </div>
         <div class="band-media reveal mosaic-4">
           <figure>
@@ -398,7 +401,7 @@
           <p class="band-num">Knowledge Transfer</p>
           <h2>Built backwards from a device that has to work</h2>
           <p>Similarly to how I work in my job, I design and run hardware workshops in a way where students have to build a real device/part from scratch and can then take it home or continue using this knowledge to build things themselves.</p>
-          <p>Sessions run in pairs so nobody watches someone else do the build. Over 200 attendees so far, and more than 100 devices built.</p>
+          <p>Sessions run in pairs so people can network with each other and acquire new connection, which is especially important for new students on campus. We have had over 200 attendees so far, and more than 100 devices built.</p>
         </div>
         <div class="band-media reveal media-wide">
           <figure class="fit-w">
