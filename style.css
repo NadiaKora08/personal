@@ -160,6 +160,14 @@ section { padding-top: 0.5rem; }
 
 .section-head h2 { margin-top: 0; }
 
+/* The hero already closes with a rule of its own, so the first section would
+   draw a second line 60px below it with nothing in between. Let the hero's
+   line serve as this heading's, and close the gap it was holding open. */
+body > main:first-of-type > section:first-child .section-head {
+  border-top: 0;
+  margin-top: 1.6rem;
+}
+
 /* ---------- project index ---------- */
 
 .projects { margin: 1.5rem 0 0; }
